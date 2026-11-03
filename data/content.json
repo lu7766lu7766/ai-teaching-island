@@ -18,12 +18,12 @@
     "description": "總複習島：從提問入門到 Harness 工程的學習地圖，並從各課題庫輪流抽題做跨課測驗、顯示全部課程的學習進度。",
     "blocks": [
       {
-        "title": "從提問到 Harness 的八站學習路線",
-        "text": "依難易度排列，建議照順序前進：\n① 咒語入門島：用 Gemini 免費版學會好好提問\n② 符文研究所：提示詞工程，用範例、拆解、自我檢查與評估讓 AI 穩定做好\n③ 魔法書之島：在 Google AI Studio 寫出 System Prompt\n④ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型\n⑤ 契約之島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑥ 使魔召喚島：打造有固定角色與權限的 Agent\n⑦ 法器寶庫島：用 Skills 與 MCP 擴充能力\n⑧ 魔導高塔：把所有元件組成能自我檢查的工作系統"
+        "title": "從提問到 Harness 的九站學習路線",
+        "text": "依難易度排列，建議照順序前進：\n① 咒語入門島：用 Gemini 免費版學會好好提問\n② 符文研究所：提示詞工程，用範例、拆解、自我檢查與評估讓 AI 穩定做好\n③ 魔法書之島：在 Google AI Studio 寫出 System Prompt\n④ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型\n⑤ 契約之島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑥ 星門渡口：在 Google AI Studio 申請 API Key，用 JavaScript 串接 Gemini API\n⑦ 使魔召喚島：打造有固定角色與權限的 Agent\n⑧ 法器寶庫島：用 Skills 與 MCP 擴充能力\n⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統"
       },
       {
         "title": "免費優先，人人都能動手",
-        "text": "課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
+        "text": "課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
       },
       {
         "title": "AI 是擴增器，不是取代者。",
@@ -981,10 +981,216 @@
     },
     {
       "order": 6,
+      "id": "island-09",
+      "name": "星門渡口",
+      "group": "API 串接",
+      "intro": "L6 串接｜在 Google AI Studio 申請 API Key，用 JavaScript 呼叫 Gemini 3.5 Flash-Lite",
+      "points": [],
+      "extra": "",
+      "link": "",
+      "material": "",
+      "goal": "能在 Google AI Studio 免費申請 API Key 並安全保管；看懂一次 API 請求的組成；用前端 JavaScript 在自己電腦呼叫 gemini-3.5-flash-lite，再學會正式上線時把金鑰放在後端。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "做法",
+          "金鑰在哪裡",
+          "適合情境"
+        ],
+        "rows": [
+          [
+            "❌ 直接寫在前端程式碼裡",
+            "任何人按 F12 或「檢視原始碼」就看得到",
+            "永遠不要這樣做"
+          ],
+          [
+            "❌ 上傳到 GitHub、雲端硬碟、截圖分享",
+            "公開在網路上，可能幾分鐘內就被盜用",
+            "永遠不要這樣做"
+          ],
+          [
+            "⚠️ 前端練習頁，執行時才手動貼上",
+            "只在你自己電腦的瀏覽器記憶體中，關掉就消失",
+            "只限自己電腦上練習，不能上傳或分享網頁"
+          ],
+          [
+            "✅ 放在後端（伺服器）的 .env 環境變數",
+            "只在伺服器上，前端只呼叫你自己的後端",
+            "要給別人使用的正式網站或應用程式"
+          ]
+        ]
+      },
+      "blocks": [
+        {
+          "title": "API 是什麼：從聊天視窗走進自己的程式",
+          "text": "在 Gemini 網頁上聊天，是「你」跟 AI 對話；API（應用程式介面）則是讓「你的程式」直接跟 AI 對話。學會 API，就能把 AI 放進自己做的網頁、表單、小工具裡。\n一次 API 呼叫只有三個元素：① 網址（要找哪個服務）② API Key（證明你是誰，像通行證）③ 用 JSON 格式寫的請求內容（用哪個模型、要問什麼）。AI 回傳的結果同樣是 JSON，程式再從裡面取出文字。\n本課使用 gemini-3.5-flash-lite：Gemini 3.5 系列中速度最快、成本最低的模型，Gemini API 免費方案即可使用，很適合練習與做小工具。\n本課範例採用 Google 建議新專案使用的 Interactions API（網址結尾為 /interactions）。網路上很多舊教學使用 generateContent，也還能用，但寫法不同，看到時不要混在一起。"
+        },
+        {
+          "title": "在 Google AI Studio 免費申請 API Key",
+          "text": "① 用 Google 帳號登入 Google AI Studio（aistudio.google.com），第一次使用需同意服務條款。\n② 進入「API Keys」頁面（左側選單或首頁的 Get API key）。新使用者通常已自動建立好專案與金鑰，也可以按「Create API key」再建立一把。\n③ 複製金鑰，馬上存進安全的地方（見下一段），不要貼到聊天群組或文件裡。\n免費方案不需要綁信用卡。使用量有每分鐘、每天的次數上限，而且是以「專案」計算，不是以金鑰計算；實際額度請看 AI Studio 裡的用量與限制頁面，額度用完會收到 429 錯誤，等一下或隔天再試即可。\n注意：免費方案送出的內容可能被 Google 用來改善產品，請不要送出個資、成績、客戶資料或公司機密。不打算付費就不要開啟帳單（Billing）。"
+        },
+        {
+          "title": "金鑰安全：不能放前端，也不能放上網",
+          "text": "API Key 就像你的密碼加上信用卡：別人拿到就能用你的額度、以你的名義呼叫 AI；如果你的專案開了帳單，費用也會算在你頭上。\n規則一：不要把金鑰寫進前端程式碼（HTML、JavaScript）。網頁送到瀏覽器後，任何人按 F12 或「檢視原始碼」都看得到，混淆或藏在別的檔案裡也沒用。\n規則二：不要把金鑰放上網路。包含 GitHub（公開或私人倉庫都不要）、雲端硬碟共用資料夾、部落格文章、截圖與教學影片。網路上有程式專門在掃描外洩的金鑰。\n規則三：自己想辦法保管好。可以存在密碼管理器，或放在專案的 .env 檔，並把 .env 加進 .gitignore，確保它不會被上傳。\n規則四：要給別人用的網站，金鑰一定要嵌在後端伺服器（環境變數）裡，由前端呼叫你自己的後端，後端再代為呼叫 Gemini（見最後一段）。\n萬一外洩：立刻到 AI Studio 的 API Keys 頁面刪除那把金鑰，再建立新的一把。"
+        },
+        {
+          "title": "範例一：前端 JavaScript 本機練習頁",
+          "text": "先用一個 HTML 檔體驗 API：把下方「範例一」的程式碼存成 gemini-test.html，在自己電腦上用瀏覽器開啟即可，不用安裝任何東西。\n這個練習頁刻意不把金鑰寫在程式碼裡：每次開啟時才把金鑰貼進密碼欄位，它只存在瀏覽器記憶體，關閉分頁就消失。即使如此，這個檔案只能在你自己電腦上練習，不要上傳到網站或分享給別人使用。\n程式做了三件事：① 用 fetch 送出 POST 請求，金鑰放在 x-goog-api-key 標頭；② 請求內容寫明 model 與 input；③ 從回傳 JSON 的 steps 裡找出模型輸出（model_output）的文字。\n看不懂的地方，可以把程式碼貼給 Gemini 或 OpenCode，請它逐行解釋（記得先把金鑰拿掉）。"
+        },
+        {
+          "title": "範例二：加上 System Instruction 與參數",
+          "text": "在魔法書之島學過的 System Prompt，在 API 裡叫 system_instruction，用來固定 AI 的角色與規則。\ngeneration_config 可以調整產出：temperature 越低回答越穩定一致（適合整理、分類），越高越有變化（適合發想）；max_output_tokens 限制回答長度，避免一次用掉太多額度。\n把「範例二」的 body 換進範例一的程式，就能做出一個「固定角色的小助教」。"
+        },
+        {
+          "title": "範例三：多輪對話與錯誤處理",
+          "text": "API 預設每次呼叫都是全新的對話。Interactions API 會回傳一個 id，下一次呼叫時把它放進 previous_interaction_id，AI 就會接著上一輪的內容回答，不必自己重送整段歷史。\n常見錯誤：400 加上 API_KEY_INVALID 表示金鑰貼錯或已被刪除；429 表示超過免費額度，請稍等或隔天再試；網路錯誤則先檢查網址與連線。把錯誤訊息顯示在畫面上，除錯會容易很多。"
+        },
+        {
+          "title": "正式上線：把金鑰嵌在後端",
+          "text": "要讓別人使用你的 AI 小工具時，正確架構是：使用者的瀏覽器 → 你自己的後端 → Gemini API。金鑰只存在後端的環境變數裡，使用者完全拿不到。\n「範例四」用 Node.js（建議 22 以上，不需安裝任何套件）寫一個最小後端：金鑰放在同資料夾的 .env 檔，用 node --env-file=.env server.mjs 啟動；網頁由同一個後端提供，前端只呼叫自己的 /api/ask，程式碼裡完全沒有金鑰。\n記得建立 .gitignore 並寫入 .env，確認上傳的檔案裡沒有金鑰。之後部署到任何雲端平台，也都是在平台的「環境變數／Secrets」設定填入金鑰，而不是寫進程式碼。\n正式服務還要考慮：限制每位使用者的呼叫次數、檢查輸入長度，避免你的額度被別人用光。"
+        }
+      ],
+      "prompts": [
+        "<!doctype html>\n<html lang=\"zh-Hant\">\n<meta charset=\"utf-8\">\n<title>Gemini API 練習</title>\n<h1>Gemini API 練習（只在自己電腦使用）</h1>\n<p>API Key（每次手動貼上，不寫進程式碼）：\n  <input id=\"key\" type=\"password\" size=\"45\" autocomplete=\"off\"></p>\n<textarea id=\"question\" rows=\"4\" cols=\"60\">用三句話向新手解釋什麼是 API</textarea><br>\n<button id=\"send\">送出</button>\n<pre id=\"answer\" style=\"white-space:pre-wrap\"></pre>\n\n<script>\nconst API_URL = \"https://generativelanguage.googleapis.com/v1beta/interactions\";\nconst MODEL = \"gemini-3.5-flash-lite\";\n\n// 送出請求，回傳 { id, text }\nasync function askGemini(apiKey, body) {\n  const res = await fetch(API_URL, {\n    method: \"POST\",\n    headers: { \"Content-Type\": \"application/json\", \"x-goog-api-key\": apiKey },\n    body: JSON.stringify({ model: MODEL, ...body })\n  });\n  const data = await res.json();\n  if (!res.ok) {\n    // 錯誤訊息有時直接回傳，有時包在陣列裡，兩種都處理\n    const error = [].concat(data)[0]?.error;\n    throw new Error(error?.message || \"HTTP \" + res.status);\n  }\n  // 只取最後一次提問之後、模型輸出的文字\n  const steps = data.steps || [];\n  const start = steps.findLastIndex(s => s.type === \"user_input\") + 1;\n  const text = steps.slice(start)\n    .filter(s => s.type === \"model_output\")\n    .flatMap(s => s.content || [])\n    .filter(c => c.type === \"text\")\n    .map(c => c.text)\n    .join(\"\");\n  return { id: data.id, text: text || JSON.stringify(data, null, 2) };\n}\n\ndocument.querySelector(\"#send\").onclick = async () => {\n  const out = document.querySelector(\"#answer\");\n  const apiKey = document.querySelector(\"#key\").value.trim();\n  if (!apiKey) { out.textContent = \"請先貼上 API Key\"; return; }\n  out.textContent = \"思考中…\";\n  try {\n    const result = await askGemini(apiKey, {\n      input: document.querySelector(\"#question\").value\n    });\n    out.textContent = result.text;\n  } catch (err) {\n    out.textContent = \"發生錯誤：\" + err.message;\n  }\n};\n</script>\n</html>",
+        "const result = await askGemini(apiKey, {\n  system_instruction: \"你是親切的程式小助教。用繁體中文回答，先給結論，再用一個生活化的比喻說明，全文不超過 150 字。\",\n  input: document.querySelector(\"#question\").value,\n  generation_config: {\n    temperature: 0.3,        // 越低越穩定，越高越有創意\n    max_output_tokens: 400   // 限制回答長度\n  }\n});",
+        "// 在 <script> 最上方宣告，用來記住上一輪的 id\nlet lastId = null;\n\n// 送出時帶上 previous_interaction_id，AI 就會記得前面聊過的內容\nconst result = await askGemini(apiKey, {\n  input: document.querySelector(\"#question\").value,\n  ...(lastId ? { previous_interaction_id: lastId } : {})\n});\nlastId = result.id;   // 存起來給下一輪使用\nout.textContent = result.text;\n\n// 想重新開始新對話時：lastId = null;",
+        "// ① 同資料夾建立 .env，內容只有一行（不要上傳這個檔案）：\n//    GEMINI_API_KEY=貼上你的金鑰\n// ② 建立 .gitignore，寫入一行：.env\n// ③ 把範例一存成同資料夾的 index.html，刪掉金鑰欄位，\n//    並把 askGemini 裡的 fetch 改成呼叫自己的後端（不帶金鑰）：\n//    fetch(\"/api/ask\", { method: \"POST\",\n//      headers: { \"Content-Type\": \"application/json\" },\n//      body: JSON.stringify({ input: \"你的問題\" }) })\n// ④ 啟動（Node.js 22 以上）：node --env-file=.env server.mjs\n//    再用瀏覽器開啟 http://localhost:3000\n\nimport http from \"node:http\";\nimport { readFile } from \"node:fs/promises\";\n\nconst API_URL = \"https://generativelanguage.googleapis.com/v1beta/interactions\";\n\nhttp.createServer(async (req, res) => {\n  try {\n    // 提供前端網頁\n    if (req.method === \"GET\" && req.url === \"/\") {\n      res.writeHead(200, { \"Content-Type\": \"text/html; charset=utf-8\" });\n      res.end(await readFile(\"index.html\"));\n      return;\n    }\n    if (req.method !== \"POST\" || req.url !== \"/api/ask\") {\n      res.writeHead(404).end();\n      return;\n    }\n    let raw = \"\";\n    for await (const chunk of req) raw += chunk;\n    const { input } = JSON.parse(raw || \"{}\");\n    if (typeof input !== \"string\" || !input || input.length > 2000) {\n      res.writeHead(400, { \"Content-Type\": \"text/plain; charset=utf-8\" });\n      res.end(\"問題不可空白，且不超過 2000 字\");\n      return;\n    }\n    // 由後端代為呼叫 Gemini，金鑰只在伺服器上\n    const upstream = await fetch(API_URL, {\n      method: \"POST\",\n      headers: {\n        \"Content-Type\": \"application/json\",\n        \"x-goog-api-key\": process.env.GEMINI_API_KEY\n      },\n      body: JSON.stringify({ model: \"gemini-3.5-flash-lite\", input })\n    });\n    res.writeHead(upstream.status, { \"Content-Type\": \"application/json; charset=utf-8\" });\n    res.end(await upstream.text());\n  } catch (err) {\n    res.writeHead(500, { \"Content-Type\": \"text/plain; charset=utf-8\" });\n    res.end(\"伺服器發生錯誤：\" + err.message);\n  }\n}).listen(3000, () => console.log(\"已啟動：http://localhost:3000\"));",
+        "我是程式新手，正在學習用 JavaScript 呼叫 Gemini API。\n請逐段解釋下面這段程式碼在做什麼，用生活化的比喻說明 fetch、headers、JSON 這三個概念，\n最後告訴我：如果要把這個網頁給別人使用，金鑰應該怎麼保管才安全？\n\n\"\"\"\n【貼上程式碼，記得先把 API Key 刪掉】\n\"\"\""
+      ],
+      "promptTitles": [
+        "範例一：前端本機練習頁（存成 gemini-test.html，只在自己電腦開啟）",
+        "範例二：加上 System Instruction 與參數（替換範例一送出的內容）",
+        "範例三：多輪對話（接著上一輪回答）",
+        "範例四：正式上線，金鑰嵌在後端（server.mjs）",
+        "請 AI 幫你看懂程式碼（貼上前先刪掉金鑰）"
+      ],
+      "links": [
+        {
+          "label": "Google AI Studio：API Keys",
+          "url": "https://aistudio.google.com/apikey",
+          "note": "免費申請與管理 API Key；外洩時在這裡刪除"
+        },
+        {
+          "label": "Gemini API 官方文件：Interactions API",
+          "url": "https://ai.google.dev/gemini-api/docs/interactions",
+          "note": "本課範例使用的 API 寫法（英文）"
+        },
+        {
+          "label": "Gemini API 官方文件：Gemini 3.5 Flash-Lite",
+          "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite",
+          "note": "模型說明與支援功能（英文）"
+        },
+        {
+          "label": "Gemini API 官方文件：Rate limits",
+          "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+          "note": "免費方案的使用額度說明（英文）"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "island-09-q1",
+          "question": "一次 Gemini API 呼叫，最基本需要哪三個元素？",
+          "options": [
+            {
+              "id": "a",
+              "text": "網址、API Key、JSON 格式的請求內容"
+            },
+            {
+              "id": "b",
+              "text": "信用卡號碼、手機號碼、密碼"
+            },
+            {
+              "id": "c",
+              "text": "只要在 Gemini 網頁登入就好"
+            },
+            {
+              "id": "d",
+              "text": "一定要先安裝 OpenCode"
+            }
+          ],
+          "answer": "a",
+          "explanation": "程式透過網址找到服務、用 API Key 證明身分，並以 JSON 說明要用哪個模型、問什麼。"
+        },
+        {
+          "id": "island-09-q2",
+          "question": "關於 API Key 的保管，下列哪一個做法正確？",
+          "options": [
+            {
+              "id": "a",
+              "text": "寫在網頁的 JavaScript 裡，比較方便"
+            },
+            {
+              "id": "b",
+              "text": "上傳到私人 GitHub 倉庫就安全了"
+            },
+            {
+              "id": "c",
+              "text": "存在密碼管理器或 .env 檔，並把 .env 加進 .gitignore"
+            },
+            {
+              "id": "d",
+              "text": "截圖存在共用雲端資料夾備份"
+            }
+          ],
+          "answer": "c",
+          "explanation": "金鑰不能放前端、也不能放上網；自己妥善保管，並確保 .env 不會被上傳。"
+        },
+        {
+          "id": "island-09-q3",
+          "question": "想把 AI 小工具做成網站給別人使用，金鑰應該放在哪裡？",
+          "options": [
+            {
+              "id": "a",
+              "text": "放在前端，再用程式混淆藏起來"
+            },
+            {
+              "id": "b",
+              "text": "嵌在後端伺服器的環境變數，前端只呼叫自己的後端"
+            },
+            {
+              "id": "c",
+              "text": "寫在網頁的註解裡"
+            },
+            {
+              "id": "d",
+              "text": "請使用者自己去偷看"
+            }
+          ],
+          "answer": "b",
+          "explanation": "送到瀏覽器的程式碼任何人都看得到；金鑰只能留在後端，由後端代為呼叫 Gemini。"
+        },
+        {
+          "id": "island-09-q4",
+          "question": "使用 Interactions API 時，怎麼讓 AI 接著上一輪對話回答？",
+          "options": [
+            {
+              "id": "a",
+              "text": "每次都換一把新的 API Key"
+            },
+            {
+              "id": "b",
+              "text": "把 temperature 調到最高"
+            },
+            {
+              "id": "c",
+              "text": "把上一輪回傳的 id 放進 previous_interaction_id"
+            },
+            {
+              "id": "d",
+              "text": "API 無法做多輪對話"
+            }
+          ],
+          "answer": "c",
+          "explanation": "Interactions API 會記住上一輪內容，只要帶上前一次回傳的 id 即可接續對話。"
+        }
+      ]
+    },
+    {
+      "order": 7,
       "id": "island-05",
       "name": "使魔召喚島",
       "group": "OpenCode 實作",
-      "intro": "L6 進階｜打造專屬 Agent：System Prompt＋模型＋權限",
+      "intro": "L7 進階｜打造專屬 Agent：System Prompt＋模型＋權限",
       "points": [],
       "extra": "",
       "link": "",
@@ -1156,11 +1362,11 @@
       ]
     },
     {
-      "order": 7,
+      "order": 8,
       "id": "island-06",
       "name": "法器寶庫島",
       "group": "進階打造",
-      "intro": "L7 擴充｜Skills 技能包與 MCP 外部工具",
+      "intro": "L8 擴充｜Skills 技能包與 MCP 外部工具",
       "points": [],
       "extra": "",
       "link": "",
@@ -1337,11 +1543,11 @@
       ]
     },
     {
-      "order": 8,
+      "order": 9,
       "id": "island-07",
       "name": "魔導高塔",
       "group": "進階打造",
-      "intro": "L8 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統",
+      "intro": "L9 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統",
       "points": [],
       "extra": "",
       "link": "",
@@ -1644,6 +1850,22 @@
       "island": "island-08",
       "concept": "拆解串接",
       "text": "大任務拆成小步驟，每一步確認後再往下。AI 做不好時別罵它，說清楚落差與原因，補上它缺的資訊。",
+      "topic": 2
+    },
+    {
+      "id": "resident-17",
+      "name": "渡渡",
+      "island": "island-09",
+      "concept": "API 三元素",
+      "text": "呼叫 API 只要三樣東西：網址、API Key、JSON 請求。程式送出問題，再從回傳的 JSON 取出 AI 的回答。",
+      "topic": 0
+    },
+    {
+      "id": "resident-18",
+      "name": "鑰鑰",
+      "island": "island-09",
+      "concept": "金鑰藏好",
+      "text": "API Key 不能放前端、不能放上網。自己保管在 .env 或密碼管理器；給別人用的網站，金鑰一定要嵌在後端。",
       "topic": 2
     }
   ]
