@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "紅焰教學夢幻島",
+    "title": "AI 魔法學習島",
     "slug": "ai-teaching-island",
-    "tagline": "讓教學靈感，在這裡發芽。",
+    "tagline": "念對咒語，讓 AI 為你所用。",
     "author": "紅焰教學",
     "contact": "https://www.facebook.com/moodlela",
     "audience": "想用免費工具上手 AI 的學員",
@@ -13,13 +13,13 @@
     }
   },
   "center": {
-    "name": "紅焰教學夢幻島",
+    "name": "AI 魔法學習島",
     "role": "總複習島",
     "description": "總複習島：從提問入門到 Harness 工程的學習地圖，並從各課題庫輪流抽題做跨課測驗、顯示全部課程的學習進度。",
     "blocks": [
       {
         "title": "從提問到 Harness 的七站學習路線",
-        "text": "依難易度排列，建議照順序前進：\n① 提問入門島：用 Gemini 免費版學會好好提問\n② 系統提示詞島：在 Google AI Studio 寫出 System Prompt\n③ OpenCode 啟航島：安裝 OpenCode，免帳號使用免費模型\n④ 專案規則島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑤ 自訂 Agent 島：打造有固定角色與權限的 Agent\n⑥ 技能工具島：用 Skills 與 MCP 擴充能力\n⑦ Harness 工程島：把所有元件組成能自我檢查的工作系統"
+        "text": "依難易度排列，建議照順序前進：\n① 咒語入門島：用 Gemini 免費版學會好好提問\n② 魔法書之島：在 Google AI Studio 寫出 System Prompt\n③ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型\n④ 契約之島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑤ 使魔召喚島：打造有固定角色與權限的 Agent\n⑥ 法器寶庫島：用 Skills 與 MCP 擴充能力\n⑦ 魔導高塔：把所有元件組成能自我檢查的工作系統"
       },
       {
         "title": "免費優先，人人都能動手",
@@ -74,7 +74,7 @@
     {
       "order": 1,
       "id": "island-01",
-      "name": "提問入門島",
+      "name": "咒語入門島",
       "group": "Gemini 免費入門",
       "intro": "L1 入門｜用 Gemini 免費版學會好好提問",
       "points": [],
@@ -253,7 +253,7 @@
     {
       "order": 2,
       "id": "island-02",
-      "name": "系統提示詞島",
+      "name": "魔法書之島",
       "group": "Gemini 免費入門",
       "intro": "L2 基礎｜System Prompt：替 AI 設定固定的身分與規則",
       "points": [],
@@ -427,7 +427,7 @@
     {
       "order": 3,
       "id": "island-03",
-      "name": "OpenCode 啟航島",
+      "name": "魔杖工坊",
       "group": "OpenCode 實作",
       "intro": "L3 上手｜安裝 OpenCode，免帳號使用免費 AI 模型",
       "points": [],
@@ -615,7 +615,7 @@
     {
       "order": 4,
       "id": "island-04",
-      "name": "專案規則島",
+      "name": "契約之島",
       "group": "OpenCode 實作",
       "intro": "L4 規則｜AGENTS.md 與自訂指令：讓 AI 記住你的做事方法",
       "points": [],
@@ -789,7 +789,7 @@
     {
       "order": 5,
       "id": "island-05",
-      "name": "自訂 Agent 島",
+      "name": "使魔召喚島",
       "group": "OpenCode 實作",
       "intro": "L5 進階｜打造專屬 Agent：System Prompt＋模型＋權限",
       "points": [],
@@ -965,7 +965,7 @@
     {
       "order": 6,
       "id": "island-06",
-      "name": "技能工具島",
+      "name": "法器寶庫島",
       "group": "進階打造",
       "intro": "L6 擴充｜Skills 技能包與 MCP 外部工具",
       "points": [],
@@ -1146,7 +1146,7 @@
     {
       "order": 7,
       "id": "island-07",
-      "name": "Harness 工程島",
+      "name": "魔導高塔",
       "group": "進階打造",
       "intro": "L7 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統",
       "points": [],
@@ -1165,17 +1165,17 @@
           [
             "Prompt Engineering（提示詞工程）",
             "這一句話怎麼問？",
-            "提問入門島、系統提示詞島"
+            "咒語入門島、魔法書之島"
           ],
           [
             "Context Engineering（上下文工程）",
             "AI 這次該看到哪些資訊？",
-            "專案規則島、技能工具島"
+            "契約之島、法器寶庫島"
           ],
           [
             "Harness Engineering（駕馭工程）",
             "整套環境如何讓 AI 穩定做對、做錯能被發現？",
-            "自訂 Agent 島、本島"
+            "使魔召喚島、本島"
           ]
         ]
       },

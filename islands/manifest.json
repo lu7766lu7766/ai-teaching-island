@@ -1,12 +1,12 @@
 {
-  "center": "islands/紅焰教學夢幻島/教材.md",
+  "center": "islands/AI魔法學習島/教材.md",
   "courses": [
-    "islands/提問入門島/教材.md",
-    "islands/系統提示詞島/教材.md",
-    "islands/OpenCode啟航島/教材.md",
-    "islands/專案規則島/教材.md",
-    "islands/自訂Agent島/教材.md",
-    "islands/技能工具島/教材.md",
-    "islands/Harness工程島/教材.md"
+    "islands/咒語入門島/教材.md",
+    "islands/魔法書之島/教材.md",
+    "islands/魔杖工坊/教材.md",
+    "islands/契約之島/教材.md",
+    "islands/使魔召喚島/教材.md",
+    "islands/法器寶庫島/教材.md",
+    "islands/魔導高塔/教材.md"
   ]
 }

@@ -1,13 +1,13 @@
 const includesAny=(q,words)=>words.some(w=>q.includes(w));
 // 依關鍵字對應課程島；順序由具體到廣泛，避免「system prompt」被歸到一般提問、「agents.md」被歸到自訂 Agent。
 function courseTopic(q){
- if(includesAny(q,['harness','駕馭','回饋迴圈','事後檢查','事前引導','compaction','上下文壓縮']))return 'island-07';
- if(includesAny(q,['skill','技能','mcp','context7']))return 'island-06';
- if(includesAny(q,['agents.md','agentsmd','/init','專案規則','自訂指令','斜線指令','$arguments','commands']))return 'island-04';
- if(includesAny(q,['systemprompt','系統提示','系統指令','aistudio','systeminstruction']))return 'island-02';
- if(includesAny(q,['subagent','子agent','agent','代理人','權限','permission','reviewer']))return 'island-05';
- if(includesAny(q,['opencode','免費模型','bigpickle','安裝','/models','/undo','plan','build']))return 'island-03';
- if(includesAny(q,['gemini','提問','問問題','提示詞','prompt','五要素','查證']))return 'island-01';
+ if(includesAny(q,['魔導高塔','harness','駕馭','回饋迴圈','事後檢查','事前引導','compaction','上下文壓縮']))return 'island-07';
+ if(includesAny(q,['法器寶庫','skill','技能','mcp','context7']))return 'island-06';
+ if(includesAny(q,['契約之島','agents.md','agentsmd','/init','專案規則','自訂指令','斜線指令','$arguments','commands']))return 'island-04';
+ if(includesAny(q,['魔法書','systemprompt','系統提示','系統指令','aistudio','systeminstruction']))return 'island-02';
+ if(includesAny(q,['使魔','subagent','子agent','agent','代理人','權限','permission','reviewer']))return 'island-05';
+ if(includesAny(q,['魔杖工坊','opencode','免費模型','bigpickle','安裝','/models','/undo','plan','build']))return 'island-03';
+ if(includesAny(q,['咒語入門','gemini','提問','問問題','提示詞','prompt','五要素','查證']))return 'island-01';
  return null;
 }
 export function answerIslandQuestion(input,data){const q=String(input).trim().toLowerCase().replace(/[？?！!，,。\s]/g,'');const center={id:'center',name:data.center.name};const result=(text,ids=[])=>({text,sources:ids.map(id=>id==='center'?center:{id,name:data.courses.find(c=>c.id===id)?.name}).filter(x=>x.name)});
@@ -28,7 +28,7 @@ export function answerIslandQuestion(input,data){const q=String(input).trim().to
  if(includesAny(q,['人物','居民','島民','島嶼','點島','建築','放大','小人','散步','走路','橋','旋轉','縮放','全景','動態','暈']))return result('先點島名或島面聚焦放大，再點主建築讀教材。聚焦後可點14位具名島民的頭頂提示，看各自不同的關鍵概念；每座島也都有沿步道走動的焰兒可提問。島民沿環形步道與橋行走，開啟「減少動態」會暫停，按「回到全景」可重新選島。',['center']);
  if(includesAny(q,['音樂','聲音','播放']))return result('按下「開啟音樂」才會開始播放你提供的背景音樂 The_Uninvited_Guest_s_Waltz，再按一次即可關閉；可用旁邊音量滑桿調整0–100%，網站會記住音量；不會自動播放聲音。',['center']);
  if(includesAny(q,['作者','講師','紅焰','黃泓諺','聯絡']))return result('網站作者是紅焰教學，講師為黃泓諺／紅焰。中央廣場有講師學經歷、現任資訊與聯絡連結。',['center']);
- if(includesAny(q,['從哪','開始','幾座','有哪些課','怎麼學','推薦','入門','順序','路線']))return result('這裡有七座課程島與中央廣場，依難易度排列：提問入門島（Gemini 免費版提問）→ 系統提示詞島（System Prompt）→ OpenCode 啟航島（安裝與免費模型）→ 專案規則島（AGENTS.md）→ 自訂 Agent 島 → 技能工具島（Skills 與 MCP）→ Harness 工程島。建議從第一站照順序前進，也能依需要直接選課。',['island-01','island-03','island-07']);
+ if(includesAny(q,['從哪','開始','幾座','有哪些課','怎麼學','推薦','入門','順序','路線']))return result('這裡有七座課程島與中央廣場，依難易度排列：咒語入門島（Gemini 免費版提問）→ 魔法書之島（System Prompt）→ 魔杖工坊（OpenCode 安裝與免費模型）→ 契約之島（AGENTS.md）→ 使魔召喚島（自訂 Agent）→ 法器寶庫島（Skills 與 MCP）→ 魔導高塔（Harness 工程）。建議從第一站照順序前進，也能依需要直接選課。',['island-01','island-03','island-07']);
  const tokens=[...new Set(q.match(/[a-z0-9]+|[\u4e00-\u9fff]{2}/g)||[])].filter(t=>!['什麼','怎麼','如何','可以','請問','老師'].includes(t));let candidates=[];for(const c of data.courses)for(const b of c.blocks){const hay=(c.name+b.title+b.text).toLowerCase();const score=tokens.reduce((sum,t)=>sum+(hay.includes(t)?t.length:0),0);if(score>=4)candidates.push({c,b,score});}candidates.sort((a,b)=>b.score-a.score);if(candidates.length){const best=candidates[0];return result(best.b.title+'：'+best.b.text,[best.c.id]);}
  return result('目前本站教材找不到這個問題的可靠答案，我不會亂猜。你可以問「怎麼拿證書」、「OpenCode 免費模型怎麼用」、「Harness 是什麼」，或用清單搜尋課程。',[]);
 }
