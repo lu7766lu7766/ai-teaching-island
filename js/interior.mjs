@@ -33,7 +33,7 @@ export function createInterior(renderer,host,{onMaterial,onExit,onInvalidate}){
  const actor=createAnimeCharacter(0,true);actor.g.scale.setScalar(1.3);scene.add(actor.g);const pickables=[];actor.g.traverse(m=>{if(m.isMesh)pickables.push(m);});let time=0,active=false,paused=false,hover=false;
  const button=document.createElement('button');button.id='interior-host';button.className='person-label island-host interior-host';button.innerHTML='<span>焰兒 · 開啟廣場教材</span>';button.setAttribute('aria-label','點室內焰兒開啟中央廣場教材');button.hidden=true;host.append(button);button.addEventListener('click',onMaterial);for(const ev of ['pointerenter','focus'])button.addEventListener(ev,()=>hover=true);for(const ev of ['pointerleave','blur'])button.addEventListener(ev,()=>hover=false);
  const exit=document.createElement('button');exit.id='exit-interior';exit.className='interior-exit';exit.textContent='← 返回中央島';exit.hidden=true;host.append(exit);exit.addEventListener('click',onExit);
- const hint=document.createElement('p');hint.className='interior-note';hint.textContent='中央島 · 備課室｜拖曳旋轉，點焰兒開啟教材；轉身點門回建築外觀';hint.hidden=true;host.append(hint);
+ const hint=document.createElement('p');hint.className='interior-note';hint.textContent='中央島 · 學習室｜拖曳旋轉，點焰兒開啟教材；轉身點門回建築外觀';hint.hidden=true;host.append(hint);
  function place(){actor.g.position.set(Math.sin(time*.24)*4.7,.04,Math.cos(time*.24)*3.7);actor.g.rotation.y=time*.24+Math.PI/2;actor.legs[0].rotation.x=paused||hover?0:Math.sin(time*5)*.4;actor.legs[1].rotation.x=-actor.legs[0].rotation.x;}
  place();const ray=new THREE.Raycaster();
  function keepDoorClear(w,h){

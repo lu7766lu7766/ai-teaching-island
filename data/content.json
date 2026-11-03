@@ -5,7 +5,7 @@
     "tagline": "讓教學靈感，在這裡發芽。",
     "author": "紅焰教學",
     "contact": "https://www.facebook.com/moodlela",
-    "audience": "老師與教育工作者",
+    "audience": "想用免費工具上手 AI 的學員",
     "language": "zh-TW",
     "mascot": {
       "name": "焰兒",
@@ -15,15 +15,19 @@
   "center": {
     "name": "紅焰教學夢幻島",
     "role": "總複習島",
-    "description": "總複習島：從各課題庫輪流抽題做跨課測驗，並顯示全部課程的學習進度。",
+    "description": "總複習島：從提問入門到 Harness 工程的學習地圖，並從各課題庫輪流抽題做跨課測驗、顯示全部課程的學習進度。",
     "blocks": [
       {
-        "title": "從發想到自動化的教學金字塔",
-        "text": "從 Ask Gemini 的靈感發想到 Gems 模組、Skill 擴充，再到 Spark（任務）教材生產與 Workspace 自動化，依教學需要選擇合適工具。"
+        "title": "從提問到 Harness 的七站學習路線",
+        "text": "依難易度排列，建議照順序前進：\n① 提問入門島：用 Gemini 免費版學會好好提問\n② 系統提示詞島：在 Google AI Studio 寫出 System Prompt\n③ OpenCode 啟航島：安裝 OpenCode，免帳號使用免費模型\n④ 專案規則島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑤ 自訂 Agent 島：打造有固定角色與權限的 Agent\n⑥ 技能工具島：用 Skills 與 MCP 擴充能力\n⑦ Harness 工程島：把所有元件組成能自我檢查的工作系統"
       },
       {
-        "title": "AI 是教學的擴增器，不是取代者。",
-        "text": "把重複繁雜的工作交給 AI，把最珍貴的溫度與關懷留給學生。"
+        "title": "免費優先，人人都能動手",
+        "text": "課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
+      },
+      {
+        "title": "AI 是擴增器，不是取代者。",
+        "text": "把重複繁雜的工作交給 AI，把判斷、查證與創意留給自己。"
       }
     ]
   },
@@ -65,1029 +69,1257 @@
       "Gemini AI 認證教育工作者"
     ]
   },
-  "editorialNote": "本站依使用者提供教材改寫；工具名稱、操作路徑及限制保留原稿，未另行查證現行服務。實際功能依使用的服務、帳號與版本為準。補寫學習目標標示「示意」，題目標示「自編練習題」。",
+  "editorialNote": "本站教材依 Google Gemini 與 OpenCode 官方文件整理，資料查核日期：2026 年 11 月 3 日。AI 工具更新快速，免費模型名單、使用額度與操作畫面可能變動，請以官方頁面為準。測驗為自編練習題。",
   "courses": [
     {
       "order": 1,
       "id": "island-01",
-      "name": "靈感發想島",
-      "group": "靈感與助教",
-      "intro": "L1 靈感層-Ask Gemini",
+      "name": "提問入門島",
+      "group": "Gemini 免費入門",
+      "intro": "L1 入門｜用 Gemini 免費版學會好好提問",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能將年級、主題與限制寫成具體提問，規劃教學靈感。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能用「角色、任務、背景、限制、格式」五要素寫出具體提問，並追問與查證 AI 的回答。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "提問要素",
+          "要交代什麼",
+          "範例"
+        ],
+        "rows": [
+          [
+            "角色",
+            "希望 AI 用什麼身分回答",
+            "你是一位擅長簡報的顧問"
+          ],
+          [
+            "任務",
+            "要它做什麼（動詞開頭）",
+            "幫我列出 5 頁簡報大綱"
+          ],
+          [
+            "背景",
+            "對象、目的、已知資訊",
+            "聽眾是第一次接觸 AI 的同事"
+          ],
+          [
+            "限制",
+            "字數、語氣、不能做的事",
+            "每頁不超過 3 點，避免專有名詞"
+          ],
+          [
+            "格式",
+            "希望產出的樣子",
+            "用表格呈現：頁次｜標題｜重點"
+          ]
+        ]
+      },
       "blocks": [
         {
-          "title": "把瀏覽中的資訊變成靈感",
-          "text": "原稿將 Ask Gemini 定位為 Chrome 內建的 AI 側邊欄助理，適合摘要、多資料統整與跨應用協作。從目前閱讀的網頁出發，先說明教學對象與想解決的問題。"
+          "title": "零成本開始：只要一個 Google 帳號",
+          "text": "打開 gemini.google.com（或手機 Gemini App），用 Google 帳號登入就能免費使用。免費版可以聊天、上傳圖片或檔案請它說明，也能用 Canvas 一起編寫文件。\n免費版有使用量上限，忙碌時段較強的模型或深入研究等功能可能被限制；額度與模型名稱會依 Google 調整，以畫面顯示為準。\n本課程只使用免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），後面的課程改用免費的 OpenCode 完成。"
         },
         {
-          "title": "原稿操作路徑",
-          "text": "點選右上角圖示，詢問單頁重點；需要統整時加入分頁（原稿記載最多 10 個）；輸入 / 呼叫常態指令；從「更多」載入近期對話。原稿也示範依網頁內容撰寫並寄送 Gmail。"
+          "title": "提問五要素：角色、任務、背景、限制、格式",
+          "text": "AI 不知道你腦中的情境，資訊給得越具體，結果越貼近需求。\n把提問拆成五個要素：角色（用什麼身分回答）、任務（要做什麼）、背景（對象與目的）、限制（字數、語氣、禁止事項）、格式（表格、條列、步驟）。\n不必每次五項都寫滿；先寫任務，再補上最影響結果的一兩項，就會明顯進步。"
         },
         {
-          "title": "教學應用",
-          "text": "以媒體識讀為例，將 40 分鐘課程、3 個破冰活動、不需複雜道具與學生熟悉的平台等條件一起交代，讓發想更具體。"
+          "title": "追問、改寫與查證",
+          "text": "第一次的回答很少完美，請把對話當成來回修改：「第 2 點再具體一點」、「改成給新手看的語氣」、「整理成表格」。\n請它「先問我 3 個問題再回答」，可以讓 AI 補齊它缺少的資訊。\nAI 可能把錯的事說得很肯定，數字、日期、法規與引用來源一定要自己查證；個資、公司機密與帳號密碼不要貼進免費服務。"
         }
       ],
       "prompts": [
-        "根據【當前這個網頁】的內容，身為一位老師，我正在規劃一堂 40 分鐘的「媒體識讀與假新聞辨識」課程。請給我 3 個生動有趣的破冰活動提案。\n\n  要求：\n  1. 無需複雜的實體道具。\n  2. 能引起學生的共鳴。\n  3. 情境需結合時下流行的網路平台（如 YouTube、TikTok、IG）。"
+        "你是一位【角色，例如：擅長把複雜概念講簡單的講師】。\n請幫我【任務，例如：設計一份 10 分鐘的 AI 入門分享大綱】。\n\n背景：\n- 對象：【例如：完全沒用過 AI 的同事】\n- 目的：【例如：讓大家願意開始試用】\n\n限制：\n- 【例如：不超過 5 個重點】\n- 【例如：避免英文縮寫，必要時附中文解釋】\n\n格式：請用表格呈現，欄位為「段落｜時間｜內容｜互動方式」。",
+        "我想請你幫我【任務】。\n在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。"
       ],
       "promptTitles": [
-        "教材提示詞"
+        "五要素提問範本",
+        "讓 AI 先問清楚再回答"
       ],
       "links": [
         {
-          "label": "問問Gemini簡報 (Canva)",
-          "url": "https://www.canva.com/design/DAHLmMfNN0M/DX5WxXr8ID_4GMmg6t9kiA/view?utm_content=DAHLmMfNN0M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb34d3dd3f8#4"
+          "label": "Gemini（網頁版）",
+          "url": "https://gemini.google.com/",
+          "note": "使用 Google 帳號登入即可免費使用"
         },
         {
-          "label": "中央社新聞連結 (範例材料)",
-          "url": "https://www.cna.com.tw/news/aopl/202608100206.aspx"
-        },
-        {
-          "label": "AI 提示詞工具庫 (Google Sites)",
-          "url": "https://sites.google.com/view/fireskills/skills%E6%8C%87%E4%BB%A4%E9%9B%86"
+          "label": "Gemini 方案比較（官方）",
+          "url": "https://gemini.google/subscriptions/",
+          "note": "查看免費版與付費方案的最新差異"
         }
       ],
       "quiz": [
         {
           "id": "island-01-q1",
-          "question": "Ask Gemini 在教材中的主要定位是？",
+          "question": "下列哪一個提問最可能得到貼近需求的回答？",
           "options": [
             {
               "id": "a",
-              "text": "Chrome 內建的 AI 側邊欄助理"
+              "text": "幫我寫簡報"
             },
             {
               "id": "b",
-              "text": "離線試算表程式"
+              "text": "請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現"
             },
             {
               "id": "c",
-              "text": "學生點名系統"
+              "text": "簡報"
             },
             {
               "id": "d",
-              "text": "雲端硬碟資料夾"
+              "text": "寫得好一點"
             }
           ],
-          "answer": "a",
-          "explanation": "教材將它用於網頁摘要、統整與教學發想。"
+          "answer": "b",
+          "explanation": "這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。"
         },
         {
           "id": "island-01-q2",
-          "question": "要讓活動發想貼近教學，應提供什麼？",
+          "question": "「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？",
           "options": [
             {
               "id": "a",
-              "text": "年級、主題、時間與活動限制"
+              "text": "角色"
             },
             {
               "id": "b",
-              "text": "只說「幫我想」"
+              "text": "背景"
             },
             {
               "id": "c",
-              "text": "只給一個表情符號"
+              "text": "限制"
             },
             {
               "id": "d",
-              "text": "只列資料夾名稱"
+              "text": "格式"
             }
           ],
-          "answer": "a",
-          "explanation": "教材範例明確交代主題、40 分鐘與無複雜道具等條件。"
+          "answer": "c",
+          "explanation": "字數、語氣與禁止事項都屬於限制。"
         },
         {
           "id": "island-01-q3",
-          "question": "依原稿，如何接續先前的對話？",
+          "question": "AI 回答了一個很肯定的統計數字，最恰當的做法是？",
           "options": [
             {
               "id": "a",
-              "text": "從「更多」載入「近期對話」"
+              "text": "直接引用，AI 不會出錯"
             },
             {
               "id": "b",
-              "text": "必須建立試算表"
+              "text": "自行查證原始來源後再使用"
             },
             {
               "id": "c",
-              "text": "先刪除所有分頁"
+              "text": "換個字體就好"
             },
             {
               "id": "d",
-              "text": "只能重新提問"
+              "text": "請 AI 回答得更肯定"
             }
           ],
-          "answer": "a",
-          "explanation": "這是原稿列出的接續脈絡方式。"
+          "answer": "b",
+          "explanation": "AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。"
         },
         {
           "id": "island-01-q4",
-          "question": "教材使用哪個主題示範活動發想？",
+          "question": "本課程遇到 Gemini 需要付費的功能時，會怎麼處理？",
           "options": [
             {
               "id": "a",
-              "text": "媒體識讀與假新聞辨識"
+              "text": "請學員購買最高方案"
             },
             {
               "id": "b",
-              "text": "游泳姿勢測驗"
+              "text": "跳過不教"
             },
             {
               "id": "c",
-              "text": "烹飪火候控制"
+              "text": "改用免費的 OpenCode 完成同類任務"
             },
             {
               "id": "d",
-              "text": "校舍工程估價"
+              "text": "使用他人帳號"
             }
           ],
-          "answer": "a",
-          "explanation": "原稿以媒體識讀課程的破冰活動示範。"
+          "answer": "c",
+          "explanation": "課程只使用 Gemini 免費功能，付費功能改以 OpenCode 的免費模型與功能替代。"
         }
       ]
     },
     {
       "order": 2,
       "id": "island-02",
-      "name": "專屬助教島",
-      "group": "靈感與助教",
-      "intro": "L2 模組層-Gems",
+      "name": "系統提示詞島",
+      "group": "Gemini 免費入門",
+      "intro": "L2 基礎｜System Prompt：替 AI 設定固定的身分與規則",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能為重複教學工作設計角色、輸入條件與輸出格式。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能分辨 System Prompt 與一般提問，並在 Google AI Studio 寫出、測試、修正一份系統提示詞。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "比較項目",
+          "System Prompt（系統提示詞）",
+          "User Prompt（一般提問）"
+        ],
+        "rows": [
+          [
+            "誰寫",
+            "設計 AI 工具的人",
+            "使用 AI 的人"
+          ],
+          [
+            "作用時間",
+            "整段對話都有效",
+            "只影響這一輪"
+          ],
+          [
+            "放什麼",
+            "身分、目標、規則、輸出格式",
+            "這次要處理的問題與資料"
+          ],
+          [
+            "比喻",
+            "員工的工作說明書",
+            "主管今天交辦的任務"
+          ]
+        ]
+      },
       "blocks": [
         {
-          "title": "打造固定風格的助教",
-          "text": "Gems 封裝特定 Prompt 與知識庫，適合固定格式、重複性產出，例如依教學風格生成學習單。"
+          "title": "什麼是 System Prompt？",
+          "text": "每次和 AI 對話時，除了你輸入的問題，背後通常還有一段你看不到的「系統提示詞」，先告訴模型：你是誰、要遵守什麼規則、用什麼格式回答。\n它就像員工的工作說明書，整段對話都有效；你的提問則像主管當天交辦的任務。\n幾乎所有 AI 產品都靠 System Prompt 決定個性與能力，下一階段的 OpenCode 自訂 Agent，本質上也是「一段 System Prompt＋可用的工具」。"
         },
         {
-          "title": "原稿操作路徑",
-          "text": "在左側選單點選「建立 Gem」，貼入系統指令。往後輸入學科、年級、單元等關鍵字，讓專屬助教依既定格式處理。"
+          "title": "免費實作：在 Google AI Studio 設定系統指令",
+          "text": "1. 用 Google 帳號登入 aistudio.google.com（免費，不需信用卡）。\n2. 開一個新的 Chat，找到「System instructions（系統指令）」欄位，貼上本島下方的範本並修改括號內容。\n3. 在下方對話框用幾個不同問題測試，看 AI 是否一直遵守你的規則。\n4. 不滿意就回去改系統指令，再用同樣的問題重測，比較前後差異。\n提醒：Google 可能使用免費服務中的對話內容改善產品，練習時請勿貼上個資或機密資料。"
         },
         {
-          "title": "把期待寫進指令",
-          "text": "教材範例包含素養導向表現任務、情境與探究問題，以及「優、良、可、待加強」四級評量規準。資訊不足時應先詢問。"
+          "title": "好的 System Prompt 長什麼樣？",
+          "text": "建議依序寫：身分（你是誰）→ 目標（幫誰解決什麼）→ 規則（必須做／不可以做）→ 輸出格式 → 資訊不足時怎麼辦（例如先發問，不要亂猜）→ 一個示範例子。\n寫具體行為，不寫空泛形容詞：「每次回答不超過 5 點」比「回答要精簡」更有效。\n規則太多會互相衝突，模型也可能漏掉；先寫最重要的 3～5 條，測試後再補。\n想看真實產品的寫法，可以到 OpenCode 的 GitHub 原始碼閱讀它內建的 System Prompt。"
         }
       ],
       "prompts": [
-        "你是一位熟悉台灣 108 課綱的專業課程設計專家。\n\n  當我輸入【學科、年級、單元主題】時，請自動執行：\n  1. 產出一份「素養導向」的表現任務學習單（含情境、探究問題、任務）。\n  2. 附帶一份包含「優、良、可、待加強」的評量規準（Rubrics）表。\n\n  要求：保持專業、鼓勵，層次分明，使用繁體中文。若資訊不足請主動詢問。"
+        "# 身分\n你是一位擅長把複雜概念講簡單的簡報顧問。\n\n# 目標\n協助使用者把想法整理成清楚的簡報大綱。\n\n# 規則\n1. 一律使用繁體中文（台灣用語）。\n2. 每頁重點不超過 3 點，每點不超過 20 字。\n3. 遇到專有名詞，第一次出現時附上一句白話解釋。\n4. 不捏造數據；需要數據時，標示「請自行補上來源」。\n\n# 輸出格式\n用表格呈現，欄位為「頁次｜標題｜重點｜講者備註」。\n\n# 資訊不足時\n如果不知道聽眾是誰或簡報長度，先問我，不要自己假設。",
+        "幫我做一份介紹「生成式 AI 是什麼」的簡報大綱。"
       ],
       "promptTitles": [
-        "教材提示詞"
+        "System Prompt 範本：簡報小幫手",
+        "測試用提問"
       ],
       "links": [
         {
-          "label": "點擊體驗：Gem 範例連結",
-          "url": "https://gemini.google.com/gem/1ZPTjcGurju5-U2oRhyd-zbSAqyvMUpbj?usp=sharing",
-          "note": "需登入 Google 帳號；未登入時僅顯示 Gemini 登入入口。"
+          "label": "Google AI Studio",
+          "url": "https://aistudio.google.com/",
+          "note": "免費試用系統指令與各種 Gemini 模型"
+        },
+        {
+          "label": "OpenCode 內建的 System Prompt（GitHub 原始碼）",
+          "url": "https://github.com/anomalyco/opencode/tree/dev/packages/core/src/plugin/system-prompt",
+          "note": "觀摩真實 AI 工具如何撰寫系統提示詞（英文）"
         }
       ],
       "quiz": [
         {
           "id": "island-02-q1",
-          "question": "Gems 最適合教材中的哪種工作？",
+          "question": "System Prompt 與一般提問最大的差別是？",
           "options": [
             {
               "id": "a",
-              "text": "固定格式的重複性產出"
+              "text": "System Prompt 整段對話都有效，負責設定身分與規則"
             },
             {
               "id": "b",
-              "text": "更換電腦硬體"
+              "text": "System Prompt 只能用英文"
             },
             {
               "id": "c",
-              "text": "維修校園網路"
+              "text": "System Prompt 只影響下一句回答"
             },
             {
               "id": "d",
-              "text": "紙張裁切"
+              "text": "兩者完全相同"
             }
           ],
           "answer": "a",
-          "explanation": "原稿以學習單產生器等固定風格與格式的工作說明。"
+          "explanation": "System Prompt 像工作說明書，持續影響整段對話；一般提問只處理當次任務。"
         },
         {
           "id": "island-02-q2",
-          "question": "建立專屬助教時，原稿要求貼入什麼？",
+          "question": "在 Google AI Studio 中，要把 System Prompt 貼在哪裡？",
           "options": [
             {
               "id": "a",
-              "text": "系統指令"
+              "text": "瀏覽器網址列"
             },
             {
               "id": "b",
-              "text": "印表機驅動程式"
+              "text": "System instructions（系統指令）欄位"
             },
             {
               "id": "c",
-              "text": "瀏覽器歷史紀錄"
+              "text": "Gmail 草稿"
             },
             {
               "id": "d",
-              "text": "學生密碼"
+              "text": "檔案名稱"
             }
           ],
-          "answer": "a",
-          "explanation": "系統指令封裝角色、產出規格與要求。"
+          "answer": "b",
+          "explanation": "AI Studio 提供系統指令欄位，可免費設定並反覆測試。"
         },
         {
           "id": "island-02-q3",
-          "question": "教材範例的評量規準包含幾個等級？",
+          "question": "下列哪一條規則寫得最具體、最容易被遵守？",
           "options": [
             {
               "id": "a",
-              "text": "四級"
+              "text": "回答要好一點"
             },
             {
               "id": "b",
-              "text": "兩級"
+              "text": "請專業"
             },
             {
               "id": "c",
-              "text": "六級"
+              "text": "每次回答不超過 5 點，每點不超過 20 字"
             },
             {
               "id": "d",
-              "text": "八級"
+              "text": "盡量精簡"
             }
           ],
-          "answer": "a",
-          "explanation": "分別為優、良、可、待加強。"
+          "answer": "c",
+          "explanation": "具體、可檢查的行為規則，比空泛的形容詞更有效。"
         },
         {
           "id": "island-02-q4",
-          "question": "範例系統指令遇到資訊不足時應如何處理？",
+          "question": "資訊不足時，System Prompt 最好要求 AI 怎麼做？",
           "options": [
             {
               "id": "a",
-              "text": "主動詢問"
+              "text": "自行假設並直接回答"
             },
             {
               "id": "b",
-              "text": "自行虛構"
+              "text": "先向使用者發問，不要亂猜"
             },
             {
               "id": "c",
-              "text": "忽略所有要求"
+              "text": "停止回答"
             },
             {
               "id": "d",
-              "text": "停止顯示內容"
+              "text": "改用英文"
             }
           ],
-          "answer": "a",
-          "explanation": "原稿明確要求資訊不足時主動詢問。"
+          "answer": "b",
+          "explanation": "寫清楚「資訊不足先發問」可以減少 AI 自行腦補造成的錯誤。"
         }
       ]
     },
     {
       "order": 3,
       "id": "island-03",
-      "name": "技能工作坊",
-      "group": "技能與選擇",
-      "intro": "L3 擴充層-Skill",
+      "name": "OpenCode 啟航島",
+      "group": "OpenCode 實作",
+      "intro": "L3 上手｜安裝 OpenCode，免帳號使用免費 AI 模型",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能將教學需求拆成參數、步驟與檢核條件。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能安裝 OpenCode、選擇免費模型，在練習資料夾完成第一個任務，並會用 Plan／Build 與復原功能。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "比較項目",
+          "Gemini 網頁版",
+          "OpenCode"
+        ],
+        "rows": [
+          [
+            "型態",
+            "聊天助理",
+            "AI Agent（代理人）"
+          ],
+          [
+            "能做什麼",
+            "回答、寫作、分析上傳的檔案",
+            "直接讀寫你電腦資料夾裡的檔案、執行指令"
+          ],
+          [
+            "費用",
+            "免費版有額度上限",
+            "軟體免費開源，內建限時免費模型"
+          ],
+          [
+            "適合",
+            "發想、問答、潤稿",
+            "做網頁、整理大量檔案、建立自動化流程"
+          ]
+        ]
+      },
       "blocks": [
         {
-          "title": "將方法拆成可執行步驟",
-          "text": "原稿將 Skill 定位為具備邏輯判斷與程序步驟的結構化外掛，適合教案展開、雙向細目表與評量矩陣等工作。透過結構化步驟與檢核提高一致性，產出仍須確認。"
+          "title": "OpenCode 是什麼？",
+          "text": "OpenCode 是開源（MIT 授權）的 AI Agent。和聊天機器人不同，它能在你指定的資料夾裡讀檔、建立與修改檔案、執行指令，幫你「動手做完」一件事。\n它有桌面版 App、終端機版與網頁介面，軟體本身免費，而且內建一組不需要註冊帳號就能用的免費模型。\n目前最新為 OpenCode 2（V2），本島內容依 2026 年 11 月官方文件整理。"
         },
         {
-          "title": "原稿調用方式",
-          "text": "輸入 @指令 或 /指令等喚醒詞，再用 Key-Value 方式給參數。範例參數包含單元名稱、節數、核心素養、認知階層與輸出格式。"
+          "title": "安裝：最簡單的是桌面版",
+          "text": "新手推薦桌面版：到 opencode.ai/download 下載 OpenCode Desktop（macOS、Windows、Linux 皆有），像一般軟體一樣安裝。Windows 若開啟後一片空白，請安裝或更新 Microsoft Edge WebView2 Runtime。\n習慣終端機的人可改裝終端機版：\nmacOS／Linux：curl -fsSL https://opencode.ai/v2/install | bash\n已安裝 Node.js：npm install -g @opencode/cli\n安裝後在終端機輸入 opencode 即可啟動。"
         },
         {
-          "title": "多 Skill 串聯",
-          "text": "原稿示範先以教案 Skill 生成課程，再交給評量規準 Skill，最後用互動網站生成 Skill 製作教學網站。每一階段應檢視輸出是否符合下一階段需求。"
+          "title": "選擇免費模型與注意事項",
+          "text": "不用登入就能在模型選單（終端機版輸入 /models）選到 OpenCode 的免費模型，例如 Big Pickle，以及名稱帶「Free」的模型，如 DeepSeek V4.1 Flash Free、GLM-5.3-Flash Free、MiMo-V2.6-Flash Free、Nemotron 3.5 Lightning Free（2026/11/03 官方清單）。\n免費模型都是「限時」提供，名單常更換，以模型選單為準；大家共用流量，尖峰時可能暫時無法使用，換一個模型即可。\n隱私：官方說明 GLM-5.3-Flash Free 與 DeepSeek V4.1 Flash Free 的供應商不保留資料、不拿來訓練；Big Pickle、MiMo 等模型在免費期間可能使用資料改進模型；Nemotron 系列為 NVIDIA 試用端點，請勿輸入個資或機密。\n想用 Gemini：到 Google AI Studio 免費建立 API 金鑰，在 OpenCode 輸入 /connect 選擇 Google 並貼上金鑰（金鑰不要分享或上傳到網路）。"
+        },
+        {
+          "title": "第一個任務：Plan 先想，Build 再做",
+          "text": "1. 先建立一個空的練習資料夾（例如桌面上的 ai-practice），用 OpenCode 開啟它。不要一開始就開重要資料夾。\n2. 切到 Plan（計畫）Agent：它只規劃、不修改檔案。描述需求，例如「做一個自我介紹網頁」，先看它的計畫。\n3. 計畫沒問題，再切回 Build（建置）Agent 請它動手。終端機版按 Shift+Tab 切換 Agent，或輸入 /agents 選擇。\n4. 結果不滿意，輸入 /undo 復原上一輪的修改，調整說法後再試。"
         }
       ],
       "prompts": [
-        "@tw-spark-edu-lesson-plan\n  請為我生成一份完整教案，參數設定如下：\n  - 單元名稱：假新聞偵探團（媒體識讀）\n  - 節數：1 節課（40 分鐘）\n  - 核心素養：J-B2 科技資訊與媒體素養\n  - 認知階層：強調布魯姆「分析」與「評鑑」層次\n  - 輸出格式：包含「教學目標、雙向細目表、三階段教學活動（引起動機、發展活動、綜合活動）、時間分配」之結構化表格。",
-        "利用 @tw-spark-edu-lesson-plan 幫我設計\"媒體識讀\"一節課的課程教案 並根據生成的課程教案 使用 @tw-spark-edu-rubric-designer 建立四級 Rubrics 評量表 並將這些內容利用 @interactive-website-generator 幫我製作成教學網站 我要蒙德里安風格 請將三份資料分別生成給我"
+        "請在這個資料夾建立一個單一檔案的自我介紹網頁 index.html。\n\n需求：\n- 內容：我的名字【填入】、三個興趣【填入】、一句座右銘【填入】\n- 風格：簡潔、溫暖的配色，手機也能好好閱讀\n- 不使用任何外部套件或網路資源\n\n完成後告訴我怎麼用瀏覽器打開它。",
+        "我想要【描述你的目標】。\n請先不要修改任何檔案，給我一份 3～5 步的執行計畫，並列出你需要我確認的問題。"
       ],
       "promptTitles": [
-        "教材提示詞 1",
-        "可結合多個Skill："
+        "第一個任務：自我介紹網頁",
+        "請 AI 先規劃（在 Plan Agent 使用）"
       ],
       "links": [
         {
-          "label": "AI Skill 智慧開發工作台",
-          "url": "https://moodlela914.github.io/gemskills/"
+          "label": "OpenCode 下載頁（官方）",
+          "url": "https://opencode.ai/download",
+          "note": "桌面版與終端機版下載"
+        },
+        {
+          "label": "OpenCode V2 官方文件：安裝與入門",
+          "url": "https://opencode.ai/v2/docs/",
+          "note": "英文"
+        },
+        {
+          "label": "OpenCode 模型清單與免費模型說明（官方）",
+          "url": "https://opencode.ai/v2/docs/console/models/",
+          "note": "查看最新免費模型與各模型的資料使用政策"
+        },
+        {
+          "label": "Google AI Studio：建立 Gemini API 金鑰",
+          "url": "https://aistudio.google.com/apikey",
+          "note": "免費額度，選用"
         }
       ],
       "quiz": [
         {
           "id": "island-03-q1",
-          "question": "Skill 的輸入條件在教材中採哪種方式？",
+          "question": "OpenCode 和一般聊天機器人最大的不同是？",
           "options": [
             {
               "id": "a",
-              "text": "參數化 Key-Value"
+              "text": "只能聊天，不能做事"
             },
             {
               "id": "b",
-              "text": "只傳空白訊息"
+              "text": "能在指定資料夾讀寫檔案、執行指令，幫你動手完成任務"
             },
             {
               "id": "c",
-              "text": "隨機輸入符號"
+              "text": "只能畫圖"
             },
             {
               "id": "d",
-              "text": "完全不給條件"
+              "text": "一定要付費才能使用"
             }
           ],
-          "answer": "a",
-          "explanation": "教材用單元名稱、節數等明確參數示範。"
+          "answer": "b",
+          "explanation": "OpenCode 是 AI Agent，可以實際操作你指定資料夾中的檔案與指令。"
         },
         {
           "id": "island-03-q2",
-          "question": "哪項是教材列出的 Skill 參數？",
+          "question": "想用 OpenCode 的免費模型，最少需要做什麼？",
           "options": [
             {
               "id": "a",
-              "text": "認知階層"
+              "text": "先購買月費方案"
             },
             {
               "id": "b",
-              "text": "學生帳號密碼"
+              "text": "綁定信用卡"
             },
             {
               "id": "c",
-              "text": "主機序號"
+              "text": "安裝後在模型選單選擇名稱帶 Free 的模型或 Big Pickle"
             },
             {
               "id": "d",
-              "text": "瀏覽器下載紀錄"
+              "text": "寄信申請"
             }
           ],
-          "answer": "a",
-          "explanation": "原稿以分析、評鑑等認知階層設定教案方向。"
+          "answer": "c",
+          "explanation": "OpenCode 內建限時免費模型，不需要註冊帳號即可選用。"
         },
         {
           "id": "island-03-q3",
-          "question": "多 Skill 範例的合理順序是？",
+          "question": "想先看 AI 的做法、確定前不要改動任何檔案，應該使用哪個 Agent？",
           "options": [
             {
               "id": "a",
-              "text": "教案 → 評量規準 → 互動網站"
+              "text": "Plan"
             },
             {
               "id": "b",
-              "text": "網站 → 刪除教材 → 不評量"
+              "text": "Build"
             },
             {
               "id": "c",
-              "text": "歸檔 → 關機 → 收款"
+              "text": "Delete"
             },
             {
               "id": "d",
-              "text": "點名 → 維修 → 裁紙"
+              "text": "Print"
             }
           ],
           "answer": "a",
-          "explanation": "原稿示範先建立課程，再依課程設計評量及網站。"
+          "explanation": "Plan Agent 只規劃、不修改一般專案檔案；確認後再切到 Build 動手。"
         },
         {
           "id": "island-03-q4",
-          "question": "對結構化 Skill 產出應採取哪種態度？",
+          "question": "AI 改出來的結果不是你要的，最快的補救方式是？",
           "options": [
             {
               "id": "a",
-              "text": "透過步驟提高一致性，產出仍須確認"
+              "text": "重灌電腦"
             },
             {
               "id": "b",
-              "text": "保證永遠零錯誤"
+              "text": "輸入 /undo 復原上一輪修改"
             },
             {
               "id": "c",
-              "text": "無需閱讀就公開"
+              "text": "刪除整個資料夾"
             },
             {
               "id": "d",
-              "text": "所有參數皆可省略"
+              "text": "關掉螢幕"
             }
           ],
-          "answer": "a",
-          "explanation": "依使用者核准修訂，結構化不能取代人工確認。"
+          "answer": "b",
+          "explanation": "/undo 會還原上一輪訊息與後續修改，讓你調整說法重試。"
         }
       ]
     },
     {
       "order": 4,
       "id": "island-04",
-      "name": "Gems vs Skill",
-      "group": "技能與選擇",
-      "intro": "Gems 與 Skill 的決定性差異",
+      "name": "專案規則島",
+      "group": "OpenCode 實作",
+      "intro": "L4 規則｜AGENTS.md 與自訂指令：讓 AI 記住你的做事方法",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能依工作需求比較 Gems 與 Skill，說明選擇理由。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能用 /init 建立 AGENTS.md、寫出精簡有效的專案規則，並把常用提問做成自訂斜線指令。",
+      "goalLabel": "學習目標",
       "comparison": {
         "headers": [
-          "比較項目",
-          "Gems",
-          "Skill"
+          "放置位置",
+          "影響範圍",
+          "適合寫什麼"
         ],
         "rows": [
           [
-            "核心",
-            "Persona：角色與語氣",
-            "Workflow：程序與檢核"
+            "~/.config/opencode/AGENTS.md",
+            "你電腦上的所有專案",
+            "個人偏好：語言、回答風格"
           ],
           [
-            "設定",
-            "白話系統指令、知識庫",
-            "參數、結構化步驟"
+            "專案根目錄/AGENTS.md",
+            "整個專案",
+            "專案目的、資料夾結構、驗證步驟"
           ],
           [
-            "適用",
-            "文字風格、情境故事",
-            "矩陣、教案與跨模組流程"
+            "子資料夾/AGENTS.md",
+            "只在處理該資料夾時載入",
+            "這一區特有的規則"
           ],
           [
-            "提醒",
-            "複雜限制可能遺漏",
-            "產出仍須確認"
+            ".opencode/commands/名稱.md",
+            "變成 /名稱 指令",
+            "常重複使用的提問範本"
           ]
         ]
       },
       "blocks": [
         {
-          "title": "比較工作方式",
-          "text": "教材以 Persona 與 Workflow 比較兩者：Gems 透過系統指令與知識庫設定角色及語氣；Skill 透過結構化參數、程序與檢核封裝專業方法。"
+          "title": "AGENTS.md：專案的長期記憶",
+          "text": "每次開新對話，AI 都會忘記上次你交代的事。AGENTS.md 是放在資料夾裡的說明檔，OpenCode 每次工作前都會自動讀取，等於專案專屬的 System Prompt。\n最快的建立方式：在 OpenCode 輸入 /init，它會先閱讀資料夾內容，再引導你建立或更新 AGENTS.md。\nOpenCode 2 只認得 AGENTS.md 這個檔名；對話進行中修改它，下一次送出提問前就會自動套用。"
         },
         {
-          "title": "比較優點與限制",
-          "text": "Gems 設定直覺、富有彈性與創意，但複雜格式可能遺漏規則。Skill 需要清楚的參數與結構化思考；透過結構化步驟與檢核提高一致性，產出仍須確認。"
+          "title": "寫什麼？越精簡越有效",
+          "text": "判斷標準：「沒寫的話，AI 很可能會做錯嗎？」會，才寫進去；AI 本來就會的常識不用寫。\n建議內容：這個專案在做什麼、資料夾怎麼分、輸出的語言與風格、完成後要怎麼檢查、絕對不能動的檔案。\n全域檔（~/.config/opencode/AGENTS.md）放所有專案都適用的個人偏好；專案根目錄放整個專案的規則；子資料夾再放更細的規則。多個檔案會合併使用，請避免互相矛盾。\n如果專案用 Git 管理，記得把 AGENTS.md 一起提交，團隊成員就會拿到同一套規則。"
         },
         {
-          "title": "教師選擇指南",
-          "text": "潤飾聯絡簿、情境故事等工作，可考慮 Gems；雙向細目表、Rubrics 或跨模組教材流程，可考慮 Skill。原稿也提出在 Gem 中喚醒 Skill 的協作方式。"
+          "title": "自訂指令：把常用提問變成 /按鈕",
+          "text": "在專案建立 .opencode/commands/ 資料夾，放一個 Markdown 檔，例如 summary.md，檔案內容就是提問範本，之後輸入 /summary 就能使用。\n範本中的 $ARGUMENTS 會換成你在指令後面輸入的文字，例如 /summary 會議紀錄.md。\n檔案開頭可以加 description（說明）與 agent（指定由哪個 Agent 執行，例如 plan）。想讓所有專案都能用，就放在 ~/.config/opencode/commands/。"
         }
       ],
-      "prompts": [],
-      "promptTitles": [],
-      "links": [],
+      "prompts": [
+        "# 專案說明\n這個資料夾用來整理課程講義與簡報素材。\n\n# 資料夾結構\n- raw/：原始資料，只能讀取，不可修改或刪除\n- notes/：整理後的講義（Markdown）\n- slides/：簡報大綱\n\n# 寫作規則\n- 一律使用繁體中文（台灣用語），語氣親切、句子簡短\n- 專有名詞第一次出現時附一句白話解釋\n- 不捏造數據；需要數據時標示「待查證」\n\n# 完成前檢查\n- 確認沒有修改 raw/ 裡的檔案\n- 列出這次新增或修改了哪些檔案",
+        "---\ndescription: 把指定檔案整理成三段式摘要\nagent: plan\n---\n\n請閱讀 $ARGUMENTS，整理成以下格式，不要修改任何檔案：\n1. 一句話重點\n2. 三個關鍵細節（條列）\n3. 我接下來可以採取的行動"
+      ],
+      "promptTitles": [
+        "AGENTS.md 範本（文件整理專案）",
+        "自訂指令範本：.opencode/commands/summary.md"
+      ],
+      "links": [
+        {
+          "label": "OpenCode 官方文件：Instructions（AGENTS.md）",
+          "url": "https://opencode.ai/v2/docs/instructions/",
+          "note": "放置位置、載入順序與 instructions 設定（英文）"
+        },
+        {
+          "label": "OpenCode 官方文件：Commands（自訂指令）",
+          "url": "https://opencode.ai/v2/docs/commands/",
+          "note": "$ARGUMENTS 與 frontmatter 欄位（英文）"
+        }
+      ],
       "quiz": [
         {
           "id": "island-04-q1",
-          "question": "教材以哪個詞描述 Gems 的核心？",
+          "question": "AGENTS.md 的主要用途是？",
           "options": [
             {
               "id": "a",
-              "text": "Persona"
+              "text": "存放密碼"
             },
             {
               "id": "b",
-              "text": "印表機"
+              "text": "提供專案的長期規則，OpenCode 每次工作前自動讀取"
             },
             {
               "id": "c",
-              "text": "資料夾"
+              "text": "播放音樂"
             },
             {
               "id": "d",
-              "text": "硬碟"
+              "text": "備份照片"
             }
           ],
-          "answer": "a",
-          "explanation": "比較表以 Persona 說明角色與語氣設定。"
+          "answer": "b",
+          "explanation": "AGENTS.md 就像專案專屬的 System Prompt，讓 AI 每次都記得你的規則。"
         },
         {
           "id": "island-04-q2",
-          "question": "教材以哪個詞描述 Skill 的核心？",
+          "question": "想讓 OpenCode 先看過資料夾、再引導你建立 AGENTS.md，要輸入哪個指令？",
           "options": [
             {
               "id": "a",
-              "text": "Workflow"
+              "text": "/init"
             },
             {
               "id": "b",
-              "text": "字型"
+              "text": "/undo"
             },
             {
               "id": "c",
-              "text": "投影機"
+              "text": "/exit"
             },
             {
               "id": "d",
-              "text": "紙張"
+              "text": "/print"
             }
           ],
           "answer": "a",
-          "explanation": "比較表以 Workflow 說明結構化步驟與檢核。"
+          "explanation": "/init 是官方內建的 AGENTS.md 引導建立指令。"
         },
         {
           "id": "island-04-q3",
-          "question": "依教師決策指南，潤飾聯絡簿可優先考慮？",
+          "question": "下列哪一句最值得寫進 AGENTS.md？",
           "options": [
             {
               "id": "a",
-              "text": "Gems"
+              "text": "請認真工作"
             },
             {
               "id": "b",
-              "text": "網路交換器"
+              "text": "raw/ 資料夾只能讀取，不可修改或刪除"
             },
             {
               "id": "c",
-              "text": "資料夾重新命名"
+              "text": "1+1=2"
             },
             {
               "id": "d",
-              "text": "鍵盤驅動程式"
+              "text": "今天天氣很好"
             }
           ],
-          "answer": "a",
-          "explanation": "此工作偏向語氣、教學風格與彈性文字產出。"
+          "answer": "b",
+          "explanation": "AI 沒被告知就很可能做錯的專案規則，才值得寫進去。"
         },
         {
           "id": "island-04-q4",
-          "question": "面對複雜格式，Gems 可能遇到什麼限制？",
+          "question": "在自訂指令檔中，$ARGUMENTS 會被換成什麼？",
           "options": [
             {
               "id": "a",
-              "text": "跑版或遺忘規則"
+              "text": "今天的日期"
             },
             {
               "id": "b",
-              "text": "必然停止供電"
+              "text": "你在斜線指令後面輸入的文字"
             },
             {
               "id": "c",
-              "text": "無法輸入文字"
+              "text": "電腦名稱"
             },
             {
               "id": "d",
-              "text": "只能產出圖像"
+              "text": "隨機數字"
             }
           ],
-          "answer": "a",
-          "explanation": "原稿提醒機率生成遇到嚴格限制時可能不一致。"
+          "answer": "b",
+          "explanation": "例如輸入 /summary 會議紀錄.md，$ARGUMENTS 就會變成「會議紀錄.md」。"
         }
       ]
     },
     {
       "order": 5,
       "id": "island-05",
-      "name": "教材生產島",
-      "group": "生產與自動化",
-      "intro": "L4 生產層-任務",
+      "name": "自訂 Agent 島",
+      "group": "OpenCode 實作",
+      "intro": "L5 進階｜打造專屬 Agent：System Prompt＋模型＋權限",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能描述從教材文本到成套教材檔案的生產流程。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能分辨主要 Agent 與子 Agent，用一個 Markdown 檔建立自訂 Agent，並用權限規則限制它能做的事。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "內建 Agent",
+          "類型",
+          "用途"
+        ],
+        "rows": [
+          [
+            "Build",
+            "主要（primary）",
+            "預設的工作 Agent，可以修改檔案、執行指令"
+          ],
+          [
+            "Plan",
+            "主要（primary）",
+            "只探索與規劃，不修改一般專案檔案"
+          ],
+          [
+            "General",
+            "子 Agent（subagent）",
+            "處理研究與多步驟工作，不能再派出子 Agent"
+          ],
+          [
+            "Explore",
+            "子 Agent（subagent）",
+            "搜尋、閱讀檔案或網頁，不修改檔案"
+          ]
+        ]
+      },
       "blocks": [
         {
-          "title": "從文字走向教材檔案",
-          "text": "Spark（任務）在原稿中是將對話文字轉成雲端實體檔案的生產引擎。將已確認的教材轉成 Google Docs、Google Slides、結構圖與 Kahoot 題庫試算表。"
+          "title": "Agent 是什麼？主要 Agent 與子 Agent",
+          "text": "在 OpenCode 裡，一個 Agent＝一段 System Prompt＋偏好的模型＋權限規則＋名稱與說明，就像一位有固定職責的助手。\n主要 Agent（primary）是直接跟你對話的那位，例如 Build 與 Plan；終端機版用 Shift+Tab 或 /agents 切換。\n子 Agent（subagent）由主要 Agent 派出去做事，例如 Explore 去搜尋資料。子 Agent 在乾淨的新對話中工作，做完把結果交回來，不會塞滿主對話。\n你只要用白話說「請用 reviewer 子 Agent 檢查我的修改」，主要 Agent 就會派它出動。"
         },
         {
-          "title": "原稿操作路徑",
-          "text": "先準備課本 PDF 或核心教材文本，再啟動 Spark（任務）並掛載備課資源包生成 Skill，下達轉換與歸檔指令。"
+          "title": "用一個 Markdown 檔建立自訂 Agent",
+          "text": "在專案建立 .opencode/agents/ 資料夾，新增 reviewer.md，檔名就是 Agent 的名稱；想讓所有專案都能用，就放在 ~/.config/opencode/agents/。\n檔案開頭用 --- 包住的設定區（frontmatter）常用欄位：\ndescription：這個 Agent 做什麼。子 Agent 一定要寫，主要 Agent 靠它決定要派誰。\nmode：primary、subagent 或 all（兩者皆可），沒寫時預設為 primary。\nmodel：指定模型，格式為「供應商/模型」，例如 opencode/big-pickle；沒寫時沿用目前對話的模型。\nsteps：最多執行幾步，避免 AI 停不下來。\n設定區下面的內文，就是這個 Agent 的 System Prompt。"
         },
         {
-          "title": "完成一套備課資源",
-          "text": "原稿要求在 Google Drive「備課資料夾」下建立專屬單元資料夾，將不同格式的成果一起歸檔，方便後續教學使用。"
+          "title": "權限：讓 Agent 只做該做的事",
+          "text": "permissions 是一串規則，每條有三個欄位：action（動作，如 edit 修改檔案、shell 執行指令、read 讀檔、webfetch 讀網頁）、resource（對象，可用 * 代表全部）、effect（allow 允許、ask 每次詢問、deny 禁止）。\n重要觀念：符合的規則中「最後一條」生效，所以先寫大範圍規則，再寫例外。\n例如審稿 Agent 只需要讀，就把 edit 與 shell 設為 deny，它就算想改檔案也做不到。\n注意：網路上 OpenCode 1 的舊教學使用 tools、permission、prompt 等欄位，2 代新設定請改用本島的寫法。"
         }
       ],
       "prompts": [
-        "@tw-spark-edu-lesson-pack-generator 請依據我提供的這份課本 PDF（或單元內容），為本課生成全套備課資源包，並將生成的 Google 文件、Google 簡報、結構圖圖片與 Kahoot 試算表，自動建立並存入 Google Drive『備課資料夾』中的專屬單元資料夾內。"
+        "---\ndescription: 檢查文件的錯字、事實疑點與語意不清之處，只回報不修改\nmode: subagent\npermissions:\n  - action: edit\n    resource: \"*\"\n    effect: deny\n  - action: shell\n    resource: \"*\"\n    effect: deny\n---\n\n你是一位細心的審稿員。請檢查指定的文件，依嚴重程度列出問題：\n1. 可能錯誤的事實或數字（標示「需查證」）\n2. 語意不清、容易誤會的句子（附建議改法）\n3. 錯字與標點\n\n每個問題請註明檔名與段落。不要修改任何檔案。",
+        "請用 reviewer 子 Agent 檢查 notes/ 資料夾裡今天新增的講義，整理成一份問題清單給我。",
+        "---\ndescription: 依專案規則撰寫與改寫講義\nmode: primary\nsteps: 20\npermissions:\n  - action: shell\n    resource: \"*\"\n    effect: ask\n---\n\n你是一位擅長把技術概念寫得平易近人的講義作者。\n- 使用繁體中文（台灣用語），每段不超過 4 句\n- 每完成一份講義，最後列出「本次修改的檔案」\n- 不確定的內容標示「待查證」，不要自行編造"
       ],
       "promptTitles": [
-        "教材提示詞"
+        "子 Agent 範本：.opencode/agents/reviewer.md（只讀不改的審稿員）",
+        "呼叫子 Agent",
+        "主要 Agent 範本：.opencode/agents/writer.md（寫作夥伴）"
       ],
       "links": [
         {
-          "label": "下載：備課資料生成 skill (ZIP 檔案載點)",
-          "url": "https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/1736270122/df8935d96eef982d28dcd34543dd5999/tw_spark_edu_lesson_pack_generator.zip?token=CmQnuwyWG8F95j2HxLK6vcpBdwVLPvobVNn9casjurOyFUN2CG7-wwuZJwYiAk5q0hmvLQmGJZdwNMSmSaLSwAxPxdiOX9IsCyqLOqkbpIg4TGogB4ABf9fT-a3Ye26upLZ7Uj4UMfb7Qp4nSzHlSdoXaZQE0cPyXAiF0j3NlT9-bSricY5t7cQEUlSN2_LGzqivc3Ty8C2du365QyEECp1CxkRJJzphbNjzpp0G20vudnmPcLD2AB_Jji_QU4k4DhaAN0kO9W1qiOYd5ZLtV7OEVqUt_9wic5VSXe_aUxk="
+          "label": "OpenCode 官方文件：Agents",
+          "url": "https://opencode.ai/v2/docs/agents/",
+          "note": "所有欄位與內建 Agent 說明（英文）"
+        },
+        {
+          "label": "OpenCode 官方文件：Permissions",
+          "url": "https://opencode.ai/v2/docs/permissions/",
+          "note": "權限規則與預設值（英文）"
         }
       ],
       "quiz": [
         {
           "id": "island-05-q1",
-          "question": "Spark（任務）在教材中跨越哪個階段？",
+          "question": "在 OpenCode 中，一個 Agent 主要由哪些部分組成？",
           "options": [
             {
               "id": "a",
-              "text": "對話文字到雲端實體檔案"
+              "text": "System Prompt、模型、權限規則與名稱說明"
             },
             {
               "id": "b",
-              "text": "電力到網路線"
+              "text": "螢幕、鍵盤、滑鼠"
             },
             {
               "id": "c",
-              "text": "紙張到木材"
+              "text": "只有一個名字"
             },
             {
               "id": "d",
-              "text": "攝影機到印表機"
+              "text": "一張圖片"
             }
           ],
           "answer": "a",
-          "explanation": "教材定位為將確認後文字轉為教材檔案的生產引擎。"
+          "explanation": "官方定義：Agent 結合 System Prompt、模型偏好、權限與顯示資訊。"
         },
         {
           "id": "island-05-q2",
-          "question": "開始生產教材資源包前應準備什麼？",
+          "question": "子 Agent（subagent）的特色是？",
           "options": [
             {
               "id": "a",
-              "text": "課本 PDF 或核心教材文本"
+              "text": "會刪除主對話"
             },
             {
               "id": "b",
-              "text": "學生密碼清單"
+              "text": "由主要 Agent 派出，在新的對話中工作後交回結果"
             },
             {
               "id": "c",
-              "text": "電腦硬體報價"
+              "text": "只能在手機使用"
             },
             {
               "id": "d",
-              "text": "空白訊息"
+              "text": "不能有任何設定"
             }
           ],
-          "answer": "a",
-          "explanation": "原稿第一步是準備來源教材。"
+          "answer": "b",
+          "explanation": "子 Agent 在乾淨的子對話中執行，結果交回主要 Agent，避免主對話過長。"
         },
         {
           "id": "island-05-q3",
-          "question": "哪項成果在原稿的資源包中？",
+          "question": "自訂 Agent 的 Markdown 檔中，設定區下面的內文代表什麼？",
           "options": [
             {
               "id": "a",
-              "text": "Kahoot 題庫試算表"
+              "text": "這個 Agent 的 System Prompt"
             },
             {
               "id": "b",
-              "text": "校車維修單"
+              "text": "註解，不會被使用"
             },
             {
               "id": "c",
-              "text": "銀行轉帳憑證"
+              "text": "Agent 的密碼"
             },
             {
               "id": "d",
-              "text": "宿舍門禁卡"
+              "text": "檔案大小"
             }
           ],
           "answer": "a",
-          "explanation": "原稿列出文件、簡報、結構圖與 Kahoot 試算表。"
+          "explanation": "Markdown 內文會成為該 Agent 的系統提示詞。"
         },
         {
           "id": "island-05-q4",
-          "question": "成果依原稿應存放在哪裡？",
+          "question": "權限規則先寫「shell 全部 ask」，再寫「shell 的 git status 為 allow」，執行 git status 時會怎樣？",
           "options": [
             {
               "id": "a",
-              "text": "Google Drive 的專屬單元資料夾"
+              "text": "每次都詢問"
             },
             {
               "id": "b",
-              "text": "只留在對話標題"
+              "text": "直接允許，因為最後一條符合的規則生效"
             },
             {
               "id": "c",
-              "text": "隨機刪除"
+              "text": "一律禁止"
             },
             {
               "id": "d",
-              "text": "學生密碼欄"
+              "text": "電腦會關機"
             }
           ],
-          "answer": "a",
-          "explanation": "指令要求建立單元資料夾，統整歸檔。"
+          "answer": "b",
+          "explanation": "OpenCode 權限採「最後符合的規則生效」，所以先寫大範圍規則、再寫例外。"
         }
       ]
     },
     {
       "order": 6,
       "id": "island-06",
-      "name": "自動化中樞島",
-      "group": "生產與自動化",
-      "intro": "L5 系統層-Workspace",
+      "name": "技能工具島",
+      "group": "進階打造",
+      "intro": "L6 擴充｜Skills 技能包與 MCP 外部工具",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能辨識觸發條件與後續動作，畫出教學行政工作流。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能建立一個 SKILL.md 技能包、用一行指令連接 MCP 伺服器，並說明 AGENTS.md、Skill、MCP、Agent 各自適用的情境。",
+      "goalLabel": "學習目標",
+      "comparison": {
+        "headers": [
+          "功能",
+          "什麼時候載入",
+          "適合放什麼"
+        ],
+        "rows": [
+          [
+            "AGENTS.md",
+            "每次都載入",
+            "永遠要遵守的專案規則"
+          ],
+          [
+            "Skill（技能包）",
+            "需要時才載入",
+            "特定任務的完整做法、範本與腳本"
+          ],
+          [
+            "MCP 伺服器",
+            "連線後提供工具",
+            "連接外部服務與資料（文件、資料庫、雲端服務）"
+          ],
+          [
+            "自訂 Agent",
+            "切換或被派出時",
+            "固定角色與權限"
+          ]
+        ]
+      },
       "blocks": [
         {
-          "title": "讓事件啟動工作流",
-          "text": "Workspace 在原稿中是跨服務的教學行政整合中樞。透過事件觸發後續動作，串起收件、分析、紀錄與回饋。"
+          "title": "Skill：需要時才打開的技能包",
+          "text": "Skill 是一個資料夾，裡面最重要的是 SKILL.md，寫著「某一類任務該怎麼做」，旁邊還能放範本、參考資料與腳本。\n它跟 AGENTS.md 最大的差別：AGENTS.md 每次都會載入；Skill 平時只讓 AI 看到名稱和描述，遇到相關任務才把完整內容載入，不會白白占用 AI 的注意力（上下文）。\n在 Gemini 裡 Skills 需要付費方案，在 OpenCode 則免費就能使用。"
         },
         {
-          "title": "原稿流程範例",
-          "text": "Google Form 提交 → 呼叫 Gemini API 分析簡答 → 將評分內容寫入 Google Docs → 透過 Gmail 寄發回饋。這是教材介紹的外部工作流，本站僅供學習，不會代為串接或寄信。"
+          "title": "建立第一個 Skill",
+          "text": "1. 在專案建立 .opencode/skills/meeting-notes/ 資料夾（資料夾名稱就是技能 ID，建議用小寫英文加連字號）。\n2. 在裡面新增 SKILL.md，開頭寫 name（顯示名稱）與 description（什麼時候該用）。沒有 description 的技能不會被 AI 發現，所以一定要寫清楚。\n3. 內文寫步驟，需要時引用同資料夾內的範本檔，例如 templates/notes.md。\n放在 ~/.config/opencode/skills/ 則所有專案都能用；OpenCode 也會讀取 .claude/skills 與 .agents/skills，其他 AI 工具的技能包可以直接共用。\n不想讓 AI 自動使用、只想手動指定時，在設定區加上 disable-model-invocation: true。"
         },
         {
-          "title": "原稿限制與評閱向度",
-          "text": "原稿記載每帳號 25 個工作流、每工作流 20 個步驟。評閱範例以概念精確度、批判思辨力、實例佐證力、素養實踐力、邏輯表達力五向度，每項 20 分、共 100 分分析作答。"
+          "title": "MCP：替 AI 接上外部工具",
+          "text": "MCP（Model Context Protocol）是讓 AI 連接外部服務的共通標準，像是替 AI 裝上 USB 插座：接上不同的 MCP 伺服器，AI 就多了查文件、讀資料庫、操作雲端服務等工具。\n用一行指令就能加入，例如提供最新技術文件查詢的 Context7：opencode mcp add context7 --url https://mcp.context7.com/mcp，再用 opencode mcp list 檢查是否顯示 connected。\n加上 --global 就是所有專案都能用。若顯示 needs authentication，在 OpenCode 輸入 /mcps 選擇該伺服器登入。\n提醒：每個 MCP 工具都會占用 AI 的上下文，只裝需要的；也只安裝來源可信的伺服器，因為它能代替你存取資料。"
         }
       ],
       "prompts": [
-        "[角色任務]\n  你現在是一位深耕教育評量與媒體識讀專業的「AI 閱卷評閱專家」。你的目標是針對學生的簡答題作答，提供客觀、精準且具教育啟發性的結構化評量。\n\n  [背景資訊]\n  學生剛完成以「AI與媒體識讀」為主題的簡答題測驗。我們需要透過五大核心向度來衡量學生的資訊素養與AI認知，以確保他們具備在數位時代辨識真偽的能力。\n\n  [具體指令]\n  請閱讀以下學生的作答內容，並嚴格依照下列五個向度（每個向度滿分20分，總計100分）進行計分與深度分析：\n  1. 概念精確度（20分）：評估對AI術語與運作機制的理解正確性。\n  2. 批判思辨力（20分）：評估分析AI生成內容潛在風險與偏見的能力。\n  3. 實例佐證力（20分）：評估使用具體案例支持自身觀點的能力。\n  4. 素養實踐力（20分）：評估提出的事實查核步驟或防範策略是否具體可行。\n  5. 邏輯表達力（20分）：評估文意通順度與論述結構的嚴謹性。\n\n  針對學生的作答，請產出以下回覆：\n  - 【總分評定】：給出總分（/100）。\n  - 【雷達圖分析】：列出五個向度的個別得分。\n  - 【優勢與亮點】：具體點出作答中表現最優異的1至2個面向。\n  - 【成長鷹架】：針對失分項目，提出具體且可操作的改善建議。\n\n  [約束條件]\n  1. 必須一律使用繁體中文與臺灣教育用語回覆。\n  2. 分析結果請以「表格」與「條列式」呈現，確保版面易讀。\n  3. 評語語氣須保持專業且溫暖，展現教育工作者的支持感。\n  4. 嚴禁使用「總的來說」、「總而言之」等空洞的結尾用語。\n\n  以下是學生的作答內容：\n  （                                       ）"
+        "---\nname: 會議紀錄整理\ndescription: 當使用者提供會議逐字稿或筆記，需要整理成正式會議紀錄時使用\n---\n\n## 步驟\n1. 閱讀使用者提供的逐字稿或筆記。\n2. 依照 templates/notes.md 的格式整理。\n3. 決議事項與待辦事項分開列出，待辦要有負責人與期限；沒提到就寫「未指定」。\n4. 不確定的內容標示「待確認」，不要自行補充。\n5. 完成後列出 3 個需要與會者確認的問題。",
+        "# 會議紀錄｜{會議名稱}\n- 日期：\n- 與會者：\n\n## 討論重點\n\n## 決議事項\n\n## 待辦事項\n| 事項 | 負責人 | 期限 |\n| ---- | ------ | ---- |",
+        "{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"mcp\": {\n    \"servers\": {\n      \"context7\": {\n        \"type\": \"remote\",\n        \"url\": \"https://mcp.context7.com/mcp\"\n      }\n    }\n  }\n}"
       ],
       "promptTitles": [
-        "教材提示詞"
+        "Skill 範本：.opencode/skills/meeting-notes/SKILL.md",
+        "範本檔：.opencode/skills/meeting-notes/templates/notes.md",
+        "用設定檔加入 MCP（opencode.jsonc，與指令二選一）"
       ],
       "links": [
         {
-          "label": "Google 表單：AI 與媒體識讀小學堂",
-          "url": "https://docs.google.com/forms/d/e/1FAIpQLSeXGEDD15aoSWfUuVnDVUYDAQT18z3Glyc0orc8nErMpiPvmA/viewform"
+          "label": "OpenCode 官方文件：Skills",
+          "url": "https://opencode.ai/v2/docs/skills/",
+          "note": "技能包位置、欄位與共用目錄（英文）"
         },
         {
-          "label": "Google 表單：學生作文上傳",
-          "url": "https://docs.google.com/forms/d/e/1FAIpQLSeZiQxbILLUaVcp5YNn76YQANyocaM2n6pN9eeBRgpGIYclGA/viewform",
-          "note": "需登入 Google 帳號。2026/10/27 未登入實測會轉至 Google 登入頁。"
+          "label": "OpenCode 官方文件：MCP servers",
+          "url": "https://opencode.ai/v2/docs/mcp-servers/",
+          "note": "本機與遠端 MCP 設定、OAuth 登入（英文）"
         },
         {
-          "label": "Google 雲端檔案：作文範例",
-          "url": "https://drive.google.com/file/d/1uDeNNTBMOU2ynpUBXBktfagf7w33i3dU/view?usp=sharing"
+          "label": "Model Context Protocol 官方網站",
+          "url": "https://modelcontextprotocol.io/",
+          "note": "了解 MCP 標準（英文）"
         }
       ],
       "quiz": [
         {
           "id": "island-06-q1",
-          "question": "教材示範的工作流觸發事件是？",
+          "question": "Skill 和 AGENTS.md 最主要的差別是？",
           "options": [
             {
               "id": "a",
-              "text": "Google Form 被提交"
+              "text": "Skill 需要時才載入完整內容；AGENTS.md 每次都載入"
             },
             {
               "id": "b",
-              "text": "教師更換滑鼠"
+              "text": "Skill 只能放圖片"
             },
             {
               "id": "c",
-              "text": "投影機關閉"
+              "text": "AGENTS.md 只能用英文"
             },
             {
               "id": "d",
-              "text": "桌面背景改色"
+              "text": "兩者完全相同"
             }
           ],
           "answer": "a",
-          "explanation": "表單提交啟動後續分析、紀錄與寄送。"
+          "explanation": "Skill 平時只露出名稱與描述，相關任務出現時才載入，可節省上下文。"
         },
         {
           "id": "island-06-q2",
-          "question": "範例在分析作答後，將評分內容寫入哪裡？",
+          "question": "SKILL.md 若沒有寫 description，會發生什麼事？",
           "options": [
             {
               "id": "a",
-              "text": "Google Docs"
+              "text": "AI 會更常使用它"
             },
             {
               "id": "b",
-              "text": "硬體 BIOS"
+              "text": "AI 不會發現這個技能"
             },
             {
               "id": "c",
-              "text": "紙張裁刀"
+              "text": "檔案會被刪除"
             },
             {
               "id": "d",
-              "text": "瀏覽器書籤名稱"
+              "text": "自動翻譯成英文"
             }
           ],
-          "answer": "a",
-          "explanation": "教材流程為 Gemini API 分析後寫入 Google Docs。"
+          "answer": "b",
+          "explanation": "官方說明：沒有 description 的技能不會被推薦給模型。"
         },
         {
           "id": "island-06-q3",
-          "question": "範例使用哪個服務寄發回饋？",
+          "question": "MCP 的角色最接近下列哪一個比喻？",
           "options": [
             {
               "id": "a",
-              "text": "Gmail"
+              "text": "替 AI 接上外部工具的 USB 插座"
             },
             {
               "id": "b",
-              "text": "相機"
+              "text": "螢幕保護程式"
             },
             {
               "id": "c",
-              "text": "計算機"
+              "text": "字型檔"
             },
             {
               "id": "d",
-              "text": "字型管理器"
+              "text": "桌布"
             }
           ],
           "answer": "a",
-          "explanation": "原稿最後一步透過 Gmail 派送回饋。"
+          "explanation": "MCP 是共通標準，接上不同伺服器就能使用不同外部服務的工具。"
         },
         {
           "id": "island-06-q4",
-          "question": "哪一項屬於教材五個評閱向度？",
+          "question": "關於安裝 MCP 伺服器，下列哪個做法最恰當？",
           "options": [
             {
               "id": "a",
-              "text": "批判思辨力"
+              "text": "越多越好，全部裝起來"
             },
             {
               "id": "b",
-              "text": "鍵盤打字速度"
+              "text": "只裝需要且來源可信的伺服器"
             },
             {
               "id": "c",
-              "text": "螢幕尺寸"
+              "text": "隨便下載來路不明的伺服器"
             },
             {
               "id": "d",
-              "text": "電腦價格"
+              "text": "把密碼寫進 AGENTS.md"
             }
           ],
-          "answer": "a",
-          "explanation": "五向度包含概念、思辨、佐證、實踐及表達。"
+          "answer": "b",
+          "explanation": "MCP 工具會占用上下文，也能存取你的資料，應精選並確認來源。"
         }
       ]
     },
     {
       "order": 7,
       "id": "island-07",
-      "name": "任務 vs  Studio",
-      "group": "生產與自動化",
-      "intro": "進階架構比較",
+      "name": "Harness 工程島",
+      "group": "進階打造",
+      "intro": "L7 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能區分單次主動產出與事件自動化，安排適用的教學階段。",
-      "goalLabel": "示意｜學習目標",
+      "goal": "能說明 Harness 的組成，拆解 OpenCode 如何組合提示詞、工具與權限，並用前幾課的功能組出一套有檢查機制的工作流程。",
+      "goalLabel": "學習目標",
       "comparison": {
         "headers": [
-          "比較項目",
-          "Spark（任務）",
-          "Workspace Studio"
+          "階段",
+          "關心的問題",
+          "本站對應課程"
         ],
         "rows": [
           [
-            "啟動",
-            "主動喚醒式、時間週期式",
-            "事件觸發式"
+            "Prompt Engineering（提示詞工程）",
+            "這一句話怎麼問？",
+            "提問入門島、系統提示詞島"
           ],
           [
-            "目的",
-            "教材打包與歸檔",
-            "資料流轉與派發"
+            "Context Engineering（上下文工程）",
+            "AI 這次該看到哪些資訊？",
+            "專案規則島、技能工具島"
           ],
           [
-            "階段",
-            "課前備課",
-            "課中與課後"
-          ],
-          [
-            "範例",
-            "文本 → 文件、簡報與題庫",
-            "收件 → 分析 → 紀錄 → 寄信"
+            "Harness Engineering（駕馭工程）",
+            "整套環境如何讓 AI 穩定做對、做錯能被發現？",
+            "自訂 Agent 島、本島"
           ]
         ]
       },
       "blocks": [
         {
-          "title": "主動產出與事件觸發",
-          "text": "Spark（任務）由老師在備課時主動喚醒，處理當次素材；Workspace Studio 則依設定的事件啟動後續流程。"
+          "title": "Agent＝模型＋Harness",
+          "text": "Harness 原意是馬具：模型是馬，力量很大；Harness 是韁繩、馬鞍與路線，決定這股力量能不能用在對的地方。\n在 AI Agent 裡，Harness 指模型以外的一切：System Prompt、專案規則、可用工具、權限、上下文管理、子 Agent，以及檢查結果的回饋機制。\n同一個模型放在不同的 Harness 裡，表現可能差很多。這也是 2026 年 AI 圈最常討論的主題：從「怎麼問」（提示詞工程）、「給它看什麼」（上下文工程），進化到「設計整套環境」（Harness 工程）。"
         },
         {
-          "title": "比較成果與階段",
-          "text": "Spark 重點是多模態教材打包與歸檔，適合課前備課；Workspace Studio 重點是資料流轉與派發，適合課中、課後作業處理。"
+          "title": "拆解 OpenCode 的 Harness",
+          "text": "依官方文件，OpenCode 每次送給模型的指示依序組合：① Agent（或模型供應商）的 System Prompt → ② 程式模式的工具說明（有啟用時）→ ③ MCP、參考資料與 Skill 的說明 → ④ 全域與專案的 AGENTS.md，以及設定中的 instructions → ⑤ 日期與環境資訊。這些是「合併」而不是互相覆蓋。\n接著進入 Agent 迴圈：模型決定要用哪個工具 → OpenCode 先檢查權限（allow／ask／deny）→ 執行並把結果交回模型 → 模型決定下一步，直到完成或達到 steps 上限。\n對話快塞滿模型的上下文時，OpenCode 會自動壓縮（compaction）：把較早的對話整理成摘要，並保留最近一段原文，讓工作能繼續。子 Agent 則在全新的上下文中工作，避免主對話被細節淹沒。\n你在前幾座島學到的 AGENTS.md、Skill、MCP、自訂 Agent 與權限，全都是在調整這套 Harness。"
         },
         {
-          "title": "把兩種引擎接起來",
-          "text": "先以任務將文本轉成教案、簡報與題庫，再規劃學生提交後的分析、紀錄與回饋流程。依需求選擇工具，把時間留給教學中的溫度與關懷。"
+          "title": "兩種控制：事前引導與事後檢查",
+          "text": "好的 Harness 同時有兩種控制：\n事前引導（feedforward）：在 AI 動手前告訴它怎麼做，例如 System Prompt、AGENTS.md、Skill、範本。\n事後檢查（feedback）：在 AI 做完後驗證結果，例如執行測試或檢查指令、讓只讀的 reviewer 子 Agent 審查、列出修改清單給人確認。\n只有引導沒有檢查，錯誤會悄悄溜過；只有檢查沒有引導，AI 會一直重複犯同樣的錯。\n核心習慣：AI 每犯一次錯，不只是叫它改，而是問「要加哪一條規則或哪一個檢查，下次就不會再發生？」然後把它寫進 Harness。"
+        },
+        {
+          "title": "實作：組出你的迷你 Harness",
+          "text": "把前幾課的元件組合起來：\n1. AGENTS.md 寫清楚「完成標準」與「完成前檢查」（事前引導）。\n2. 建立只讀的 reviewer 子 Agent，用權限禁止它修改檔案（事後檢查）。\n3. 建立 /ship 自訂指令，固定「計畫 → 執行 → 審查 → 修正 → 回報」的流程。\n4. 在 opencode.jsonc 設定全域權限：執行指令前先詢問、禁止推送到遠端、存取專案外的資料夾要詢問（安全護欄）。\n先用免費模型跑一次，觀察哪裡出錯，再回頭調整規則或檢查。這個「觀察 → 調整 Harness → 再試」的循環，就是 Harness 工程的日常。"
         }
       ],
-      "prompts": [],
-      "promptTitles": [],
+      "prompts": [
+        "---\ndescription: 標準流程：計畫 → 執行 → 審查 → 修正 → 回報\n---\n\n任務：$ARGUMENTS\n\n請依照以下流程完成：\n1. 計畫：列出步驟與「完成標準」，先停下來等我確認。\n2. 執行：依照 AGENTS.md 的規則完成任務。\n3. 審查：請 reviewer 子 Agent 檢查這次的修改。\n4. 修正：處理審查提出的問題；無法處理的列為「待決定」。\n5. 回報：列出修改的檔案、完成標準是否全部達成，以及建議我人工確認的地方。",
+        "{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"permissions\": [\n    { \"action\": \"shell\", \"resource\": \"*\", \"effect\": \"ask\" },\n    { \"action\": \"shell\", \"resource\": \"git status *\", \"effect\": \"allow\" },\n    { \"action\": \"shell\", \"resource\": \"git diff *\", \"effect\": \"allow\" },\n    { \"action\": \"shell\", \"resource\": \"git push *\", \"effect\": \"deny\" },\n    { \"action\": \"external_directory\", \"resource\": \"*\", \"effect\": \"ask\" }\n  ]\n}",
+        "# 完成標準\n- 每個需求都有對應的修改，並列在回報中\n- 不確定的內容標示「待查證」\n\n# 完成前檢查（每次都要做）\n1. 重新閱讀需求，逐條確認是否完成\n2. 有可以執行的檢查（例如測試、格式檢查）就執行，失敗要修正後重跑\n3. 大型修改完成後，請 reviewer 子 Agent 審查\n\n# 犯錯紀錄（每次出錯後新增一條規則）\n- 範例：不要修改 raw/ 資料夾，只能讀取"
+      ],
+      "promptTitles": [
+        "自訂指令：.opencode/commands/ship.md（固定工作流程）",
+        "全域安全護欄：opencode.jsonc",
+        "AGENTS.md 加入回饋迴圈"
+      ],
       "links": [
         {
-          "label": "Google AI 雙引擎 (Spark Studio 網站)",
-          "url": "https://moodlela914.github.io/sparkstudio"
+          "label": "Agent Harness Engineering（Addy Osmani）",
+          "url": "https://addyosmani.com/blog/agent-harness-engineering/",
+          "note": "Harness 工程概念整理（英文）"
+        },
+        {
+          "label": "OpenCode 官方文件：Instructions 的組合順序",
+          "url": "https://opencode.ai/v2/docs/instructions/",
+          "note": "System Prompt、AGENTS.md 等如何合併（英文）"
+        },
+        {
+          "label": "OpenCode 官方文件：Compaction（上下文壓縮）",
+          "url": "https://opencode.ai/v2/docs/compaction/",
+          "note": "長對話如何自動摘要（英文）"
         }
       ],
       "quiz": [
         {
           "id": "island-07-q1",
-          "question": "Spark（任務）的觸發方式在教材中是？",
+          "question": "「Agent＝模型＋Harness」中的 Harness 指的是？",
           "options": [
             {
               "id": "a",
-              "text": "教師主動喚醒"
+              "text": "模型以外的一切：提示詞、規則、工具、權限、上下文管理與檢查機制"
             },
             {
               "id": "b",
-              "text": "學生提交後永遠自動啟動"
+              "text": "電腦的電源線"
             },
             {
               "id": "c",
-              "text": "只能午夜啟動"
+              "text": "模型的名稱"
             },
             {
               "id": "d",
-              "text": "由印表機墨水決定"
+              "text": "螢幕解析度"
             }
           ],
           "answer": "a",
-          "explanation": "教材將其定位為 On-Demand 單次產出。"
+          "explanation": "Harness 是包住模型、讓它能穩定做事的整套環境與控制機制。"
         },
         {
           "id": "island-07-q2",
-          "question": "Workspace Studio 的主要觸發方式是？",
+          "question": "依 OpenCode 官方文件，送給模型的指示中，最先放入的是哪一項？",
           "options": [
             {
               "id": "a",
-              "text": "事件觸發"
+              "text": "日期與環境資訊"
             },
             {
               "id": "b",
-              "text": "每次必須手動貼完整指令"
+              "text": "AGENTS.md"
             },
             {
               "id": "c",
-              "text": "只能按投影機開關"
+              "text": "Agent（或模型供應商）的 System Prompt"
             },
             {
               "id": "d",
-              "text": "由紙張顏色決定"
+              "text": "使用者的最後一句話"
             }
           ],
-          "answer": "a",
-          "explanation": "設定規則後由事件啟動工作流。"
+          "answer": "c",
+          "explanation": "官方順序：System Prompt → 工具說明 → MCP/Skill 說明 → AGENTS.md 與 instructions → 日期環境。"
         },
         {
           "id": "island-07-q3",
-          "question": "哪種情境較符合教材的 Spark 用途？",
+          "question": "下列哪一項屬於「事後檢查（feedback）」？",
           "options": [
             {
               "id": "a",
-              "text": "課前將文本打包為教材"
+              "text": "在 AGENTS.md 寫寫作規則"
             },
             {
               "id": "b",
-              "text": "課後依表單提交自動派發"
+              "text": "讓只讀的 reviewer 子 Agent 審查完成的修改"
             },
             {
               "id": "c",
-              "text": "電腦硬碟修復"
+              "text": "撰寫 System Prompt"
             },
             {
               "id": "d",
-              "text": "校舍清潔排程"
+              "text": "準備範本檔"
             }
           ],
-          "answer": "a",
-          "explanation": "Spark 聚焦主動生成多種教材檔案。"
+          "answer": "b",
+          "explanation": "審查、測試、檢查指令都是在 AI 動手後驗證結果的回饋機制。"
         },
         {
           "id": "island-07-q4",
-          "question": "哪種情境較符合教材的 Workspace Studio 用途？",
+          "question": "AI 第二次犯了同樣的錯，Harness 工程的建議做法是？",
           "options": [
             {
               "id": "a",
-              "text": "收件後分析、寫紀錄並寄信"
+              "text": "換一台電腦"
             },
             {
               "id": "b",
-              "text": "單次發想破冰活動"
+              "text": "每次都手動糾正就好"
             },
             {
               "id": "c",
-              "text": "只潤飾一則聯絡簿"
+              "text": "把對應的規則或檢查加進 Harness，讓它下次不再發生"
             },
             {
               "id": "d",
-              "text": "手動替換簡報字型"
+              "text": "放棄使用 AI"
             }
           ],
-          "answer": "a",
-          "explanation": "Studio 聚焦課中、課後的資料流轉與派發。"
+          "answer": "c",
+          "explanation": "每個錯誤都是改進 Harness 的機會：補上規則（引導）或檢查（回饋）。"
         }
       ]
     }
@@ -1097,112 +1329,112 @@
       "id": "resident-01",
       "name": "點點",
       "island": "island-01",
-      "concept": "聚焦提問",
-      "text": "提問時一起交代年級、主題、時間與活動限制，才能讓靈感更貼近真實課堂。教材以媒體識讀、40分鐘、無複雜道具的破冰活動示範。",
-      "topic": 2
+      "concept": "提問五要素",
+      "text": "角色、任務、背景、限制、格式。先寫清楚任務，再補上最影響結果的一兩項，AI 的回答就會更貼近你的需求。",
+      "topic": 1
     },
     {
       "id": "resident-02",
       "name": "晴晴",
       "island": "island-01",
-      "concept": "網頁統整",
-      "text": "從當前閱讀的網頁摘要出發，再依需求整理多個分頁的資訊，將閱讀內容連結到教學發想。工具操作依本站原稿介紹。",
-      "topic": 1
+      "concept": "追問與查證",
+      "text": "把對話當成來回修改，讓 AI 先問你問題再回答；數字、日期與來源要自己查證，個資與機密不要貼進免費服務。",
+      "topic": 2
     },
     {
       "id": "resident-03",
       "name": "沐沐",
       "island": "island-02",
-      "concept": "角色與系統指令",
-      "text": "Gem 的系統指令可以交代助教角色、教學風格與輸出要求，讓重複任務有一致的起點。",
-      "topic": 1
+      "concept": "工作說明書",
+      "text": "System Prompt 是 AI 看得到、你通常看不到的工作說明書：身分、規則與格式在整段對話中持續有效。",
+      "topic": 0
     },
     {
       "id": "resident-04",
       "name": "可可",
       "island": "island-02",
-      "concept": "固定輸入與格式",
-      "text": "把學科、年級、單元設為固定輸入，明確要求情境、探究問題與四級評量規準；資訊不足時先詢問。",
+      "concept": "具體規則",
+      "text": "寫可檢查的行為，例如「每點不超過 20 字」，不要寫「精簡一點」。先寫最重要的 3～5 條，測試後再補。",
       "topic": 2
     },
     {
       "id": "resident-05",
       "name": "齒齒",
       "island": "island-03",
-      "concept": "參數化",
-      "text": "Key-Value 參數把需求說清楚，例如單元、節數、認知階層與輸出格式，讓程序有可檢核的條件。",
-      "topic": 1
+      "concept": "免費模型",
+      "text": "OpenCode 內建限時免費模型，不用帳號就能選。名單常換、大家共用流量；在意隱私時，優先選官方標示不保留資料的模型。",
+      "topic": 2
     },
     {
       "id": "resident-06",
       "name": "序序",
       "island": "island-03",
-      "concept": "多技能串聯",
-      "text": "教案先完成，再交給評量規準 Skill，最後製作互動網站。每一階段先確認輸出，才適合交給下一階段。",
-      "topic": 2
+      "concept": "Plan 與 Build",
+      "text": "先用 Plan 討論做法、不動檔案；確認後切到 Build 動手。做錯了就用 /undo 復原，再換個說法試試。",
+      "topic": 3
     },
     {
       "id": "resident-07",
       "name": "米米",
       "island": "island-04",
-      "concept": "Persona",
-      "text": "Gems 的角色與語氣設定，適合需要教學風格、情境故事與彈性文字的工作；複雜限制仍需要檢查。",
-      "topic": 0
+      "concept": "專案記憶",
+      "text": "AGENTS.md 讓 AI 每次開工前先讀規則。只寫「沒寫就會做錯」的事，越精簡越有效；輸入 /init 就能快速建立。",
+      "topic": 1
     },
     {
       "id": "resident-08",
       "name": "洛洛",
       "island": "island-04",
-      "concept": "Workflow 與檢核",
-      "text": "Skill 用結構化參數、步驟與檢核封裝方法。這能提高一致性，卻不等於保證零錯誤，產出仍須確認。",
-      "topic": 1
+      "concept": "斜線指令",
+      "text": "把常用提問存成 .opencode/commands/ 裡的 Markdown 檔，就多了一個 /指令；$ARGUMENTS 會換成你後面輸入的內容。",
+      "topic": 2
     },
     {
       "id": "resident-09",
       "name": "桃桃",
       "island": "island-05",
-      "concept": "文字轉教材檔案",
-      "text": "確認來源文本後，再規劃文件、簡報、結構圖與題庫等不同成果。Spark（任務）在教材中負責這段生產流程。",
+      "concept": "子 Agent 分工",
+      "text": "主要 Agent 負責跟你對話，子 Agent 被派去做專門的事，在新對話中完成後交回結果，主對話就不會越來越亂。",
       "topic": 0
     },
     {
       "id": "resident-10",
       "name": "包包",
       "island": "island-05",
-      "concept": "單元歸檔",
-      "text": "將同一單元的多種成果放進 Google Drive 專屬單元資料夾，讓教學檔案能一起被找到與使用。",
+      "concept": "權限規則",
+      "text": "allow、ask、deny 三種效果，最後一條符合的規則生效。只需要讀的 Agent，就把 edit 與 shell 設為 deny。",
       "topic": 2
     },
     {
       "id": "resident-11",
       "name": "鈴鈴",
       "island": "island-06",
-      "concept": "事件觸發",
-      "text": "工作流先定義什麼事件會啟動它，例如表單提交，再串接分析、寫紀錄與寄回饋等動作。",
-      "topic": 1
+      "concept": "按需載入",
+      "text": "Skill 平時只讓 AI 看到名稱與描述，需要時才打開整包做法，description 寫得越清楚，AI 越知道什麼時候該用。",
+      "topic": 0
     },
     {
       "id": "resident-12",
       "name": "衡衡",
       "island": "island-06",
-      "concept": "五向度評閱",
-      "text": "教材的評閱範例包含概念精確、批判思辨、實例佐證、素養實踐與邏輯表達五向度，回饋應清楚且可行動。",
+      "concept": "MCP 插座",
+      "text": "MCP 讓 AI 接上外部服務的工具。一行 opencode mcp add 就能加入，但只裝需要且可信的伺服器。",
       "topic": 2
     },
     {
       "id": "resident-13",
       "name": "星星",
       "island": "island-07",
-      "concept": "主動式單次產出",
-      "text": "老師備課時主動喚醒任務、提供當次素材，生成一套教材，這與長期等待事件觸發的工作方式不同。",
+      "concept": "模型＋Harness",
+      "text": "模型是馬，Harness 是韁繩與路線。同一個模型放在不同的 Harness 裡，表現可能差很多。",
       "topic": 0
     },
     {
       "id": "resident-14",
       "name": "流流",
       "island": "island-07",
-      "concept": "雙引擎分工",
-      "text": "課前以任務生產教材；課中與課後以 Workspace Studio 處理資料流轉與派發。依工作階段選擇適合的引擎。",
+      "concept": "引導與檢查",
+      "text": "事前引導告訴 AI 怎麼做，事後檢查確認它做對了。AI 每犯一次錯，就補一條規則或一個檢查。",
       "topic": 2
     }
   ]

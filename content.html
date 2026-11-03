@@ -1,45 +1,227 @@
-<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>完整文字教材｜紅焰教學夢幻島</title><style>body{font:18px/1.8 system-ui;max-width:850px;margin:auto;padding:24px;background:#fffaf1;color:#382e42}pre,p{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid;padding:8px}a{color:#5f357e}</style><body><main><a href="./">返回群島首頁</a><h1>紅焰教學夢幻島</h1><p>本站依使用者提供教材改寫；工具名稱、操作路徑及限制保留原稿，未另行查證現行服務。實際功能依使用的服務、帳號與版本為準。補寫學習目標標示「示意」，題目標示「自編練習題」。</p><h2>講師介紹：黃泓諺／紅焰</h2><p>竹師語教系、中興台文所</p><p>音樂科任、中高年級導師、電腦專任、資優教育方案教師、補校外籍配偶班教師、程式教育社團教師、指導演說比賽、作文比賽、話劇比賽、電腦競賽、太陽能玩具、風力船、空氣火箭、智能車、溜冰隊、管樂團打擊分部老師、南陽胡琴教師團指導老師</p><p>特教組長、出納組長</p><ul><li>資訊教育輔導小組專任輔導員第九年</li><li>家庭教育輔導團兼任輔導員七年</li><li>教育部數位教學指引培力工作坊講師</li><li>夢的N次方數位協力計畫內部專家</li><li>臺中夢N科技領域召集人</li><li>Gemini AI 認證教育工作者</li></ul><h3>從發想到自動化的教學金字塔</h3><p>從 Ask Gemini 的靈感發想到 Gems 模組、Skill 擴充，再到 Spark（任務）教材生產與 Workspace 自動化，依教學需要選擇合適工具。</p><h3>AI 是教學的擴增器，不是取代者。</h3><p>把重複繁雜的工作交給 AI，把最珍貴的溫度與關懷留給學生。</p><section><h2>1. 靈感發想島</h2><p>L1 靈感層-Ask Gemini</p><p>示意｜學習目標：能將年級、主題與限制寫成具體提問，規劃教學靈感。</p><h3>把瀏覽中的資訊變成靈感</h3><p>原稿將 Ask Gemini 定位為 Chrome 內建的 AI 側邊欄助理，適合摘要、多資料統整與跨應用協作。從目前閱讀的網頁出發，先說明教學對象與想解決的問題。</p><h3>原稿操作路徑</h3><p>點選右上角圖示，詢問單頁重點；需要統整時加入分頁（原稿記載最多 10 個）；輸入 / 呼叫常態指令；從「更多」載入近期對話。原稿也示範依網頁內容撰寫並寄送 Gmail。</p><h3>教學應用</h3><p>以媒體識讀為例，將 40 分鐘課程、3 個破冰活動、不需複雜道具與學生熟悉的平台等條件一起交代，讓發想更具體。</p><h3>教材提示詞</h3><pre>根據【當前這個網頁】的內容，身為一位老師，我正在規劃一堂 40 分鐘的「媒體識讀與假新聞辨識」課程。請給我 3 個生動有趣的破冰活動提案。
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>完整文字教材｜紅焰教學夢幻島</title><style>body{font:18px/1.8 system-ui;max-width:850px;margin:auto;padding:24px;background:#fffaf1;color:#382e42}pre,p{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid;padding:8px}a{color:#5f357e}</style><body><main><a href="./">返回群島首頁</a><h1>紅焰教學夢幻島</h1><p>本站教材依 Google Gemini 與 OpenCode 官方文件整理，資料查核日期：2026 年 11 月 3 日。AI 工具更新快速，免費模型名單、使用額度與操作畫面可能變動，請以官方頁面為準。測驗為自編練習題。</p><h2>講師介紹：黃泓諺／紅焰</h2><p>竹師語教系、中興台文所</p><p>音樂科任、中高年級導師、電腦專任、資優教育方案教師、補校外籍配偶班教師、程式教育社團教師、指導演說比賽、作文比賽、話劇比賽、電腦競賽、太陽能玩具、風力船、空氣火箭、智能車、溜冰隊、管樂團打擊分部老師、南陽胡琴教師團指導老師</p><p>特教組長、出納組長</p><ul><li>資訊教育輔導小組專任輔導員第九年</li><li>家庭教育輔導團兼任輔導員七年</li><li>教育部數位教學指引培力工作坊講師</li><li>夢的N次方數位協力計畫內部專家</li><li>臺中夢N科技領域召集人</li><li>Gemini AI 認證教育工作者</li></ul><h3>從提問到 Harness 的七站學習路線</h3><p>依難易度排列，建議照順序前進：
+① 提問入門島：用 Gemini 免費版學會好好提問
+② 系統提示詞島：在 Google AI Studio 寫出 System Prompt
+③ OpenCode 啟航島：安裝 OpenCode，免帳號使用免費模型
+④ 專案規則島：用 AGENTS.md 與自訂指令讓 AI 記住規則
+⑤ 自訂 Agent 島：打造有固定角色與權限的 Agent
+⑥ 技能工具島：用 Skills 與 MCP 擴充能力
+⑦ Harness 工程島：把所有元件組成能自我檢查的工作系統</p><h3>免費優先，人人都能動手</h3><p>課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。
+每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。</p><h3>AI 是擴增器，不是取代者。</h3><p>把重複繁雜的工作交給 AI，把判斷、查證與創意留給自己。</p><section><h2>1. 提問入門島</h2><p>L1 入門｜用 Gemini 免費版學會好好提問</p><p>學習目標：能用「角色、任務、背景、限制、格式」五要素寫出具體提問，並追問與查證 AI 的回答。</p><h3>零成本開始：只要一個 Google 帳號</h3><p>打開 gemini.google.com（或手機 Gemini App），用 Google 帳號登入就能免費使用。免費版可以聊天、上傳圖片或檔案請它說明，也能用 Canvas 一起編寫文件。
+免費版有使用量上限，忙碌時段較強的模型或深入研究等功能可能被限制；額度與模型名稱會依 Google 調整，以畫面顯示為準。
+本課程只使用免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），後面的課程改用免費的 OpenCode 完成。</p><h3>提問五要素：角色、任務、背景、限制、格式</h3><p>AI 不知道你腦中的情境，資訊給得越具體，結果越貼近需求。
+把提問拆成五個要素：角色（用什麼身分回答）、任務（要做什麼）、背景（對象與目的）、限制（字數、語氣、禁止事項）、格式（表格、條列、步驟）。
+不必每次五項都寫滿；先寫任務，再補上最影響結果的一兩項，就會明顯進步。</p><h3>追問、改寫與查證</h3><p>第一次的回答很少完美，請把對話當成來回修改：「第 2 點再具體一點」、「改成給新手看的語氣」、「整理成表格」。
+請它「先問我 3 個問題再回答」，可以讓 AI 補齊它缺少的資訊。
+AI 可能把錯的事說得很肯定，數字、日期、法規與引用來源一定要自己查證；個資、公司機密與帳號密碼不要貼進免費服務。</p><table><thead><tr><th>提問要素</th><th>要交代什麼</th><th>範例</th></tr></thead><tbody><tr><td>角色</td><td>希望 AI 用什麼身分回答</td><td>你是一位擅長簡報的顧問</td></tr><tr><td>任務</td><td>要它做什麼（動詞開頭）</td><td>幫我列出 5 頁簡報大綱</td></tr><tr><td>背景</td><td>對象、目的、已知資訊</td><td>聽眾是第一次接觸 AI 的同事</td></tr><tr><td>限制</td><td>字數、語氣、不能做的事</td><td>每頁不超過 3 點，避免專有名詞</td></tr><tr><td>格式</td><td>希望產出的樣子</td><td>用表格呈現：頁次｜標題｜重點</td></tr></tbody></table><h3>五要素提問範本</h3><pre>你是一位【角色，例如：擅長把複雜概念講簡單的講師】。
+請幫我【任務，例如：設計一份 10 分鐘的 AI 入門分享大綱】。
 
-  要求：
-  1. 無需複雜的實體道具。
-  2. 能引起學生的共鳴。
-  3. 情境需結合時下流行的網路平台（如 YouTube、TikTok、IG）。</pre><p><a href="https://www.canva.com/design/DAHLmMfNN0M/DX5WxXr8ID_4GMmg6t9kiA/view?utm_content=DAHLmMfNN0M&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=uniquelinks&amp;utlId=hb34d3dd3f8#4" target="_blank" rel="noopener noreferrer">問問Gemini簡報 (Canva)</a> </p><p><a href="https://www.cna.com.tw/news/aopl/202608100206.aspx" target="_blank" rel="noopener noreferrer">中央社新聞連結 (範例材料)</a> </p><p><a href="https://sites.google.com/view/fireskills/skills%E6%8C%87%E4%BB%A4%E9%9B%86" target="_blank" rel="noopener noreferrer">AI 提示詞工具庫 (Google Sites)</a> </p><h3>自編練習題</h3><details><summary>Ask Gemini 在教材中的主要定位是？</summary><ol><li>Chrome 內建的 AI 側邊欄助理</li><li>離線試算表程式</li><li>學生點名系統</li><li>雲端硬碟資料夾</li></ol><p>正確答案：Chrome 內建的 AI 側邊欄助理<br>教材將它用於網頁摘要、統整與教學發想。</p></details><details><summary>要讓活動發想貼近教學，應提供什麼？</summary><ol><li>年級、主題、時間與活動限制</li><li>只說「幫我想」</li><li>只給一個表情符號</li><li>只列資料夾名稱</li></ol><p>正確答案：年級、主題、時間與活動限制<br>教材範例明確交代主題、40 分鐘與無複雜道具等條件。</p></details><details><summary>依原稿，如何接續先前的對話？</summary><ol><li>從「更多」載入「近期對話」</li><li>必須建立試算表</li><li>先刪除所有分頁</li><li>只能重新提問</li></ol><p>正確答案：從「更多」載入「近期對話」<br>這是原稿列出的接續脈絡方式。</p></details><details><summary>教材使用哪個主題示範活動發想？</summary><ol><li>媒體識讀與假新聞辨識</li><li>游泳姿勢測驗</li><li>烹飪火候控制</li><li>校舍工程估價</li></ol><p>正確答案：媒體識讀與假新聞辨識<br>原稿以媒體識讀課程的破冰活動示範。</p></details></section><section><h2>2. 專屬助教島</h2><p>L2 模組層-Gems</p><p>示意｜學習目標：能為重複教學工作設計角色、輸入條件與輸出格式。</p><h3>打造固定風格的助教</h3><p>Gems 封裝特定 Prompt 與知識庫，適合固定格式、重複性產出，例如依教學風格生成學習單。</p><h3>原稿操作路徑</h3><p>在左側選單點選「建立 Gem」，貼入系統指令。往後輸入學科、年級、單元等關鍵字，讓專屬助教依既定格式處理。</p><h3>把期待寫進指令</h3><p>教材範例包含素養導向表現任務、情境與探究問題，以及「優、良、可、待加強」四級評量規準。資訊不足時應先詢問。</p><h3>教材提示詞</h3><pre>你是一位熟悉台灣 108 課綱的專業課程設計專家。
+背景：
+- 對象：【例如：完全沒用過 AI 的同事】
+- 目的：【例如：讓大家願意開始試用】
 
-  當我輸入【學科、年級、單元主題】時，請自動執行：
-  1. 產出一份「素養導向」的表現任務學習單（含情境、探究問題、任務）。
-  2. 附帶一份包含「優、良、可、待加強」的評量規準（Rubrics）表。
+限制：
+- 【例如：不超過 5 個重點】
+- 【例如：避免英文縮寫，必要時附中文解釋】
 
-  要求：保持專業、鼓勵，層次分明，使用繁體中文。若資訊不足請主動詢問。</pre><p><a href="https://gemini.google.com/gem/1ZPTjcGurju5-U2oRhyd-zbSAqyvMUpbj?usp=sharing" target="_blank" rel="noopener noreferrer">點擊體驗：Gem 範例連結</a> 需登入 Google 帳號；未登入時僅顯示 Gemini 登入入口。</p><h3>自編練習題</h3><details><summary>Gems 最適合教材中的哪種工作？</summary><ol><li>固定格式的重複性產出</li><li>更換電腦硬體</li><li>維修校園網路</li><li>紙張裁切</li></ol><p>正確答案：固定格式的重複性產出<br>原稿以學習單產生器等固定風格與格式的工作說明。</p></details><details><summary>建立專屬助教時，原稿要求貼入什麼？</summary><ol><li>系統指令</li><li>印表機驅動程式</li><li>瀏覽器歷史紀錄</li><li>學生密碼</li></ol><p>正確答案：系統指令<br>系統指令封裝角色、產出規格與要求。</p></details><details><summary>教材範例的評量規準包含幾個等級？</summary><ol><li>四級</li><li>兩級</li><li>六級</li><li>八級</li></ol><p>正確答案：四級<br>分別為優、良、可、待加強。</p></details><details><summary>範例系統指令遇到資訊不足時應如何處理？</summary><ol><li>主動詢問</li><li>自行虛構</li><li>忽略所有要求</li><li>停止顯示內容</li></ol><p>正確答案：主動詢問<br>原稿明確要求資訊不足時主動詢問。</p></details></section><section><h2>3. 技能工作坊</h2><p>L3 擴充層-Skill</p><p>示意｜學習目標：能將教學需求拆成參數、步驟與檢核條件。</p><h3>將方法拆成可執行步驟</h3><p>原稿將 Skill 定位為具備邏輯判斷與程序步驟的結構化外掛，適合教案展開、雙向細目表與評量矩陣等工作。透過結構化步驟與檢核提高一致性，產出仍須確認。</p><h3>原稿調用方式</h3><p>輸入 @指令 或 /指令等喚醒詞，再用 Key-Value 方式給參數。範例參數包含單元名稱、節數、核心素養、認知階層與輸出格式。</p><h3>多 Skill 串聯</h3><p>原稿示範先以教案 Skill 生成課程，再交給評量規準 Skill，最後用互動網站生成 Skill 製作教學網站。每一階段應檢視輸出是否符合下一階段需求。</p><h3>教材提示詞 1</h3><pre>@tw-spark-edu-lesson-plan
-  請為我生成一份完整教案，參數設定如下：
-  - 單元名稱：假新聞偵探團（媒體識讀）
-  - 節數：1 節課（40 分鐘）
-  - 核心素養：J-B2 科技資訊與媒體素養
-  - 認知階層：強調布魯姆「分析」與「評鑑」層次
-  - 輸出格式：包含「教學目標、雙向細目表、三階段教學活動（引起動機、發展活動、綜合活動）、時間分配」之結構化表格。</pre><h3>可結合多個Skill：</h3><pre>利用 @tw-spark-edu-lesson-plan 幫我設計&quot;媒體識讀&quot;一節課的課程教案 並根據生成的課程教案 使用 @tw-spark-edu-rubric-designer 建立四級 Rubrics 評量表 並將這些內容利用 @interactive-website-generator 幫我製作成教學網站 我要蒙德里安風格 請將三份資料分別生成給我</pre><p><a href="https://moodlela914.github.io/gemskills/" target="_blank" rel="noopener noreferrer">AI Skill 智慧開發工作台</a> </p><h3>自編練習題</h3><details><summary>Skill 的輸入條件在教材中採哪種方式？</summary><ol><li>參數化 Key-Value</li><li>只傳空白訊息</li><li>隨機輸入符號</li><li>完全不給條件</li></ol><p>正確答案：參數化 Key-Value<br>教材用單元名稱、節數等明確參數示範。</p></details><details><summary>哪項是教材列出的 Skill 參數？</summary><ol><li>認知階層</li><li>學生帳號密碼</li><li>主機序號</li><li>瀏覽器下載紀錄</li></ol><p>正確答案：認知階層<br>原稿以分析、評鑑等認知階層設定教案方向。</p></details><details><summary>多 Skill 範例的合理順序是？</summary><ol><li>教案 → 評量規準 → 互動網站</li><li>網站 → 刪除教材 → 不評量</li><li>歸檔 → 關機 → 收款</li><li>點名 → 維修 → 裁紙</li></ol><p>正確答案：教案 → 評量規準 → 互動網站<br>原稿示範先建立課程，再依課程設計評量及網站。</p></details><details><summary>對結構化 Skill 產出應採取哪種態度？</summary><ol><li>透過步驟提高一致性，產出仍須確認</li><li>保證永遠零錯誤</li><li>無需閱讀就公開</li><li>所有參數皆可省略</li></ol><p>正確答案：透過步驟提高一致性，產出仍須確認<br>依使用者核准修訂，結構化不能取代人工確認。</p></details></section><section><h2>4. Gems vs Skill</h2><p>Gems 與 Skill 的決定性差異</p><p>示意｜學習目標：能依工作需求比較 Gems 與 Skill，說明選擇理由。</p><h3>比較工作方式</h3><p>教材以 Persona 與 Workflow 比較兩者：Gems 透過系統指令與知識庫設定角色及語氣；Skill 透過結構化參數、程序與檢核封裝專業方法。</p><h3>比較優點與限制</h3><p>Gems 設定直覺、富有彈性與創意，但複雜格式可能遺漏規則。Skill 需要清楚的參數與結構化思考；透過結構化步驟與檢核提高一致性，產出仍須確認。</p><h3>教師選擇指南</h3><p>潤飾聯絡簿、情境故事等工作，可考慮 Gems；雙向細目表、Rubrics 或跨模組教材流程，可考慮 Skill。原稿也提出在 Gem 中喚醒 Skill 的協作方式。</p><table><thead><tr><th>比較項目</th><th>Gems</th><th>Skill</th></tr></thead><tbody><tr><td>核心</td><td>Persona：角色與語氣</td><td>Workflow：程序與檢核</td></tr><tr><td>設定</td><td>白話系統指令、知識庫</td><td>參數、結構化步驟</td></tr><tr><td>適用</td><td>文字風格、情境故事</td><td>矩陣、教案與跨模組流程</td></tr><tr><td>提醒</td><td>複雜限制可能遺漏</td><td>產出仍須確認</td></tr></tbody></table><h3>自編練習題</h3><details><summary>教材以哪個詞描述 Gems 的核心？</summary><ol><li>Persona</li><li>印表機</li><li>資料夾</li><li>硬碟</li></ol><p>正確答案：Persona<br>比較表以 Persona 說明角色與語氣設定。</p></details><details><summary>教材以哪個詞描述 Skill 的核心？</summary><ol><li>Workflow</li><li>字型</li><li>投影機</li><li>紙張</li></ol><p>正確答案：Workflow<br>比較表以 Workflow 說明結構化步驟與檢核。</p></details><details><summary>依教師決策指南，潤飾聯絡簿可優先考慮？</summary><ol><li>Gems</li><li>網路交換器</li><li>資料夾重新命名</li><li>鍵盤驅動程式</li></ol><p>正確答案：Gems<br>此工作偏向語氣、教學風格與彈性文字產出。</p></details><details><summary>面對複雜格式，Gems 可能遇到什麼限制？</summary><ol><li>跑版或遺忘規則</li><li>必然停止供電</li><li>無法輸入文字</li><li>只能產出圖像</li></ol><p>正確答案：跑版或遺忘規則<br>原稿提醒機率生成遇到嚴格限制時可能不一致。</p></details></section><section><h2>5. 教材生產島</h2><p>L4 生產層-任務</p><p>示意｜學習目標：能描述從教材文本到成套教材檔案的生產流程。</p><h3>從文字走向教材檔案</h3><p>Spark（任務）在原稿中是將對話文字轉成雲端實體檔案的生產引擎。將已確認的教材轉成 Google Docs、Google Slides、結構圖與 Kahoot 題庫試算表。</p><h3>原稿操作路徑</h3><p>先準備課本 PDF 或核心教材文本，再啟動 Spark（任務）並掛載備課資源包生成 Skill，下達轉換與歸檔指令。</p><h3>完成一套備課資源</h3><p>原稿要求在 Google Drive「備課資料夾」下建立專屬單元資料夾，將不同格式的成果一起歸檔，方便後續教學使用。</p><h3>教材提示詞</h3><pre>@tw-spark-edu-lesson-pack-generator 請依據我提供的這份課本 PDF（或單元內容），為本課生成全套備課資源包，並將生成的 Google 文件、Google 簡報、結構圖圖片與 Kahoot 試算表，自動建立並存入 Google Drive『備課資料夾』中的專屬單元資料夾內。</pre><p><a href="https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/1736270122/df8935d96eef982d28dcd34543dd5999/tw_spark_edu_lesson_pack_generator.zip?token=CmQnuwyWG8F95j2HxLK6vcpBdwVLPvobVNn9casjurOyFUN2CG7-wwuZJwYiAk5q0hmvLQmGJZdwNMSmSaLSwAxPxdiOX9IsCyqLOqkbpIg4TGogB4ABf9fT-a3Ye26upLZ7Uj4UMfb7Qp4nSzHlSdoXaZQE0cPyXAiF0j3NlT9-bSricY5t7cQEUlSN2_LGzqivc3Ty8C2du365QyEECp1CxkRJJzphbNjzpp0G20vudnmPcLD2AB_Jji_QU4k4DhaAN0kO9W1qiOYd5ZLtV7OEVqUt_9wic5VSXe_aUxk=" target="_blank" rel="noopener noreferrer">下載：備課資料生成 skill (ZIP 檔案載點)</a> </p><h3>自編練習題</h3><details><summary>Spark（任務）在教材中跨越哪個階段？</summary><ol><li>對話文字到雲端實體檔案</li><li>電力到網路線</li><li>紙張到木材</li><li>攝影機到印表機</li></ol><p>正確答案：對話文字到雲端實體檔案<br>教材定位為將確認後文字轉為教材檔案的生產引擎。</p></details><details><summary>開始生產教材資源包前應準備什麼？</summary><ol><li>課本 PDF 或核心教材文本</li><li>學生密碼清單</li><li>電腦硬體報價</li><li>空白訊息</li></ol><p>正確答案：課本 PDF 或核心教材文本<br>原稿第一步是準備來源教材。</p></details><details><summary>哪項成果在原稿的資源包中？</summary><ol><li>Kahoot 題庫試算表</li><li>校車維修單</li><li>銀行轉帳憑證</li><li>宿舍門禁卡</li></ol><p>正確答案：Kahoot 題庫試算表<br>原稿列出文件、簡報、結構圖與 Kahoot 試算表。</p></details><details><summary>成果依原稿應存放在哪裡？</summary><ol><li>Google Drive 的專屬單元資料夾</li><li>只留在對話標題</li><li>隨機刪除</li><li>學生密碼欄</li></ol><p>正確答案：Google Drive 的專屬單元資料夾<br>指令要求建立單元資料夾，統整歸檔。</p></details></section><section><h2>6. 自動化中樞島</h2><p>L5 系統層-Workspace</p><p>示意｜學習目標：能辨識觸發條件與後續動作，畫出教學行政工作流。</p><h3>讓事件啟動工作流</h3><p>Workspace 在原稿中是跨服務的教學行政整合中樞。透過事件觸發後續動作，串起收件、分析、紀錄與回饋。</p><h3>原稿流程範例</h3><p>Google Form 提交 → 呼叫 Gemini API 分析簡答 → 將評分內容寫入 Google Docs → 透過 Gmail 寄發回饋。這是教材介紹的外部工作流，本站僅供學習，不會代為串接或寄信。</p><h3>原稿限制與評閱向度</h3><p>原稿記載每帳號 25 個工作流、每工作流 20 個步驟。評閱範例以概念精確度、批判思辨力、實例佐證力、素養實踐力、邏輯表達力五向度，每項 20 分、共 100 分分析作答。</p><h3>教材提示詞</h3><pre>[角色任務]
-  你現在是一位深耕教育評量與媒體識讀專業的「AI 閱卷評閱專家」。你的目標是針對學生的簡答題作答，提供客觀、精準且具教育啟發性的結構化評量。
+格式：請用表格呈現，欄位為「段落｜時間｜內容｜互動方式」。</pre><h3>讓 AI 先問清楚再回答</h3><pre>我想請你幫我【任務】。
+在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。</pre><p><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini（網頁版）</a> 使用 Google 帳號登入即可免費使用</p><p><a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener noreferrer">Gemini 方案比較（官方）</a> 查看免費版與付費方案的最新差異</p><h3>自編練習題</h3><details><summary>下列哪一個提問最可能得到貼近需求的回答？</summary><ol><li>幫我寫簡報</li><li>請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現</li><li>簡報</li><li>寫得好一點</li></ol><p>正確答案：請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現<br>這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。</p></details><details><summary>「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？</summary><ol><li>角色</li><li>背景</li><li>限制</li><li>格式</li></ol><p>正確答案：限制<br>字數、語氣與禁止事項都屬於限制。</p></details><details><summary>AI 回答了一個很肯定的統計數字，最恰當的做法是？</summary><ol><li>直接引用，AI 不會出錯</li><li>自行查證原始來源後再使用</li><li>換個字體就好</li><li>請 AI 回答得更肯定</li></ol><p>正確答案：自行查證原始來源後再使用<br>AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。</p></details><details><summary>本課程遇到 Gemini 需要付費的功能時，會怎麼處理？</summary><ol><li>請學員購買最高方案</li><li>跳過不教</li><li>改用免費的 OpenCode 完成同類任務</li><li>使用他人帳號</li></ol><p>正確答案：改用免費的 OpenCode 完成同類任務<br>課程只使用 Gemini 免費功能，付費功能改以 OpenCode 的免費模型與功能替代。</p></details></section><section><h2>2. 系統提示詞島</h2><p>L2 基礎｜System Prompt：替 AI 設定固定的身分與規則</p><p>學習目標：能分辨 System Prompt 與一般提問，並在 Google AI Studio 寫出、測試、修正一份系統提示詞。</p><h3>什麼是 System Prompt？</h3><p>每次和 AI 對話時，除了你輸入的問題，背後通常還有一段你看不到的「系統提示詞」，先告訴模型：你是誰、要遵守什麼規則、用什麼格式回答。
+它就像員工的工作說明書，整段對話都有效；你的提問則像主管當天交辦的任務。
+幾乎所有 AI 產品都靠 System Prompt 決定個性與能力，下一階段的 OpenCode 自訂 Agent，本質上也是「一段 System Prompt＋可用的工具」。</p><h3>免費實作：在 Google AI Studio 設定系統指令</h3><p>1. 用 Google 帳號登入 aistudio.google.com（免費，不需信用卡）。
+2. 開一個新的 Chat，找到「System instructions（系統指令）」欄位，貼上本島下方的範本並修改括號內容。
+3. 在下方對話框用幾個不同問題測試，看 AI 是否一直遵守你的規則。
+4. 不滿意就回去改系統指令，再用同樣的問題重測，比較前後差異。
+提醒：Google 可能使用免費服務中的對話內容改善產品，練習時請勿貼上個資或機密資料。</p><h3>好的 System Prompt 長什麼樣？</h3><p>建議依序寫：身分（你是誰）→ 目標（幫誰解決什麼）→ 規則（必須做／不可以做）→ 輸出格式 → 資訊不足時怎麼辦（例如先發問，不要亂猜）→ 一個示範例子。
+寫具體行為，不寫空泛形容詞：「每次回答不超過 5 點」比「回答要精簡」更有效。
+規則太多會互相衝突，模型也可能漏掉；先寫最重要的 3～5 條，測試後再補。
+想看真實產品的寫法，可以到 OpenCode 的 GitHub 原始碼閱讀它內建的 System Prompt。</p><table><thead><tr><th>比較項目</th><th>System Prompt（系統提示詞）</th><th>User Prompt（一般提問）</th></tr></thead><tbody><tr><td>誰寫</td><td>設計 AI 工具的人</td><td>使用 AI 的人</td></tr><tr><td>作用時間</td><td>整段對話都有效</td><td>只影響這一輪</td></tr><tr><td>放什麼</td><td>身分、目標、規則、輸出格式</td><td>這次要處理的問題與資料</td></tr><tr><td>比喻</td><td>員工的工作說明書</td><td>主管今天交辦的任務</td></tr></tbody></table><h3>System Prompt 範本：簡報小幫手</h3><pre># 身分
+你是一位擅長把複雜概念講簡單的簡報顧問。
 
-  [背景資訊]
-  學生剛完成以「AI與媒體識讀」為主題的簡答題測驗。我們需要透過五大核心向度來衡量學生的資訊素養與AI認知，以確保他們具備在數位時代辨識真偽的能力。
+# 目標
+協助使用者把想法整理成清楚的簡報大綱。
 
-  [具體指令]
-  請閱讀以下學生的作答內容，並嚴格依照下列五個向度（每個向度滿分20分，總計100分）進行計分與深度分析：
-  1. 概念精確度（20分）：評估對AI術語與運作機制的理解正確性。
-  2. 批判思辨力（20分）：評估分析AI生成內容潛在風險與偏見的能力。
-  3. 實例佐證力（20分）：評估使用具體案例支持自身觀點的能力。
-  4. 素養實踐力（20分）：評估提出的事實查核步驟或防範策略是否具體可行。
-  5. 邏輯表達力（20分）：評估文意通順度與論述結構的嚴謹性。
+# 規則
+1. 一律使用繁體中文（台灣用語）。
+2. 每頁重點不超過 3 點，每點不超過 20 字。
+3. 遇到專有名詞，第一次出現時附上一句白話解釋。
+4. 不捏造數據；需要數據時，標示「請自行補上來源」。
 
-  針對學生的作答，請產出以下回覆：
-  - 【總分評定】：給出總分（/100）。
-  - 【雷達圖分析】：列出五個向度的個別得分。
-  - 【優勢與亮點】：具體點出作答中表現最優異的1至2個面向。
-  - 【成長鷹架】：針對失分項目，提出具體且可操作的改善建議。
+# 輸出格式
+用表格呈現，欄位為「頁次｜標題｜重點｜講者備註」。
 
-  [約束條件]
-  1. 必須一律使用繁體中文與臺灣教育用語回覆。
-  2. 分析結果請以「表格」與「條列式」呈現，確保版面易讀。
-  3. 評語語氣須保持專業且溫暖，展現教育工作者的支持感。
-  4. 嚴禁使用「總的來說」、「總而言之」等空洞的結尾用語。
+# 資訊不足時
+如果不知道聽眾是誰或簡報長度，先問我，不要自己假設。</pre><h3>測試用提問</h3><pre>幫我做一份介紹「生成式 AI 是什麼」的簡報大綱。</pre><p><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a> 免費試用系統指令與各種 Gemini 模型</p><p><a href="https://github.com/anomalyco/opencode/tree/dev/packages/core/src/plugin/system-prompt" target="_blank" rel="noopener noreferrer">OpenCode 內建的 System Prompt（GitHub 原始碼）</a> 觀摩真實 AI 工具如何撰寫系統提示詞（英文）</p><h3>自編練習題</h3><details><summary>System Prompt 與一般提問最大的差別是？</summary><ol><li>System Prompt 整段對話都有效，負責設定身分與規則</li><li>System Prompt 只能用英文</li><li>System Prompt 只影響下一句回答</li><li>兩者完全相同</li></ol><p>正確答案：System Prompt 整段對話都有效，負責設定身分與規則<br>System Prompt 像工作說明書，持續影響整段對話；一般提問只處理當次任務。</p></details><details><summary>在 Google AI Studio 中，要把 System Prompt 貼在哪裡？</summary><ol><li>瀏覽器網址列</li><li>System instructions（系統指令）欄位</li><li>Gmail 草稿</li><li>檔案名稱</li></ol><p>正確答案：System instructions（系統指令）欄位<br>AI Studio 提供系統指令欄位，可免費設定並反覆測試。</p></details><details><summary>下列哪一條規則寫得最具體、最容易被遵守？</summary><ol><li>回答要好一點</li><li>請專業</li><li>每次回答不超過 5 點，每點不超過 20 字</li><li>盡量精簡</li></ol><p>正確答案：每次回答不超過 5 點，每點不超過 20 字<br>具體、可檢查的行為規則，比空泛的形容詞更有效。</p></details><details><summary>資訊不足時，System Prompt 最好要求 AI 怎麼做？</summary><ol><li>自行假設並直接回答</li><li>先向使用者發問，不要亂猜</li><li>停止回答</li><li>改用英文</li></ol><p>正確答案：先向使用者發問，不要亂猜<br>寫清楚「資訊不足先發問」可以減少 AI 自行腦補造成的錯誤。</p></details></section><section><h2>3. OpenCode 啟航島</h2><p>L3 上手｜安裝 OpenCode，免帳號使用免費 AI 模型</p><p>學習目標：能安裝 OpenCode、選擇免費模型，在練習資料夾完成第一個任務，並會用 Plan／Build 與復原功能。</p><h3>OpenCode 是什麼？</h3><p>OpenCode 是開源（MIT 授權）的 AI Agent。和聊天機器人不同，它能在你指定的資料夾裡讀檔、建立與修改檔案、執行指令，幫你「動手做完」一件事。
+它有桌面版 App、終端機版與網頁介面，軟體本身免費，而且內建一組不需要註冊帳號就能用的免費模型。
+目前最新為 OpenCode 2（V2），本島內容依 2026 年 11 月官方文件整理。</p><h3>安裝：最簡單的是桌面版</h3><p>新手推薦桌面版：到 opencode.ai/download 下載 OpenCode Desktop（macOS、Windows、Linux 皆有），像一般軟體一樣安裝。Windows 若開啟後一片空白，請安裝或更新 Microsoft Edge WebView2 Runtime。
+習慣終端機的人可改裝終端機版：
+macOS／Linux：curl -fsSL https://opencode.ai/v2/install | bash
+已安裝 Node.js：npm install -g @opencode/cli
+安裝後在終端機輸入 opencode 即可啟動。</p><h3>選擇免費模型與注意事項</h3><p>不用登入就能在模型選單（終端機版輸入 /models）選到 OpenCode 的免費模型，例如 Big Pickle，以及名稱帶「Free」的模型，如 DeepSeek V4.1 Flash Free、GLM-5.3-Flash Free、MiMo-V2.6-Flash Free、Nemotron 3.5 Lightning Free（2026/11/03 官方清單）。
+免費模型都是「限時」提供，名單常更換，以模型選單為準；大家共用流量，尖峰時可能暫時無法使用，換一個模型即可。
+隱私：官方說明 GLM-5.3-Flash Free 與 DeepSeek V4.1 Flash Free 的供應商不保留資料、不拿來訓練；Big Pickle、MiMo 等模型在免費期間可能使用資料改進模型；Nemotron 系列為 NVIDIA 試用端點，請勿輸入個資或機密。
+想用 Gemini：到 Google AI Studio 免費建立 API 金鑰，在 OpenCode 輸入 /connect 選擇 Google 並貼上金鑰（金鑰不要分享或上傳到網路）。</p><h3>第一個任務：Plan 先想，Build 再做</h3><p>1. 先建立一個空的練習資料夾（例如桌面上的 ai-practice），用 OpenCode 開啟它。不要一開始就開重要資料夾。
+2. 切到 Plan（計畫）Agent：它只規劃、不修改檔案。描述需求，例如「做一個自我介紹網頁」，先看它的計畫。
+3. 計畫沒問題，再切回 Build（建置）Agent 請它動手。終端機版按 Shift+Tab 切換 Agent，或輸入 /agents 選擇。
+4. 結果不滿意，輸入 /undo 復原上一輪的修改，調整說法後再試。</p><table><thead><tr><th>比較項目</th><th>Gemini 網頁版</th><th>OpenCode</th></tr></thead><tbody><tr><td>型態</td><td>聊天助理</td><td>AI Agent（代理人）</td></tr><tr><td>能做什麼</td><td>回答、寫作、分析上傳的檔案</td><td>直接讀寫你電腦資料夾裡的檔案、執行指令</td></tr><tr><td>費用</td><td>免費版有額度上限</td><td>軟體免費開源，內建限時免費模型</td></tr><tr><td>適合</td><td>發想、問答、潤稿</td><td>做網頁、整理大量檔案、建立自動化流程</td></tr></tbody></table><h3>第一個任務：自我介紹網頁</h3><pre>請在這個資料夾建立一個單一檔案的自我介紹網頁 index.html。
 
-  以下是學生的作答內容：
-  （                                       ）</pre><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeXGEDD15aoSWfUuVnDVUYDAQT18z3Glyc0orc8nErMpiPvmA/viewform" target="_blank" rel="noopener noreferrer">Google 表單：AI 與媒體識讀小學堂</a> </p><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeZiQxbILLUaVcp5YNn76YQANyocaM2n6pN9eeBRgpGIYclGA/viewform" target="_blank" rel="noopener noreferrer">Google 表單：學生作文上傳</a> 需登入 Google 帳號。2026/10/27 未登入實測會轉至 Google 登入頁。</p><p><a href="https://drive.google.com/file/d/1uDeNNTBMOU2ynpUBXBktfagf7w33i3dU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Google 雲端檔案：作文範例</a> </p><h3>自編練習題</h3><details><summary>教材示範的工作流觸發事件是？</summary><ol><li>Google Form 被提交</li><li>教師更換滑鼠</li><li>投影機關閉</li><li>桌面背景改色</li></ol><p>正確答案：Google Form 被提交<br>表單提交啟動後續分析、紀錄與寄送。</p></details><details><summary>範例在分析作答後，將評分內容寫入哪裡？</summary><ol><li>Google Docs</li><li>硬體 BIOS</li><li>紙張裁刀</li><li>瀏覽器書籤名稱</li></ol><p>正確答案：Google Docs<br>教材流程為 Gemini API 分析後寫入 Google Docs。</p></details><details><summary>範例使用哪個服務寄發回饋？</summary><ol><li>Gmail</li><li>相機</li><li>計算機</li><li>字型管理器</li></ol><p>正確答案：Gmail<br>原稿最後一步透過 Gmail 派送回饋。</p></details><details><summary>哪一項屬於教材五個評閱向度？</summary><ol><li>批判思辨力</li><li>鍵盤打字速度</li><li>螢幕尺寸</li><li>電腦價格</li></ol><p>正確答案：批判思辨力<br>五向度包含概念、思辨、佐證、實踐及表達。</p></details></section><section><h2>7. 任務 vs  Studio</h2><p>進階架構比較</p><p>示意｜學習目標：能區分單次主動產出與事件自動化，安排適用的教學階段。</p><h3>主動產出與事件觸發</h3><p>Spark（任務）由老師在備課時主動喚醒，處理當次素材；Workspace Studio 則依設定的事件啟動後續流程。</p><h3>比較成果與階段</h3><p>Spark 重點是多模態教材打包與歸檔，適合課前備課；Workspace Studio 重點是資料流轉與派發，適合課中、課後作業處理。</p><h3>把兩種引擎接起來</h3><p>先以任務將文本轉成教案、簡報與題庫，再規劃學生提交後的分析、紀錄與回饋流程。依需求選擇工具，把時間留給教學中的溫度與關懷。</p><table><thead><tr><th>比較項目</th><th>Spark（任務）</th><th>Workspace Studio</th></tr></thead><tbody><tr><td>啟動</td><td>主動喚醒式、時間週期式</td><td>事件觸發式</td></tr><tr><td>目的</td><td>教材打包與歸檔</td><td>資料流轉與派發</td></tr><tr><td>階段</td><td>課前備課</td><td>課中與課後</td></tr><tr><td>範例</td><td>文本 → 文件、簡報與題庫</td><td>收件 → 分析 → 紀錄 → 寄信</td></tr></tbody></table><p><a href="https://moodlela914.github.io/sparkstudio" target="_blank" rel="noopener noreferrer">Google AI 雙引擎 (Spark Studio 網站)</a> </p><h3>自編練習題</h3><details><summary>Spark（任務）的觸發方式在教材中是？</summary><ol><li>教師主動喚醒</li><li>學生提交後永遠自動啟動</li><li>只能午夜啟動</li><li>由印表機墨水決定</li></ol><p>正確答案：教師主動喚醒<br>教材將其定位為 On-Demand 單次產出。</p></details><details><summary>Workspace Studio 的主要觸發方式是？</summary><ol><li>事件觸發</li><li>每次必須手動貼完整指令</li><li>只能按投影機開關</li><li>由紙張顏色決定</li></ol><p>正確答案：事件觸發<br>設定規則後由事件啟動工作流。</p></details><details><summary>哪種情境較符合教材的 Spark 用途？</summary><ol><li>課前將文本打包為教材</li><li>課後依表單提交自動派發</li><li>電腦硬碟修復</li><li>校舍清潔排程</li></ol><p>正確答案：課前將文本打包為教材<br>Spark 聚焦主動生成多種教材檔案。</p></details><details><summary>哪種情境較符合教材的 Workspace Studio 用途？</summary><ol><li>收件後分析、寫紀錄並寄信</li><li>單次發想破冰活動</li><li>只潤飾一則聯絡簿</li><li>手動替換簡報字型</li></ol><p>正確答案：收件後分析、寫紀錄並寄信<br>Studio 聚焦課中、課後的資料流轉與派發。</p></details></section></main></body></html>
+需求：
+- 內容：我的名字【填入】、三個興趣【填入】、一句座右銘【填入】
+- 風格：簡潔、溫暖的配色，手機也能好好閱讀
+- 不使用任何外部套件或網路資源
+
+完成後告訴我怎麼用瀏覽器打開它。</pre><h3>請 AI 先規劃（在 Plan Agent 使用）</h3><pre>我想要【描述你的目標】。
+請先不要修改任何檔案，給我一份 3～5 步的執行計畫，並列出你需要我確認的問題。</pre><p><a href="https://opencode.ai/download" target="_blank" rel="noopener noreferrer">OpenCode 下載頁（官方）</a> 桌面版與終端機版下載</p><p><a href="https://opencode.ai/v2/docs/" target="_blank" rel="noopener noreferrer">OpenCode V2 官方文件：安裝與入門</a> 英文</p><p><a href="https://opencode.ai/v2/docs/console/models/" target="_blank" rel="noopener noreferrer">OpenCode 模型清單與免費模型說明（官方）</a> 查看最新免費模型與各模型的資料使用政策</p><p><a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio：建立 Gemini API 金鑰</a> 免費額度，選用</p><h3>自編練習題</h3><details><summary>OpenCode 和一般聊天機器人最大的不同是？</summary><ol><li>只能聊天，不能做事</li><li>能在指定資料夾讀寫檔案、執行指令，幫你動手完成任務</li><li>只能畫圖</li><li>一定要付費才能使用</li></ol><p>正確答案：能在指定資料夾讀寫檔案、執行指令，幫你動手完成任務<br>OpenCode 是 AI Agent，可以實際操作你指定資料夾中的檔案與指令。</p></details><details><summary>想用 OpenCode 的免費模型，最少需要做什麼？</summary><ol><li>先購買月費方案</li><li>綁定信用卡</li><li>安裝後在模型選單選擇名稱帶 Free 的模型或 Big Pickle</li><li>寄信申請</li></ol><p>正確答案：安裝後在模型選單選擇名稱帶 Free 的模型或 Big Pickle<br>OpenCode 內建限時免費模型，不需要註冊帳號即可選用。</p></details><details><summary>想先看 AI 的做法、確定前不要改動任何檔案，應該使用哪個 Agent？</summary><ol><li>Plan</li><li>Build</li><li>Delete</li><li>Print</li></ol><p>正確答案：Plan<br>Plan Agent 只規劃、不修改一般專案檔案；確認後再切到 Build 動手。</p></details><details><summary>AI 改出來的結果不是你要的，最快的補救方式是？</summary><ol><li>重灌電腦</li><li>輸入 /undo 復原上一輪修改</li><li>刪除整個資料夾</li><li>關掉螢幕</li></ol><p>正確答案：輸入 /undo 復原上一輪修改<br>/undo 會還原上一輪訊息與後續修改，讓你調整說法重試。</p></details></section><section><h2>4. 專案規則島</h2><p>L4 規則｜AGENTS.md 與自訂指令：讓 AI 記住你的做事方法</p><p>學習目標：能用 /init 建立 AGENTS.md、寫出精簡有效的專案規則，並把常用提問做成自訂斜線指令。</p><h3>AGENTS.md：專案的長期記憶</h3><p>每次開新對話，AI 都會忘記上次你交代的事。AGENTS.md 是放在資料夾裡的說明檔，OpenCode 每次工作前都會自動讀取，等於專案專屬的 System Prompt。
+最快的建立方式：在 OpenCode 輸入 /init，它會先閱讀資料夾內容，再引導你建立或更新 AGENTS.md。
+OpenCode 2 只認得 AGENTS.md 這個檔名；對話進行中修改它，下一次送出提問前就會自動套用。</p><h3>寫什麼？越精簡越有效</h3><p>判斷標準：「沒寫的話，AI 很可能會做錯嗎？」會，才寫進去；AI 本來就會的常識不用寫。
+建議內容：這個專案在做什麼、資料夾怎麼分、輸出的語言與風格、完成後要怎麼檢查、絕對不能動的檔案。
+全域檔（~/.config/opencode/AGENTS.md）放所有專案都適用的個人偏好；專案根目錄放整個專案的規則；子資料夾再放更細的規則。多個檔案會合併使用，請避免互相矛盾。
+如果專案用 Git 管理，記得把 AGENTS.md 一起提交，團隊成員就會拿到同一套規則。</p><h3>自訂指令：把常用提問變成 /按鈕</h3><p>在專案建立 .opencode/commands/ 資料夾，放一個 Markdown 檔，例如 summary.md，檔案內容就是提問範本，之後輸入 /summary 就能使用。
+範本中的 $ARGUMENTS 會換成你在指令後面輸入的文字，例如 /summary 會議紀錄.md。
+檔案開頭可以加 description（說明）與 agent（指定由哪個 Agent 執行，例如 plan）。想讓所有專案都能用，就放在 ~/.config/opencode/commands/。</p><table><thead><tr><th>放置位置</th><th>影響範圍</th><th>適合寫什麼</th></tr></thead><tbody><tr><td>~/.config/opencode/AGENTS.md</td><td>你電腦上的所有專案</td><td>個人偏好：語言、回答風格</td></tr><tr><td>專案根目錄/AGENTS.md</td><td>整個專案</td><td>專案目的、資料夾結構、驗證步驟</td></tr><tr><td>子資料夾/AGENTS.md</td><td>只在處理該資料夾時載入</td><td>這一區特有的規則</td></tr><tr><td>.opencode/commands/名稱.md</td><td>變成 /名稱 指令</td><td>常重複使用的提問範本</td></tr></tbody></table><h3>AGENTS.md 範本（文件整理專案）</h3><pre># 專案說明
+這個資料夾用來整理課程講義與簡報素材。
+
+# 資料夾結構
+- raw/：原始資料，只能讀取，不可修改或刪除
+- notes/：整理後的講義（Markdown）
+- slides/：簡報大綱
+
+# 寫作規則
+- 一律使用繁體中文（台灣用語），語氣親切、句子簡短
+- 專有名詞第一次出現時附一句白話解釋
+- 不捏造數據；需要數據時標示「待查證」
+
+# 完成前檢查
+- 確認沒有修改 raw/ 裡的檔案
+- 列出這次新增或修改了哪些檔案</pre><h3>自訂指令範本：.opencode/commands/summary.md</h3><pre>---
+description: 把指定檔案整理成三段式摘要
+agent: plan
+---
+
+請閱讀 $ARGUMENTS，整理成以下格式，不要修改任何檔案：
+1. 一句話重點
+2. 三個關鍵細節（條列）
+3. 我接下來可以採取的行動</pre><p><a href="https://opencode.ai/v2/docs/instructions/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Instructions（AGENTS.md）</a> 放置位置、載入順序與 instructions 設定（英文）</p><p><a href="https://opencode.ai/v2/docs/commands/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Commands（自訂指令）</a> $ARGUMENTS 與 frontmatter 欄位（英文）</p><h3>自編練習題</h3><details><summary>AGENTS.md 的主要用途是？</summary><ol><li>存放密碼</li><li>提供專案的長期規則，OpenCode 每次工作前自動讀取</li><li>播放音樂</li><li>備份照片</li></ol><p>正確答案：提供專案的長期規則，OpenCode 每次工作前自動讀取<br>AGENTS.md 就像專案專屬的 System Prompt，讓 AI 每次都記得你的規則。</p></details><details><summary>想讓 OpenCode 先看過資料夾、再引導你建立 AGENTS.md，要輸入哪個指令？</summary><ol><li>/init</li><li>/undo</li><li>/exit</li><li>/print</li></ol><p>正確答案：/init<br>/init 是官方內建的 AGENTS.md 引導建立指令。</p></details><details><summary>下列哪一句最值得寫進 AGENTS.md？</summary><ol><li>請認真工作</li><li>raw/ 資料夾只能讀取，不可修改或刪除</li><li>1+1=2</li><li>今天天氣很好</li></ol><p>正確答案：raw/ 資料夾只能讀取，不可修改或刪除<br>AI 沒被告知就很可能做錯的專案規則，才值得寫進去。</p></details><details><summary>在自訂指令檔中，$ARGUMENTS 會被換成什麼？</summary><ol><li>今天的日期</li><li>你在斜線指令後面輸入的文字</li><li>電腦名稱</li><li>隨機數字</li></ol><p>正確答案：你在斜線指令後面輸入的文字<br>例如輸入 /summary 會議紀錄.md，$ARGUMENTS 就會變成「會議紀錄.md」。</p></details></section><section><h2>5. 自訂 Agent 島</h2><p>L5 進階｜打造專屬 Agent：System Prompt＋模型＋權限</p><p>學習目標：能分辨主要 Agent 與子 Agent，用一個 Markdown 檔建立自訂 Agent，並用權限規則限制它能做的事。</p><h3>Agent 是什麼？主要 Agent 與子 Agent</h3><p>在 OpenCode 裡，一個 Agent＝一段 System Prompt＋偏好的模型＋權限規則＋名稱與說明，就像一位有固定職責的助手。
+主要 Agent（primary）是直接跟你對話的那位，例如 Build 與 Plan；終端機版用 Shift+Tab 或 /agents 切換。
+子 Agent（subagent）由主要 Agent 派出去做事，例如 Explore 去搜尋資料。子 Agent 在乾淨的新對話中工作，做完把結果交回來，不會塞滿主對話。
+你只要用白話說「請用 reviewer 子 Agent 檢查我的修改」，主要 Agent 就會派它出動。</p><h3>用一個 Markdown 檔建立自訂 Agent</h3><p>在專案建立 .opencode/agents/ 資料夾，新增 reviewer.md，檔名就是 Agent 的名稱；想讓所有專案都能用，就放在 ~/.config/opencode/agents/。
+檔案開頭用 --- 包住的設定區（frontmatter）常用欄位：
+description：這個 Agent 做什麼。子 Agent 一定要寫，主要 Agent 靠它決定要派誰。
+mode：primary、subagent 或 all（兩者皆可），沒寫時預設為 primary。
+model：指定模型，格式為「供應商/模型」，例如 opencode/big-pickle；沒寫時沿用目前對話的模型。
+steps：最多執行幾步，避免 AI 停不下來。
+設定區下面的內文，就是這個 Agent 的 System Prompt。</p><h3>權限：讓 Agent 只做該做的事</h3><p>permissions 是一串規則，每條有三個欄位：action（動作，如 edit 修改檔案、shell 執行指令、read 讀檔、webfetch 讀網頁）、resource（對象，可用 * 代表全部）、effect（allow 允許、ask 每次詢問、deny 禁止）。
+重要觀念：符合的規則中「最後一條」生效，所以先寫大範圍規則，再寫例外。
+例如審稿 Agent 只需要讀，就把 edit 與 shell 設為 deny，它就算想改檔案也做不到。
+注意：網路上 OpenCode 1 的舊教學使用 tools、permission、prompt 等欄位，2 代新設定請改用本島的寫法。</p><table><thead><tr><th>內建 Agent</th><th>類型</th><th>用途</th></tr></thead><tbody><tr><td>Build</td><td>主要（primary）</td><td>預設的工作 Agent，可以修改檔案、執行指令</td></tr><tr><td>Plan</td><td>主要（primary）</td><td>只探索與規劃，不修改一般專案檔案</td></tr><tr><td>General</td><td>子 Agent（subagent）</td><td>處理研究與多步驟工作，不能再派出子 Agent</td></tr><tr><td>Explore</td><td>子 Agent（subagent）</td><td>搜尋、閱讀檔案或網頁，不修改檔案</td></tr></tbody></table><h3>子 Agent 範本：.opencode/agents/reviewer.md（只讀不改的審稿員）</h3><pre>---
+description: 檢查文件的錯字、事實疑點與語意不清之處，只回報不修改
+mode: subagent
+permissions:
+  - action: edit
+    resource: &quot;*&quot;
+    effect: deny
+  - action: shell
+    resource: &quot;*&quot;
+    effect: deny
+---
+
+你是一位細心的審稿員。請檢查指定的文件，依嚴重程度列出問題：
+1. 可能錯誤的事實或數字（標示「需查證」）
+2. 語意不清、容易誤會的句子（附建議改法）
+3. 錯字與標點
+
+每個問題請註明檔名與段落。不要修改任何檔案。</pre><h3>呼叫子 Agent</h3><pre>請用 reviewer 子 Agent 檢查 notes/ 資料夾裡今天新增的講義，整理成一份問題清單給我。</pre><h3>主要 Agent 範本：.opencode/agents/writer.md（寫作夥伴）</h3><pre>---
+description: 依專案規則撰寫與改寫講義
+mode: primary
+steps: 20
+permissions:
+  - action: shell
+    resource: &quot;*&quot;
+    effect: ask
+---
+
+你是一位擅長把技術概念寫得平易近人的講義作者。
+- 使用繁體中文（台灣用語），每段不超過 4 句
+- 每完成一份講義，最後列出「本次修改的檔案」
+- 不確定的內容標示「待查證」，不要自行編造</pre><p><a href="https://opencode.ai/v2/docs/agents/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Agents</a> 所有欄位與內建 Agent 說明（英文）</p><p><a href="https://opencode.ai/v2/docs/permissions/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Permissions</a> 權限規則與預設值（英文）</p><h3>自編練習題</h3><details><summary>在 OpenCode 中，一個 Agent 主要由哪些部分組成？</summary><ol><li>System Prompt、模型、權限規則與名稱說明</li><li>螢幕、鍵盤、滑鼠</li><li>只有一個名字</li><li>一張圖片</li></ol><p>正確答案：System Prompt、模型、權限規則與名稱說明<br>官方定義：Agent 結合 System Prompt、模型偏好、權限與顯示資訊。</p></details><details><summary>子 Agent（subagent）的特色是？</summary><ol><li>會刪除主對話</li><li>由主要 Agent 派出，在新的對話中工作後交回結果</li><li>只能在手機使用</li><li>不能有任何設定</li></ol><p>正確答案：由主要 Agent 派出，在新的對話中工作後交回結果<br>子 Agent 在乾淨的子對話中執行，結果交回主要 Agent，避免主對話過長。</p></details><details><summary>自訂 Agent 的 Markdown 檔中，設定區下面的內文代表什麼？</summary><ol><li>這個 Agent 的 System Prompt</li><li>註解，不會被使用</li><li>Agent 的密碼</li><li>檔案大小</li></ol><p>正確答案：這個 Agent 的 System Prompt<br>Markdown 內文會成為該 Agent 的系統提示詞。</p></details><details><summary>權限規則先寫「shell 全部 ask」，再寫「shell 的 git status 為 allow」，執行 git status 時會怎樣？</summary><ol><li>每次都詢問</li><li>直接允許，因為最後一條符合的規則生效</li><li>一律禁止</li><li>電腦會關機</li></ol><p>正確答案：直接允許，因為最後一條符合的規則生效<br>OpenCode 權限採「最後符合的規則生效」，所以先寫大範圍規則、再寫例外。</p></details></section><section><h2>6. 技能工具島</h2><p>L6 擴充｜Skills 技能包與 MCP 外部工具</p><p>學習目標：能建立一個 SKILL.md 技能包、用一行指令連接 MCP 伺服器，並說明 AGENTS.md、Skill、MCP、Agent 各自適用的情境。</p><h3>Skill：需要時才打開的技能包</h3><p>Skill 是一個資料夾，裡面最重要的是 SKILL.md，寫著「某一類任務該怎麼做」，旁邊還能放範本、參考資料與腳本。
+它跟 AGENTS.md 最大的差別：AGENTS.md 每次都會載入；Skill 平時只讓 AI 看到名稱和描述，遇到相關任務才把完整內容載入，不會白白占用 AI 的注意力（上下文）。
+在 Gemini 裡 Skills 需要付費方案，在 OpenCode 則免費就能使用。</p><h3>建立第一個 Skill</h3><p>1. 在專案建立 .opencode/skills/meeting-notes/ 資料夾（資料夾名稱就是技能 ID，建議用小寫英文加連字號）。
+2. 在裡面新增 SKILL.md，開頭寫 name（顯示名稱）與 description（什麼時候該用）。沒有 description 的技能不會被 AI 發現，所以一定要寫清楚。
+3. 內文寫步驟，需要時引用同資料夾內的範本檔，例如 templates/notes.md。
+放在 ~/.config/opencode/skills/ 則所有專案都能用；OpenCode 也會讀取 .claude/skills 與 .agents/skills，其他 AI 工具的技能包可以直接共用。
+不想讓 AI 自動使用、只想手動指定時，在設定區加上 disable-model-invocation: true。</p><h3>MCP：替 AI 接上外部工具</h3><p>MCP（Model Context Protocol）是讓 AI 連接外部服務的共通標準，像是替 AI 裝上 USB 插座：接上不同的 MCP 伺服器，AI 就多了查文件、讀資料庫、操作雲端服務等工具。
+用一行指令就能加入，例如提供最新技術文件查詢的 Context7：opencode mcp add context7 --url https://mcp.context7.com/mcp，再用 opencode mcp list 檢查是否顯示 connected。
+加上 --global 就是所有專案都能用。若顯示 needs authentication，在 OpenCode 輸入 /mcps 選擇該伺服器登入。
+提醒：每個 MCP 工具都會占用 AI 的上下文，只裝需要的；也只安裝來源可信的伺服器，因為它能代替你存取資料。</p><table><thead><tr><th>功能</th><th>什麼時候載入</th><th>適合放什麼</th></tr></thead><tbody><tr><td>AGENTS.md</td><td>每次都載入</td><td>永遠要遵守的專案規則</td></tr><tr><td>Skill（技能包）</td><td>需要時才載入</td><td>特定任務的完整做法、範本與腳本</td></tr><tr><td>MCP 伺服器</td><td>連線後提供工具</td><td>連接外部服務與資料（文件、資料庫、雲端服務）</td></tr><tr><td>自訂 Agent</td><td>切換或被派出時</td><td>固定角色與權限</td></tr></tbody></table><h3>Skill 範本：.opencode/skills/meeting-notes/SKILL.md</h3><pre>---
+name: 會議紀錄整理
+description: 當使用者提供會議逐字稿或筆記，需要整理成正式會議紀錄時使用
+---
+
+## 步驟
+1. 閱讀使用者提供的逐字稿或筆記。
+2. 依照 templates/notes.md 的格式整理。
+3. 決議事項與待辦事項分開列出，待辦要有負責人與期限；沒提到就寫「未指定」。
+4. 不確定的內容標示「待確認」，不要自行補充。
+5. 完成後列出 3 個需要與會者確認的問題。</pre><h3>範本檔：.opencode/skills/meeting-notes/templates/notes.md</h3><pre># 會議紀錄｜{會議名稱}
+- 日期：
+- 與會者：
+
+## 討論重點
+
+## 決議事項
+
+## 待辦事項
+| 事項 | 負責人 | 期限 |
+| ---- | ------ | ---- |</pre><h3>用設定檔加入 MCP（opencode.jsonc，與指令二選一）</h3><pre>{
+  &quot;$schema&quot;: &quot;https://opencode.ai/config.json&quot;,
+  &quot;mcp&quot;: {
+    &quot;servers&quot;: {
+      &quot;context7&quot;: {
+        &quot;type&quot;: &quot;remote&quot;,
+        &quot;url&quot;: &quot;https://mcp.context7.com/mcp&quot;
+      }
+    }
+  }
+}</pre><p><a href="https://opencode.ai/v2/docs/skills/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Skills</a> 技能包位置、欄位與共用目錄（英文）</p><p><a href="https://opencode.ai/v2/docs/mcp-servers/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：MCP servers</a> 本機與遠端 MCP 設定、OAuth 登入（英文）</p><p><a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol 官方網站</a> 了解 MCP 標準（英文）</p><h3>自編練習題</h3><details><summary>Skill 和 AGENTS.md 最主要的差別是？</summary><ol><li>Skill 需要時才載入完整內容；AGENTS.md 每次都載入</li><li>Skill 只能放圖片</li><li>AGENTS.md 只能用英文</li><li>兩者完全相同</li></ol><p>正確答案：Skill 需要時才載入完整內容；AGENTS.md 每次都載入<br>Skill 平時只露出名稱與描述，相關任務出現時才載入，可節省上下文。</p></details><details><summary>SKILL.md 若沒有寫 description，會發生什麼事？</summary><ol><li>AI 會更常使用它</li><li>AI 不會發現這個技能</li><li>檔案會被刪除</li><li>自動翻譯成英文</li></ol><p>正確答案：AI 不會發現這個技能<br>官方說明：沒有 description 的技能不會被推薦給模型。</p></details><details><summary>MCP 的角色最接近下列哪一個比喻？</summary><ol><li>替 AI 接上外部工具的 USB 插座</li><li>螢幕保護程式</li><li>字型檔</li><li>桌布</li></ol><p>正確答案：替 AI 接上外部工具的 USB 插座<br>MCP 是共通標準，接上不同伺服器就能使用不同外部服務的工具。</p></details><details><summary>關於安裝 MCP 伺服器，下列哪個做法最恰當？</summary><ol><li>越多越好，全部裝起來</li><li>只裝需要且來源可信的伺服器</li><li>隨便下載來路不明的伺服器</li><li>把密碼寫進 AGENTS.md</li></ol><p>正確答案：只裝需要且來源可信的伺服器<br>MCP 工具會占用上下文，也能存取你的資料，應精選並確認來源。</p></details></section><section><h2>7. Harness 工程島</h2><p>L7 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統</p><p>學習目標：能說明 Harness 的組成，拆解 OpenCode 如何組合提示詞、工具與權限，並用前幾課的功能組出一套有檢查機制的工作流程。</p><h3>Agent＝模型＋Harness</h3><p>Harness 原意是馬具：模型是馬，力量很大；Harness 是韁繩、馬鞍與路線，決定這股力量能不能用在對的地方。
+在 AI Agent 裡，Harness 指模型以外的一切：System Prompt、專案規則、可用工具、權限、上下文管理、子 Agent，以及檢查結果的回饋機制。
+同一個模型放在不同的 Harness 裡，表現可能差很多。這也是 2026 年 AI 圈最常討論的主題：從「怎麼問」（提示詞工程）、「給它看什麼」（上下文工程），進化到「設計整套環境」（Harness 工程）。</p><h3>拆解 OpenCode 的 Harness</h3><p>依官方文件，OpenCode 每次送給模型的指示依序組合：① Agent（或模型供應商）的 System Prompt → ② 程式模式的工具說明（有啟用時）→ ③ MCP、參考資料與 Skill 的說明 → ④ 全域與專案的 AGENTS.md，以及設定中的 instructions → ⑤ 日期與環境資訊。這些是「合併」而不是互相覆蓋。
+接著進入 Agent 迴圈：模型決定要用哪個工具 → OpenCode 先檢查權限（allow／ask／deny）→ 執行並把結果交回模型 → 模型決定下一步，直到完成或達到 steps 上限。
+對話快塞滿模型的上下文時，OpenCode 會自動壓縮（compaction）：把較早的對話整理成摘要，並保留最近一段原文，讓工作能繼續。子 Agent 則在全新的上下文中工作，避免主對話被細節淹沒。
+你在前幾座島學到的 AGENTS.md、Skill、MCP、自訂 Agent 與權限，全都是在調整這套 Harness。</p><h3>兩種控制：事前引導與事後檢查</h3><p>好的 Harness 同時有兩種控制：
+事前引導（feedforward）：在 AI 動手前告訴它怎麼做，例如 System Prompt、AGENTS.md、Skill、範本。
+事後檢查（feedback）：在 AI 做完後驗證結果，例如執行測試或檢查指令、讓只讀的 reviewer 子 Agent 審查、列出修改清單給人確認。
+只有引導沒有檢查，錯誤會悄悄溜過；只有檢查沒有引導，AI 會一直重複犯同樣的錯。
+核心習慣：AI 每犯一次錯，不只是叫它改，而是問「要加哪一條規則或哪一個檢查，下次就不會再發生？」然後把它寫進 Harness。</p><h3>實作：組出你的迷你 Harness</h3><p>把前幾課的元件組合起來：
+1. AGENTS.md 寫清楚「完成標準」與「完成前檢查」（事前引導）。
+2. 建立只讀的 reviewer 子 Agent，用權限禁止它修改檔案（事後檢查）。
+3. 建立 /ship 自訂指令，固定「計畫 → 執行 → 審查 → 修正 → 回報」的流程。
+4. 在 opencode.jsonc 設定全域權限：執行指令前先詢問、禁止推送到遠端、存取專案外的資料夾要詢問（安全護欄）。
+先用免費模型跑一次，觀察哪裡出錯，再回頭調整規則或檢查。這個「觀察 → 調整 Harness → 再試」的循環，就是 Harness 工程的日常。</p><table><thead><tr><th>階段</th><th>關心的問題</th><th>本站對應課程</th></tr></thead><tbody><tr><td>Prompt Engineering（提示詞工程）</td><td>這一句話怎麼問？</td><td>提問入門島、系統提示詞島</td></tr><tr><td>Context Engineering（上下文工程）</td><td>AI 這次該看到哪些資訊？</td><td>專案規則島、技能工具島</td></tr><tr><td>Harness Engineering（駕馭工程）</td><td>整套環境如何讓 AI 穩定做對、做錯能被發現？</td><td>自訂 Agent 島、本島</td></tr></tbody></table><h3>自訂指令：.opencode/commands/ship.md（固定工作流程）</h3><pre>---
+description: 標準流程：計畫 → 執行 → 審查 → 修正 → 回報
+---
+
+任務：$ARGUMENTS
+
+請依照以下流程完成：
+1. 計畫：列出步驟與「完成標準」，先停下來等我確認。
+2. 執行：依照 AGENTS.md 的規則完成任務。
+3. 審查：請 reviewer 子 Agent 檢查這次的修改。
+4. 修正：處理審查提出的問題；無法處理的列為「待決定」。
+5. 回報：列出修改的檔案、完成標準是否全部達成，以及建議我人工確認的地方。</pre><h3>全域安全護欄：opencode.jsonc</h3><pre>{
+  &quot;$schema&quot;: &quot;https://opencode.ai/config.json&quot;,
+  &quot;permissions&quot;: [
+    { &quot;action&quot;: &quot;shell&quot;, &quot;resource&quot;: &quot;*&quot;, &quot;effect&quot;: &quot;ask&quot; },
+    { &quot;action&quot;: &quot;shell&quot;, &quot;resource&quot;: &quot;git status *&quot;, &quot;effect&quot;: &quot;allow&quot; },
+    { &quot;action&quot;: &quot;shell&quot;, &quot;resource&quot;: &quot;git diff *&quot;, &quot;effect&quot;: &quot;allow&quot; },
+    { &quot;action&quot;: &quot;shell&quot;, &quot;resource&quot;: &quot;git push *&quot;, &quot;effect&quot;: &quot;deny&quot; },
+    { &quot;action&quot;: &quot;external_directory&quot;, &quot;resource&quot;: &quot;*&quot;, &quot;effect&quot;: &quot;ask&quot; }
+  ]
+}</pre><h3>AGENTS.md 加入回饋迴圈</h3><pre># 完成標準
+- 每個需求都有對應的修改，並列在回報中
+- 不確定的內容標示「待查證」
+
+# 完成前檢查（每次都要做）
+1. 重新閱讀需求，逐條確認是否完成
+2. 有可以執行的檢查（例如測試、格式檢查）就執行，失敗要修正後重跑
+3. 大型修改完成後，請 reviewer 子 Agent 審查
+
+# 犯錯紀錄（每次出錯後新增一條規則）
+- 範例：不要修改 raw/ 資料夾，只能讀取</pre><p><a href="https://addyosmani.com/blog/agent-harness-engineering/" target="_blank" rel="noopener noreferrer">Agent Harness Engineering（Addy Osmani）</a> Harness 工程概念整理（英文）</p><p><a href="https://opencode.ai/v2/docs/instructions/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Instructions 的組合順序</a> System Prompt、AGENTS.md 等如何合併（英文）</p><p><a href="https://opencode.ai/v2/docs/compaction/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Compaction（上下文壓縮）</a> 長對話如何自動摘要（英文）</p><h3>自編練習題</h3><details><summary>「Agent＝模型＋Harness」中的 Harness 指的是？</summary><ol><li>模型以外的一切：提示詞、規則、工具、權限、上下文管理與檢查機制</li><li>電腦的電源線</li><li>模型的名稱</li><li>螢幕解析度</li></ol><p>正確答案：模型以外的一切：提示詞、規則、工具、權限、上下文管理與檢查機制<br>Harness 是包住模型、讓它能穩定做事的整套環境與控制機制。</p></details><details><summary>依 OpenCode 官方文件，送給模型的指示中，最先放入的是哪一項？</summary><ol><li>日期與環境資訊</li><li>AGENTS.md</li><li>Agent（或模型供應商）的 System Prompt</li><li>使用者的最後一句話</li></ol><p>正確答案：Agent（或模型供應商）的 System Prompt<br>官方順序：System Prompt → 工具說明 → MCP/Skill 說明 → AGENTS.md 與 instructions → 日期環境。</p></details><details><summary>下列哪一項屬於「事後檢查（feedback）」？</summary><ol><li>在 AGENTS.md 寫寫作規則</li><li>讓只讀的 reviewer 子 Agent 審查完成的修改</li><li>撰寫 System Prompt</li><li>準備範本檔</li></ol><p>正確答案：讓只讀的 reviewer 子 Agent 審查完成的修改<br>審查、測試、檢查指令都是在 AI 動手後驗證結果的回饋機制。</p></details><details><summary>AI 第二次犯了同樣的錯，Harness 工程的建議做法是？</summary><ol><li>換一台電腦</li><li>每次都手動糾正就好</li><li>把對應的規則或檢查加進 Harness，讓它下次不再發生</li><li>放棄使用 AI</li></ol><p>正確答案：把對應的規則或檢查加進 Harness，讓它下次不再發生<br>每個錯誤都是改進 Harness 的機會：補上規則（引導）或檢查（回饋）。</p></details></section></main></body></html>
