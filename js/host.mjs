@@ -1,15 +1,15 @@
 const includesAny=(q,words)=>words.some(w=>q.includes(w));
 // 依關鍵字對應課程島；順序由具體到廣泛，避免「system prompt」被歸到一般提問、「agents.md」被歸到自訂 Agent。
 function courseTopic(q){
- if(includesAny(q,['魔導高塔','harness','駕馭','回饋迴圈','事後檢查','事前引導','compaction','上下文壓縮']))return 'island-07';
+ if(includesAny(q,['魔導高塔','harness','駕馭','回饋迴圈','事後檢查','事前引導','compaction','上下文壓縮','護欄']))return 'island-07';
  if(includesAny(q,['法器寶庫','skill','技能','mcp','context7']))return 'island-06';
  if(includesAny(q,['契約之島','agents.md','agentsmd','/init','專案規則','自訂指令','斜線指令','$arguments','commands']))return 'island-04';
- if(includesAny(q,['星門','渡口','api','金鑰','密鑰','fetch','javascript','前端','後端','.env','flash-lite','flashlite','interactions','429']))return 'island-09';
+ if(includesAny(q,['星門','渡口','api','金鑰','密鑰','fetch','javascript','前端','後端','.env','flash-lite','flashlite','interactions','429','response_format','結構化輸出','jsonschema']))return 'island-09';
  if(includesAny(q,['符文','提示詞工程','promptengineering','few-shot','fewshot','給範例','拆解','串接','chaining','自我檢查','評估','罵']))return 'island-08';
  if(includesAny(q,['魔法書','systemprompt','系統提示','系統指令','aistudio','systeminstruction']))return 'island-02';
  if(includesAny(q,['使魔','subagent','子agent','agent','代理人','權限','permission','reviewer']))return 'island-05';
  if(includesAny(q,['魔杖工坊','opencode','免費模型','bigpickle','安裝','/models','/undo','plan','build']))return 'island-03';
- if(includesAny(q,['咒語入門','gemini','提問','問問題','提示詞','prompt','五要素','查證']))return 'island-01';
+ if(includesAny(q,['咒語入門','gemini','提問','問問題','提示詞','prompt','五要素','查證','token','幻覺','hallucination','知識截止','上下文長度','contextwindow','語言模型','llm','ai怎麼運作','ai是什麼']))return 'island-01';
  return null;
 }
 export function answerIslandQuestion(input,data){const q=String(input).trim().toLowerCase().replace(/[？?！!，,。\s]/g,'');const center={id:'center',name:data.center.name};const result=(text,ids=[])=>({text,sources:ids.map(id=>id==='center'?center:{id,name:data.courses.find(c=>c.id===id)?.name}).filter(x=>x.name)});
@@ -17,6 +17,10 @@ export function answerIslandQuestion(input,data){const q=String(input).trim().to
  if(includesAny(q,['答案','正解','選哪個','第幾題','第1題','第2題','第3題','第4題']))return result('我不直接提供測驗答案喔！你可以問我教材概念，或先作答再閱讀每題解析；我們一起把觀念弄懂。',[]);
  const explicit=courseTopic(q);
  if(explicit&&!includesAny(q,['證書','測驗','考試','總複習','已讀','我的進度','本站','這個網站'])){const c=data.courses.find(c=>c.id===explicit);return result(c.name+'：'+c.blocks.map(b=>b.text).join('\n\n')+'\n\n以上依本站教材整理，實際功能以官方最新版本為準。',[explicit]);}
+ const centerBlock=title=>{const b=data.center.blocks.find(b=>b.title.includes(title));return b?b.title+'：\n'+b.text:null;};
+ if(includesAny(q,['專題','作品','小幫手'])&&centerBlock('畢業專題'))return result(centerBlock('畢業專題'),['center']);
+ if(includesAny(q,['辭典','名詞','詞彙','術語'])&&centerBlock('名詞小辭典'))return result(centerBlock('名詞小辭典'),['center']);
+ if(includesAny(q,['安全','守則','隱私','個資','著作權','版權','揭露','抄襲','倫理'])&&centerBlock('五條守則'))return result(centerBlock('五條守則'),['center']);
  if(includesAny(q,['你是誰','島主','咒咒','介紹自己']))return result('我是咒咒，這座學習群島的島主！我依本站教材與功能說明協助導覽，能帶你找課程、測驗與資源；右上「？」內的圖文是純說明；提問請先選一座島，再點島上咒咒。我不會連到外部 AI，也不直接揭露測驗答案。',['center']);
  if(includesAny(q,['證書','證明','畢業','75']))return result('要領取學習完成紀念證書，九課都標記已讀，而且各課測驗至少 75 分。到中央廣場的「進度與證書」輸入姓名，就能下載 PNG 或列印／另存 PDF；這是學習紀念，不代表官方認證。',['center']);
  if(includesAny(q,['進度','存在哪','存哪裡','保存','儲存','重置','接續','不同電腦','換電腦']))return result('閱讀紀錄與測驗最高分保存在目前瀏覽器。重新整理會保留；換瀏覽器或裝置不會自動同步。中央廣場「進度與證書」可匯出 JSON 備份，換裝置後匯入接續；會合併已讀並保留最高分，也可清除紀錄。若瀏覽器拒絕儲存，會提示「僅本次有效」，這次操作仍可繼續，但重新整理後不會保留。',['center']);
@@ -27,7 +31,7 @@ export function answerIslandQuestion(input,data){const q=String(input).trim().to
  if(includesAny(q,['學習單','開放題']))return result('本站沒有學習單功能，每課只有教材與隨堂測驗；九課已讀、每課測驗至少 75 分即可領取紀念證書。',['center']);
  if(includesAny(q,['測驗','考試','總複習','抽題','分數','及格']))return result('每課有四題隨堂測驗，提交後會顯示缺答、分數與逐題解析，並保留最高分。中央廣場的總複習每次從九課各抽一題，共九題；證書資格仍以各課測驗達 75 分為準。',['center']);
  if(includesAny(q,['白天','夜晚','夜海','黃昏','主題','色調','日夜','萬聖節','南瓜','蝙蝠','巫婆帽']))return result('現在是可愛萬聖節小島，使用奶油橘、薰衣草紫與鼠尾草綠，島上有笑臉南瓜、巫婆帽屋頂與空中蝙蝠。開啟「減少動態」也會停止蝙蝠飛行及振翅。上方控制列有晨光、海霧、夜海三種底色，以及白天／夜晚開關與光線選單。選夜海時會預設夜晚光線，之後還能獨立改成白天或黃昏。你的選擇會保存在這個瀏覽器。',['center']);
- if(includesAny(q,['人物','居民','島民','島嶼','點島','建築','放大','小人','散步','走路','橋','旋轉','縮放','全景','動態','暈']))return result('先點島名或島面聚焦放大，再點主建築讀教材。聚焦後可點16位具名島民的頭頂提示，看各自不同的關鍵概念；每座島也都有沿步道走動的咒咒可提問。島民沿環形步道與橋行走，開啟「減少動態」會暫停，按「回到全景」可重新選島。',['center']);
+ if(includesAny(q,['人物','居民','島民','島嶼','點島','建築','放大','小人','散步','走路','橋','旋轉','縮放','全景','動態','暈']))return result('先點島名或島面聚焦放大，再點主建築讀教材。聚焦後可點18位具名島民的頭頂提示，看各自不同的關鍵概念；每座島也都有沿步道走動的咒咒可提問。島民沿環形步道與橋行走，開啟「減少動態」會暫停，按「回到全景」可重新選島。',['center']);
  if(includesAny(q,['音樂','聲音','播放']))return result('按下「開啟音樂」才會開始播放你提供的背景音樂 The_Uninvited_Guest_s_Waltz，再按一次即可關閉；可用旁邊音量滑桿調整0–100%，網站會記住音量；不會自動播放聲音。',['center']);
  if(includesAny(q,['作者','講師','聯絡',String(data.speaker.name||'').toLowerCase()||'講師']))return result(`網站作者是${data.site.author}${data.speaker.name?`，講師為${data.speaker.name}${data.speaker.alias?'／'+data.speaker.alias:''}`:''}。中央廣場有講師介紹${data.site.contact?'與聯絡連結':''}。`,['center']);
  if(includesAny(q,['從哪','開始','幾座','有哪些課','怎麼學','推薦','入門','順序','路線']))return result('這裡有九座課程島與中央廣場，依難易度排列：咒語入門島（Gemini 免費版提問）→ 符文研究所（提示詞工程）→ 魔法書之島（System Prompt）→ 魔杖工坊（OpenCode 安裝與免費模型）→ 契約之島（AGENTS.md）→ 星門渡口（申請 API Key、用 JavaScript 串接 Gemini API）→ 使魔召喚島（自訂 Agent）→ 法器寶庫島（Skills 與 MCP）→ 魔導高塔（Harness 工程）。建議從第一站照順序前進，也能依需要直接選課。',['island-01','island-03','island-07']);

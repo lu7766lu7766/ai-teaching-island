@@ -9,9 +9,39 @@
 ⑧ 法器寶庫島：用 Skills 與 MCP 擴充能力
 ⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統</p><h3>免費優先，人人都能動手</h3><p>課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。
 串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。
-每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。</p><h3>AI 是擴增器，不是取代者。</h3><p>把重複繁雜的工作交給 AI，把判斷、查證與創意留給自己。</p><section><h2>1. 咒語入門島</h2><p>L1 入門｜用 Gemini 免費版學會好好提問</p><p>學習目標：能用「角色、任務、背景、限制、格式」五要素寫出具體提問，並追問與查證 AI 的回答。</p><h3>零成本開始：只要一個 Google 帳號</h3><p>打開 gemini.google.com（或手機 Gemini App），用 Google 帳號登入就能免費使用。免費版可以聊天、上傳圖片或檔案請它說明，也能用 Canvas 一起編寫文件。
+每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。</p><h3>安全使用 AI 的五條守則</h3><p>① 個資與機密不貼：身分證字號、病歷、成績、公司內部文件、帳號密碼都不要貼進免費 AI 服務；免費方案的對話可能被用來改善服務。
+② 重要資訊要查證：數字、日期、法規、醫療與財務相關內容，一律以原始來源為準。
+③ 尊重著作權：不要把別人的作品整份貼上、改寫後當成自己的；AI 產出的圖文要公開發表或商用前，先確認平台條款與引用規範。
+④ 誠實揭露：作業、報告或工作文件用到 AI 時，依學校或公司規定說明哪些部分有 AI 協助；最後的判斷與責任在你。
+⑤ 管好金鑰與權限：API Key 不放前端、不上網（第 6 站）；讓 Agent 改檔案或執行指令前，先設好權限、看過再同意（第 7 站）。</p><h3>畢業專題：做一個你的專屬 AI 小幫手</h3><p>挑一件你每週都會重複做的事，例如整理會議紀錄、改寫公告、出練習題，用九站學到的方法做成能重複使用的小幫手：
+① 用五要素與範例寫出穩定的提示詞（第 1、2 站）
+② 把固定規則寫成 System Prompt，在 Google AI Studio 測試（第 3 站）
+③ 準備 3–5 題固定測試題，比較不同版本的表現（第 2 站）
+④ 二選一完成作品：用 Gemini API 做一個網頁小工具，金鑰放在後端（第 6 站）；或在 OpenCode 做成自訂指令、Agent 或 Skill（第 5、7、8 站）
+⑤ 加上檢查機制：固定輸出格式，或讓 AI 先自我檢查再交件（第 2、9 站）
+完成標準：別人照你的說明就能使用；並寫下它做不好的情況，以及你怎麼因應。</p><h3>名詞小辭典</h3><p>大型語言模型（LLM）：從大量文字學會語言規律、靠預測下一段文字來回答的 AI。（第 1 站）
+Token：AI 切分文字的小片段，額度與計費都用它計算。（第 1 站）
+上下文長度：AI 每次回答時能同時看到的內容上限。（第 1 站）
+幻覺：AI 把不存在或錯誤的內容說得很肯定。（第 1 站）
+提示詞（Prompt）：你給 AI 的指示與資料。（第 1、2 站）
+Few-shot：在提示詞裡附上範例，讓 AI 照著做。（第 2 站）
+System Prompt：替 AI 設定固定身分與規則的系統指令。（第 3 站）
+OpenCode：開源的 AI 程式助手，可使用免費模型。（第 4 站）
+AGENTS.md：寫給 AI 看的專案規則檔，每次都會讀取。（第 5 站）
+API／API Key：讓你的程式呼叫 AI 的介面，以及代表你身分的金鑰。（第 6 站）
+結構化輸出：要求 AI 依固定的 JSON 格式回答，方便程式使用。（第 6 站）
+Agent：會自己規劃步驟、使用工具完成任務的 AI。（第 7 站）
+Skill：需要時才載入的技能包。（第 8 站）
+MCP：讓 AI 接上外部工具與資料的標準協定。（第 8 站）
+Harness：包在模型外面、引導與檢查 AI 的整套系統。（第 9 站）</p><h3>AI 是擴增器，不是取代者。</h3><p>把重複繁雜的工作交給 AI，把判斷、查證與創意留給自己。</p><section><h2>1. 咒語入門島</h2><p>L1 入門｜認識 AI 怎麼運作，用 Gemini 免費版學會好好提問</p><p>學習目標：能說明 AI 如何產生回答、Token 與上下文是什麼、為什麼會說錯；並用「角色、任務、背景、限制、格式」五要素寫出具體提問，追問與查證 AI 的回答。</p><h3>零成本開始：只要一個 Google 帳號</h3><p>打開 gemini.google.com（或手機 Gemini App），用 Google 帳號登入就能免費使用。免費版可以聊天、上傳圖片或檔案請它說明，也能用 Canvas 一起編寫文件。
 免費版有使用量上限，忙碌時段較強的模型或深入研究等功能可能被限制；額度與模型名稱會依 Google 調整，以畫面顯示為準。
-本課程只使用免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），後面的課程改用免費的 OpenCode 完成。</p><h3>提問五要素：角色、任務、背景、限制、格式</h3><p>AI 不知道你腦中的情境，資訊給得越具體，結果越貼近需求。
+本課程只使用免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），後面的課程改用免費的 OpenCode 完成。</p><h3>AI 怎麼回答你：一台超會接龍的文字預測機</h3><p>Gemini 這類聊天 AI 的核心是「大型語言模型」（LLM, Large Language Model）。它從大量文字中學到字詞之間的規律，回答時是根據你的問題，一小段一小段地預測「接下來最可能出現的文字」，再接成完整的句子。
+所以它特別擅長跟語言有關的工作：寫作、改寫、摘要、翻譯、整理、發想。但它不是資料庫，也不是計算機；它產生的是「看起來最合理的文字」，不保證每句都是事實。
+同一個問題問兩次，答案可能不一樣，這是正常的：預測帶有一點隨機性。不滿意就重新產生，或多問幾次挑最好的版本。</p><h3>Token 與上下文：AI 的短期記憶</h3><p>AI 不是一個字一個字讀，而是把文字切成叫做 Token 的小片段，怎麼切依模型而定。使用額度、API 計費和回答長度上限，都是用 Token 計算。
+AI 每次回答時能同時看到的內容有上限，叫做「上下文長度」（context window），包含你這次的問題、前面的對話、上傳的檔案，以及它自己說過的話。對話拉得很長時，前面交代的規則可能被淡忘，或超出它看得到的範圍。
+小技巧：換新主題就開新對話；長對話中把重要規則再提醒一次；需要每次都遵守的規則，寫成 System Prompt（第 3 站）或 AGENTS.md（第 5 站）。</p><h3>為什麼 AI 會說錯：幻覺與知識截止</h3><p>因為 AI 是在「產生合理的文字」而不是查證事實，它可能編出不存在的書名、網址、數據或引用，而且語氣非常肯定，這叫做「幻覺」（hallucination）。
+模型的知識來自訓練資料，訓練之後才發生的事它不一定知道，這叫做「知識截止」。有時 Gemini 會上網搜尋來補充，但搜尋到的資料也可能過時或有錯。
+降低幻覺的方法：先提供資料，請它「只根據這份資料回答」；請它標出不確定的地方，不知道就說不知道；要求附上來源，再自己點開確認。</p><h3>提問五要素：角色、任務、背景、限制、格式</h3><p>AI 不知道你腦中的情境，資訊給得越具體，結果越貼近需求。
 把提問拆成五個要素：角色（用什麼身分回答）、任務（要做什麼）、背景（對象與目的）、限制（字數、語氣、禁止事項）、格式（表格、條列、步驟）。
 不必每次五項都寫滿；先寫任務，再補上最影響結果的一兩項，就會明顯進步。</p><h3>追問、改寫與查證</h3><p>第一次的回答很少完美，請把對話當成來回修改：「第 2 點再具體一點」、「改成給新手看的語氣」、「整理成表格」。
 請它「先問我 3 個問題再回答」，可以讓 AI 補齊它缺少的資訊。
@@ -27,7 +57,12 @@ AI 可能把錯的事說得很肯定，數字、日期、法規與引用來源�
 - 【例如：避免英文縮寫，必要時附中文解釋】
 
 格式：請用表格呈現，欄位為「段落｜時間｜內容｜互動方式」。</pre><h3>讓 AI 先問清楚再回答</h3><pre>我想請你幫我【任務】。
-在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。</pre><p><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini（網頁版）</a> 使用 Google 帳號登入即可免費使用</p><p><a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener noreferrer">Gemini 方案比較（官方）</a> 查看免費版與付費方案的最新差異</p><h3>自編練習題</h3><details><summary>下列哪一個提問最可能得到貼近需求的回答？</summary><ol><li>幫我寫簡報</li><li>請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現</li><li>簡報</li><li>寫得好一點</li></ol><p>正確答案：請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現<br>這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。</p></details><details><summary>「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？</summary><ol><li>角色</li><li>背景</li><li>限制</li><li>格式</li></ol><p>正確答案：限制<br>字數、語氣與禁止事項都屬於限制。</p></details><details><summary>AI 回答了一個很肯定的統計數字，最恰當的做法是？</summary><ol><li>直接引用，AI 不會出錯</li><li>自行查證原始來源後再使用</li><li>換個字體就好</li><li>請 AI 回答得更肯定</li></ol><p>正確答案：自行查證原始來源後再使用<br>AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。</p></details><details><summary>本課程遇到 Gemini 需要付費的功能時，會怎麼處理？</summary><ol><li>請學員購買最高方案</li><li>跳過不教</li><li>改用免費的 OpenCode 完成同類任務</li><li>使用他人帳號</li></ol><p>正確答案：改用免費的 OpenCode 完成同類任務<br>課程只使用 Gemini 免費功能，付費功能改以 OpenCode 的免費模型與功能替代。</p></details></section><section><h2>2. 符文研究所</h2><p>L2 進階提問｜提示詞工程：範例、拆解、自我檢查與評估</p><p>學習目標：AI 做不好時能診斷原因、補上引導；會用範例（Few-shot）、任務拆解與串接、自我檢查，並用固定測試題比較提示詞版本。</p><h3>AI 做不好時：罵它沒用，給它更完整的引導</h3><p>AI 回答不理想，最常見的原因是它缺了某些資訊，而不是它「不努力」。大寫、驚嘆號、責罵或威脅都沒有提供新資訊，只會讓下一次回答一樣離題。
+在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。</pre><h3>請 AI 分清楚事實與推測</h3><pre>請回答下面的問題：【你的問題】
+
+回答規則：
+- 把內容分成「確定的事實」和「推測或不確定」兩部分
+- 不知道或資料不足時，直接說不知道，不要自己編
+- 列出我可以用來查證的來源類型或關鍵字（不要編造網址）</pre><p><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini（網頁版）</a> 使用 Google 帳號登入即可免費使用</p><p><a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener noreferrer">Gemini 方案比較（官方）</a> 查看免費版與付費方案的最新差異</p><h3>自編練習題</h3><details><summary>下列哪一個提問最可能得到貼近需求的回答？</summary><ol><li>幫我寫簡報</li><li>請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現</li><li>簡報</li><li>寫得好一點</li></ol><p>正確答案：請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現<br>這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。</p></details><details><summary>「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？</summary><ol><li>角色</li><li>背景</li><li>限制</li><li>格式</li></ol><p>正確答案：限制<br>字數、語氣與禁止事項都屬於限制。</p></details><details><summary>AI 回答了一個很肯定的統計數字，最恰當的做法是？</summary><ol><li>直接引用，AI 不會出錯</li><li>自行查證原始來源後再使用</li><li>換個字體就好</li><li>請 AI 回答得更肯定</li></ol><p>正確答案：自行查證原始來源後再使用<br>AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。</p></details><details><summary>和 AI 聊了很久之後，它開始忘記你一開始交代的規則，最可能的原因是？</summary><ol><li>AI 故意不聽話</li><li>網路速度太慢</li><li>對話太長，早期的內容在上下文中被淡忘或超出範圍</li><li>規則寫得太有禮貌</li></ol><p>正確答案：對話太長，早期的內容在上下文中被淡忘或超出範圍<br>AI 每次能看到的內容有上限（上下文長度）。換主題就開新對話、重要規則再提醒一次，或改寫成 System Prompt。</p></details></section><section><h2>2. 符文研究所</h2><p>L2 進階提問｜提示詞工程：範例、拆解、自我檢查與評估</p><p>學習目標：AI 做不好時能診斷原因、補上引導；會用範例（Few-shot）、任務拆解與串接、自我檢查，並用固定測試題比較提示詞版本。</p><h3>AI 做不好時：罵它沒用，給它更完整的引導</h3><p>AI 回答不理想，最常見的原因是它缺了某些資訊，而不是它「不努力」。大寫、驚嘆號、責罵或威脅都沒有提供新資訊，只會讓下一次回答一樣離題。
 請先像醫生一樣診斷：它缺了背景資料？不知道你要的樣子？任務一次塞太多？還是沒有判斷標準？再針對原因補上引導（對照本島上方表格）。
 具體回饋的寫法：「你寫的是 A，我需要的是 B，因為 C。請保留 D，只修改 E。」
 如果對話已經被錯誤方向帶偏，與其在原對話裡反覆糾正，不如開新對話，把補齊後的完整提示詞一次給清楚。
@@ -179,7 +214,7 @@ agent: plan
 請閱讀 $ARGUMENTS，整理成以下格式，不要修改任何檔案：
 1. 一句話重點
 2. 三個關鍵細節（條列）
-3. 我接下來可以採取的行動</pre><p><a href="https://opencode.ai/v2/docs/instructions/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Instructions（AGENTS.md）</a> 放置位置、載入順序與 instructions 設定（英文）</p><p><a href="https://opencode.ai/v2/docs/commands/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Commands（自訂指令）</a> $ARGUMENTS 與 frontmatter 欄位（英文）</p><h3>自編練習題</h3><details><summary>AGENTS.md 的主要用途是？</summary><ol><li>存放密碼</li><li>提供專案的長期規則，OpenCode 每次工作前自動讀取</li><li>播放音樂</li><li>備份照片</li></ol><p>正確答案：提供專案的長期規則，OpenCode 每次工作前自動讀取<br>AGENTS.md 就像專案專屬的 System Prompt，讓 AI 每次都記得你的規則。</p></details><details><summary>想讓 OpenCode 先看過資料夾、再引導你建立 AGENTS.md，要輸入哪個指令？</summary><ol><li>/init</li><li>/undo</li><li>/exit</li><li>/print</li></ol><p>正確答案：/init<br>/init 是官方內建的 AGENTS.md 引導建立指令。</p></details><details><summary>下列哪一句最值得寫進 AGENTS.md？</summary><ol><li>請認真工作</li><li>raw/ 資料夾只能讀取，不可修改或刪除</li><li>1+1=2</li><li>今天天氣很好</li></ol><p>正確答案：raw/ 資料夾只能讀取，不可修改或刪除<br>AI 沒被告知就很可能做錯的專案規則，才值得寫進去。</p></details><details><summary>在自訂指令檔中，$ARGUMENTS 會被換成什麼？</summary><ol><li>今天的日期</li><li>你在斜線指令後面輸入的文字</li><li>電腦名稱</li><li>隨機數字</li></ol><p>正確答案：你在斜線指令後面輸入的文字<br>例如輸入 /summary 會議紀錄.md，$ARGUMENTS 就會變成「會議紀錄.md」。</p></details></section><section><h2>6. 星門渡口</h2><p>L6 串接｜在 Google AI Studio 申請 API Key，用 JavaScript 呼叫 Gemini 3.5 Flash-Lite</p><p>學習目標：能在 Google AI Studio 免費申請 API Key 並安全保管；看懂一次 API 請求的組成；用前端 JavaScript 在自己電腦呼叫 gemini-3.5-flash-lite，再學會正式上線時把金鑰放在後端。</p><h3>API 是什麼：從聊天視窗走進自己的程式</h3><p>在 Gemini 網頁上聊天，是「你」跟 AI 對話；API（應用程式介面）則是讓「你的程式」直接跟 AI 對話。學會 API，就能把 AI 放進自己做的網頁、表單、小工具裡。
+3. 我接下來可以採取的行動</pre><p><a href="https://opencode.ai/v2/docs/instructions/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Instructions（AGENTS.md）</a> 放置位置、載入順序與 instructions 設定（英文）</p><p><a href="https://opencode.ai/v2/docs/commands/" target="_blank" rel="noopener noreferrer">OpenCode 官方文件：Commands（自訂指令）</a> $ARGUMENTS 與 frontmatter 欄位（英文）</p><h3>自編練習題</h3><details><summary>AGENTS.md 的主要用途是？</summary><ol><li>存放密碼</li><li>提供專案的長期規則，OpenCode 每次工作前自動讀取</li><li>播放音樂</li><li>備份照片</li></ol><p>正確答案：提供專案的長期規則，OpenCode 每次工作前自動讀取<br>AGENTS.md 就像專案專屬的 System Prompt，讓 AI 每次都記得你的規則。</p></details><details><summary>想讓 OpenCode 先看過資料夾、再引導你建立 AGENTS.md，要輸入哪個指令？</summary><ol><li>/init</li><li>/undo</li><li>/exit</li><li>/print</li></ol><p>正確答案：/init<br>/init 是官方內建的 AGENTS.md 引導建立指令。</p></details><details><summary>下列哪一句最值得寫進 AGENTS.md？</summary><ol><li>請認真工作</li><li>raw/ 資料夾只能讀取，不可修改或刪除</li><li>1+1=2</li><li>今天天氣很好</li></ol><p>正確答案：raw/ 資料夾只能讀取，不可修改或刪除<br>AI 沒被告知就很可能做錯的專案規則，才值得寫進去。</p></details><details><summary>在自訂指令檔中，$ARGUMENTS 會被換成什麼？</summary><ol><li>今天的日期</li><li>你在斜線指令後面輸入的文字</li><li>電腦名稱</li><li>隨機數字</li></ol><p>正確答案：你在斜線指令後面輸入的文字<br>例如輸入 /summary 會議紀錄.md，$ARGUMENTS 就會變成「會議紀錄.md」。</p></details></section><section><h2>6. 星門渡口</h2><p>L6 串接｜在 Google AI Studio 申請 API Key，用 JavaScript 呼叫 Gemini 3.5 Flash-Lite</p><p>學習目標：能在 Google AI Studio 免費申請 API Key 並安全保管；看懂一次 API 請求的組成；用前端 JavaScript 在自己電腦呼叫 gemini-3.5-flash-lite，讓它回傳固定格式的 JSON，再學會正式上線時把金鑰放在後端。</p><h3>API 是什麼：從聊天視窗走進自己的程式</h3><p>在 Gemini 網頁上聊天，是「你」跟 AI 對話；API（應用程式介面）則是讓「你的程式」直接跟 AI 對話。學會 API，就能把 AI 放進自己做的網頁、表單、小工具裡。
 一次 API 呼叫只有三個元素：① 網址（要找哪個服務）② API Key（證明你是誰，像通行證）③ 用 JSON 格式寫的請求內容（用哪個模型、要問什麼）。AI 回傳的結果同樣是 JSON，程式再從裡面取出文字。
 本課使用 gemini-3.5-flash-lite：Gemini 3.5 系列中速度最快、成本最低的模型，Gemini API 免費方案即可使用，很適合練習與做小工具。
 本課範例採用 Google 建議新專案使用的 Interactions API（網址結尾為 /interactions）。網路上很多舊教學使用 generateContent，也還能用，但寫法不同，看到時不要混在一起。</p><h3>在 Google AI Studio 免費申請 API Key</h3><p>① 用 Google 帳號登入 Google AI Studio（aistudio.google.com），第一次使用需同意服務條款。
@@ -197,8 +232,10 @@ agent: plan
 看不懂的地方，可以把程式碼貼給 Gemini 或 OpenCode，請它逐行解釋（記得先把金鑰拿掉）。</p><h3>範例二：加上 System Instruction 與參數</h3><p>在魔法書之島學過的 System Prompt，在 API 裡叫 system_instruction，用來固定 AI 的角色與規則。
 generation_config 可以調整產出：temperature 越低回答越穩定一致（適合整理、分類），越高越有變化（適合發想）；max_output_tokens 限制回答長度，避免一次用掉太多額度。
 把「範例二」的 body 換進範例一的程式，就能做出一個「固定角色的小助教」。</p><h3>範例三：多輪對話與錯誤處理</h3><p>API 預設每次呼叫都是全新的對話。Interactions API 會回傳一個 id，下一次呼叫時把它放進 previous_interaction_id，AI 就會接著上一輪的內容回答，不必自己重送整段歷史。
-常見錯誤：400 加上 API_KEY_INVALID 表示金鑰貼錯或已被刪除；429 表示超過免費額度，請稍等或隔天再試；網路錯誤則先檢查網址與連線。把錯誤訊息顯示在畫面上，除錯會容易很多。</p><h3>正式上線：把金鑰嵌在後端</h3><p>要讓別人使用你的 AI 小工具時，正確架構是：使用者的瀏覽器 → 你自己的後端 → Gemini API。金鑰只存在後端的環境變數裡，使用者完全拿不到。
-「範例四」用 Node.js（建議 22 以上，不需安裝任何套件）寫一個最小後端：金鑰放在同資料夾的 .env 檔，用 node --env-file=.env server.mjs 啟動；網頁由同一個後端提供，前端只呼叫自己的 /api/ask，程式碼裡完全沒有金鑰。
+常見錯誤：400 加上 API_KEY_INVALID 表示金鑰貼錯或已被刪除；429 表示超過免費額度，請稍等或隔天再試；網路錯誤則先檢查網址與連線。把錯誤訊息顯示在畫面上，除錯會容易很多。</p><h3>範例四：結構化輸出，讓 AI 回固定格式的 JSON</h3><p>AI 平常回的是一段文字，程式很難從裡面準確取出「題目是什麼、答案是哪個」。加上 response_format，把 mime_type 設成 application/json，再用 schema（JSON Schema）描述有哪些欄位，AI 就會照這個格式回答。程式用 JSON.parse 轉成物件後，就能直接做成測驗、表格或存起來。
+schema 要寫清楚欄位名稱、型別（string 文字、integer 整數、array 陣列、object 物件）和必填欄位（required）；欄位加上 description 說明用途，AI 會填得更準。
+注意：有些限制（例如字數上下限）不一定會被強制遵守，程式拿到資料後仍要自己檢查一次再使用。</p><h3>正式上線：把金鑰嵌在後端</h3><p>要讓別人使用你的 AI 小工具時，正確架構是：使用者的瀏覽器 → 你自己的後端 → Gemini API。金鑰只存在後端的環境變數裡，使用者完全拿不到。
+「範例五」用 Node.js（建議 22 以上，不需安裝任何套件）寫一個最小後端：金鑰放在同資料夾的 .env 檔，用 node --env-file=.env server.mjs 啟動；網頁由同一個後端提供，前端只呼叫自己的 /api/ask，程式碼裡完全沒有金鑰。
 記得建立 .gitignore 並寫入 .env，確認上傳的檔案裡沒有金鑰。之後部署到任何雲端平台，也都是在平台的「環境變數／Secrets」設定填入金鑰，而不是寫進程式碼。
 正式服務還要考慮：限制每位使用者的呼叫次數、檢查輸入長度，避免你的額度被別人用光。</p><table><thead><tr><th>做法</th><th>金鑰在哪裡</th><th>適合情境</th></tr></thead><tbody><tr><td>❌ 直接寫在前端程式碼裡</td><td>任何人按 F12 或「檢視原始碼」就看得到</td><td>永遠不要這樣做</td></tr><tr><td>❌ 上傳到 GitHub、雲端硬碟、截圖分享</td><td>公開在網路上，可能幾分鐘內就被盜用</td><td>永遠不要這樣做</td></tr><tr><td>⚠️ 前端練習頁，執行時才手動貼上</td><td>只在你自己電腦的瀏覽器記憶體中，關掉就消失</td><td>只限自己電腦上練習，不能上傳或分享網頁</td></tr><tr><td>✅ 放在後端（伺服器）的 .env 環境變數</td><td>只在伺服器上，前端只呼叫你自己的後端</td><td>要給別人使用的正式網站或應用程式</td></tr></tbody></table><h3>範例一：前端本機練習頁（存成 gemini-test.html，只在自己電腦開啟）</h3><pre>&lt;!doctype html&gt;
 &lt;html lang=&quot;zh-Hant&quot;&gt;
@@ -273,7 +310,40 @@ const result = await askGemini(apiKey, {
 lastId = result.id;   // 存起來給下一輪使用
 out.textContent = result.text;
 
-// 想重新開始新對話時：lastId = null;</pre><h3>範例四：正式上線，金鑰嵌在後端（server.mjs）</h3><pre>// ① 同資料夾建立 .env，內容只有一行（不要上傳這個檔案）：
+// 想重新開始新對話時：lastId = null;</pre><h3>範例四：結構化輸出，讓 AI 出三題選擇題（替換範例一送出的內容）</h3><pre>const result = await askGemini(apiKey, {
+  input: &quot;請依下面的主題，出 3 題四選一的選擇題：&quot; + document.querySelector(&quot;#question&quot;).value,
+  response_format: {
+    type: &quot;text&quot;,
+    mime_type: &quot;application/json&quot;,
+    schema: {
+      type: &quot;object&quot;,
+      properties: {
+        questions: {
+          type: &quot;array&quot;,
+          items: {
+            type: &quot;object&quot;,
+            properties: {
+              question: { type: &quot;string&quot;, description: &quot;題目&quot; },
+              options: { type: &quot;array&quot;, items: { type: &quot;string&quot; }, minItems: 4, maxItems: 4 },
+              answer: { type: &quot;integer&quot;, description: &quot;正確選項的位置，0 到 3&quot; }
+            },
+            required: [&quot;question&quot;, &quot;options&quot;, &quot;answer&quot;]
+          }
+        }
+      },
+      required: [&quot;questions&quot;]
+    }
+  }
+});
+
+// 回傳的文字就是 JSON：轉成物件，先檢查格式再使用
+const quiz = JSON.parse(result.text);
+if (!Array.isArray(quiz.questions)) throw new Error(&quot;回傳格式不符：&quot; + result.text);
+out.textContent = quiz.questions.map((q, i) =&gt;
+  (i + 1) + &quot;. &quot; + q.question + &quot;\n&quot; +
+  q.options.map((o, j) =&gt; &quot;   (&quot; + &quot;ABCD&quot;[j] + &quot;) &quot; + o).join(&quot;\n&quot;) +
+  &quot;\n   答案：&quot; + &quot;ABCD&quot;[q.answer]
+).join(&quot;\n\n&quot;);</pre><h3>範例五：正式上線，金鑰嵌在後端（server.mjs）</h3><pre>// ① 同資料夾建立 .env，內容只有一行（不要上傳這個檔案）：
 //    GEMINI_API_KEY=貼上你的金鑰
 // ② 建立 .gitignore，寫入一行：.env
 // ③ 把範例一存成同資料夾的 index.html，刪掉金鑰欄位，

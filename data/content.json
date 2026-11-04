@@ -26,6 +26,18 @@
         "text": "課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
       },
       {
+        "title": "安全使用 AI 的五條守則",
+        "text": "① 個資與機密不貼：身分證字號、病歷、成績、公司內部文件、帳號密碼都不要貼進免費 AI 服務；免費方案的對話可能被用來改善服務。\n② 重要資訊要查證：數字、日期、法規、醫療與財務相關內容，一律以原始來源為準。\n③ 尊重著作權：不要把別人的作品整份貼上、改寫後當成自己的；AI 產出的圖文要公開發表或商用前，先確認平台條款與引用規範。\n④ 誠實揭露：作業、報告或工作文件用到 AI 時，依學校或公司規定說明哪些部分有 AI 協助；最後的判斷與責任在你。\n⑤ 管好金鑰與權限：API Key 不放前端、不上網（第 6 站）；讓 Agent 改檔案或執行指令前，先設好權限、看過再同意（第 7 站）。"
+      },
+      {
+        "title": "畢業專題：做一個你的專屬 AI 小幫手",
+        "text": "挑一件你每週都會重複做的事，例如整理會議紀錄、改寫公告、出練習題，用九站學到的方法做成能重複使用的小幫手：\n① 用五要素與範例寫出穩定的提示詞（第 1、2 站）\n② 把固定規則寫成 System Prompt，在 Google AI Studio 測試（第 3 站）\n③ 準備 3–5 題固定測試題，比較不同版本的表現（第 2 站）\n④ 二選一完成作品：用 Gemini API 做一個網頁小工具，金鑰放在後端（第 6 站）；或在 OpenCode 做成自訂指令、Agent 或 Skill（第 5、7、8 站）\n⑤ 加上檢查機制：固定輸出格式，或讓 AI 先自我檢查再交件（第 2、9 站）\n完成標準：別人照你的說明就能使用；並寫下它做不好的情況，以及你怎麼因應。"
+      },
+      {
+        "title": "名詞小辭典",
+        "text": "大型語言模型（LLM）：從大量文字學會語言規律、靠預測下一段文字來回答的 AI。（第 1 站）\nToken：AI 切分文字的小片段，額度與計費都用它計算。（第 1 站）\n上下文長度：AI 每次回答時能同時看到的內容上限。（第 1 站）\n幻覺：AI 把不存在或錯誤的內容說得很肯定。（第 1 站）\n提示詞（Prompt）：你給 AI 的指示與資料。（第 1、2 站）\nFew-shot：在提示詞裡附上範例，讓 AI 照著做。（第 2 站）\nSystem Prompt：替 AI 設定固定身分與規則的系統指令。（第 3 站）\nOpenCode：開源的 AI 程式助手，可使用免費模型。（第 4 站）\nAGENTS.md：寫給 AI 看的專案規則檔，每次都會讀取。（第 5 站）\nAPI／API Key：讓你的程式呼叫 AI 的介面，以及代表你身分的金鑰。（第 6 站）\n結構化輸出：要求 AI 依固定的 JSON 格式回答，方便程式使用。（第 6 站）\nAgent：會自己規劃步驟、使用工具完成任務的 AI。（第 7 站）\nSkill：需要時才載入的技能包。（第 8 站）\nMCP：讓 AI 接上外部工具與資料的標準協定。（第 8 站）\nHarness：包在模型外面、引導與檢查 AI 的整套系統。（第 9 站）"
+      },
+      {
         "title": "AI 是擴增器，不是取代者。",
         "text": "把重複繁雜的工作交給 AI，把判斷、查證與創意留給自己。"
       }
@@ -71,12 +83,12 @@
       "id": "island-01",
       "name": "咒語入門島",
       "group": "Gemini 免費入門",
-      "intro": "L1 入門｜用 Gemini 免費版學會好好提問",
+      "intro": "L1 入門｜認識 AI 怎麼運作，用 Gemini 免費版學會好好提問",
       "points": [],
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能用「角色、任務、背景、限制、格式」五要素寫出具體提問，並追問與查證 AI 的回答。",
+      "goal": "能說明 AI 如何產生回答、Token 與上下文是什麼、為什麼會說錯；並用「角色、任務、背景、限制、格式」五要素寫出具體提問，追問與查證 AI 的回答。",
       "goalLabel": "學習目標",
       "comparison": {
         "headers": [
@@ -118,6 +130,18 @@
           "text": "打開 gemini.google.com（或手機 Gemini App），用 Google 帳號登入就能免費使用。免費版可以聊天、上傳圖片或檔案請它說明，也能用 Canvas 一起編寫文件。\n免費版有使用量上限，忙碌時段較強的模型或深入研究等功能可能被限制；額度與模型名稱會依 Google 調整，以畫面顯示為準。\n本課程只使用免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），後面的課程改用免費的 OpenCode 完成。"
         },
         {
+          "title": "AI 怎麼回答你：一台超會接龍的文字預測機",
+          "text": "Gemini 這類聊天 AI 的核心是「大型語言模型」（LLM, Large Language Model）。它從大量文字中學到字詞之間的規律，回答時是根據你的問題，一小段一小段地預測「接下來最可能出現的文字」，再接成完整的句子。\n所以它特別擅長跟語言有關的工作：寫作、改寫、摘要、翻譯、整理、發想。但它不是資料庫，也不是計算機；它產生的是「看起來最合理的文字」，不保證每句都是事實。\n同一個問題問兩次，答案可能不一樣，這是正常的：預測帶有一點隨機性。不滿意就重新產生，或多問幾次挑最好的版本。"
+        },
+        {
+          "title": "Token 與上下文：AI 的短期記憶",
+          "text": "AI 不是一個字一個字讀，而是把文字切成叫做 Token 的小片段，怎麼切依模型而定。使用額度、API 計費和回答長度上限，都是用 Token 計算。\nAI 每次回答時能同時看到的內容有上限，叫做「上下文長度」（context window），包含你這次的問題、前面的對話、上傳的檔案，以及它自己說過的話。對話拉得很長時，前面交代的規則可能被淡忘，或超出它看得到的範圍。\n小技巧：換新主題就開新對話；長對話中把重要規則再提醒一次；需要每次都遵守的規則，寫成 System Prompt（第 3 站）或 AGENTS.md（第 5 站）。"
+        },
+        {
+          "title": "為什麼 AI 會說錯：幻覺與知識截止",
+          "text": "因為 AI 是在「產生合理的文字」而不是查證事實，它可能編出不存在的書名、網址、數據或引用，而且語氣非常肯定，這叫做「幻覺」（hallucination）。\n模型的知識來自訓練資料，訓練之後才發生的事它不一定知道，這叫做「知識截止」。有時 Gemini 會上網搜尋來補充，但搜尋到的資料也可能過時或有錯。\n降低幻覺的方法：先提供資料，請它「只根據這份資料回答」；請它標出不確定的地方，不知道就說不知道；要求附上來源，再自己點開確認。"
+        },
+        {
           "title": "提問五要素：角色、任務、背景、限制、格式",
           "text": "AI 不知道你腦中的情境，資訊給得越具體，結果越貼近需求。\n把提問拆成五個要素：角色（用什麼身分回答）、任務（要做什麼）、背景（對象與目的）、限制（字數、語氣、禁止事項）、格式（表格、條列、步驟）。\n不必每次五項都寫滿；先寫任務，再補上最影響結果的一兩項，就會明顯進步。"
         },
@@ -128,11 +152,18 @@
       ],
       "prompts": [
         "你是一位【角色，例如：擅長把複雜概念講簡單的講師】。\n請幫我【任務，例如：設計一份 10 分鐘的 AI 入門分享大綱】。\n\n背景：\n- 對象：【例如：完全沒用過 AI 的同事】\n- 目的：【例如：讓大家願意開始試用】\n\n限制：\n- 【例如：不超過 5 個重點】\n- 【例如：避免英文縮寫，必要時附中文解釋】\n\n格式：請用表格呈現，欄位為「段落｜時間｜內容｜互動方式」。",
-        "我想請你幫我【任務】。\n在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。"
+        "我想請你幫我【任務】。\n在開始之前，請先問我 3 個你最需要知道的問題，等我回答後再給完整答案。",
+        "請回答下面的問題：【你的問題】\n\n回答規則：\n- 把內容分成「確定的事實」和「推測或不確定」兩部分\n- 不知道或資料不足時，直接說不知道，不要自己編\n- 列出我可以用來查證的來源類型或關鍵字（不要編造網址）"
       ],
       "promptTitles": [
         "五要素提問範本",
-        "讓 AI 先問清楚再回答"
+        "讓 AI 先問清楚再回答",
+        "請 AI 分清楚事實與推測"
+      ],
+      "promptKinds": [
+        "prompt",
+        "prompt",
+        "prompt"
       ],
       "links": [
         {
@@ -221,27 +252,27 @@
         },
         {
           "id": "island-01-q4",
-          "question": "本課程遇到 Gemini 需要付費的功能時，會怎麼處理？",
+          "question": "和 AI 聊了很久之後，它開始忘記你一開始交代的規則，最可能的原因是？",
           "options": [
             {
               "id": "a",
-              "text": "請學員購買最高方案"
+              "text": "AI 故意不聽話"
             },
             {
               "id": "b",
-              "text": "跳過不教"
+              "text": "網路速度太慢"
             },
             {
               "id": "c",
-              "text": "改用免費的 OpenCode 完成同類任務"
+              "text": "對話太長，早期的內容在上下文中被淡忘或超出範圍"
             },
             {
               "id": "d",
-              "text": "使用他人帳號"
+              "text": "規則寫得太有禮貌"
             }
           ],
           "answer": "c",
-          "explanation": "課程只使用 Gemini 免費功能，付費功能改以 OpenCode 的免費模型與功能替代。"
+          "explanation": "AI 每次能看到的內容有上限（上下文長度）。換主題就開新對話、重要規則再提醒一次，或改寫成 System Prompt。"
         }
       ]
     },
@@ -326,6 +357,13 @@
         "串接範本：一步一步完成",
         "自我檢查範本：交件前逐條核對",
         "評估範本：比較兩個提示詞版本"
+      ],
+      "promptKinds": [
+        "prompt",
+        "prompt",
+        "prompt",
+        "prompt",
+        "prompt"
       ],
       "links": [
         {
@@ -506,6 +544,10 @@
         "System Prompt 範本：簡報小幫手",
         "測試用提問"
       ],
+      "promptKinds": [
+        "prompt",
+        "prompt"
+      ],
       "links": [
         {
           "label": "Google AI Studio",
@@ -683,6 +725,10 @@
       "promptTitles": [
         "第一個任務：自我介紹網頁",
         "請 AI 先規劃（在 Plan Agent 使用）"
+      ],
+      "promptKinds": [
+        "prompt",
+        "prompt"
       ],
       "links": [
         {
@@ -868,6 +914,10 @@
         "AGENTS.md 範本（文件整理專案）",
         "自訂指令範本：.opencode/commands/summary.md"
       ],
+      "promptKinds": [
+        "prompt",
+        "prompt"
+      ],
       "links": [
         {
           "label": "OpenCode 官方文件：Instructions（AGENTS.md）",
@@ -989,7 +1039,7 @@
       "extra": "",
       "link": "",
       "material": "",
-      "goal": "能在 Google AI Studio 免費申請 API Key 並安全保管；看懂一次 API 請求的組成；用前端 JavaScript 在自己電腦呼叫 gemini-3.5-flash-lite，再學會正式上線時把金鑰放在後端。",
+      "goal": "能在 Google AI Studio 免費申請 API Key 並安全保管；看懂一次 API 請求的組成；用前端 JavaScript 在自己電腦呼叫 gemini-3.5-flash-lite，讓它回傳固定格式的 JSON，再學會正式上線時把金鑰放在後端。",
       "goalLabel": "學習目標",
       "comparison": {
         "headers": [
@@ -1046,14 +1096,19 @@
           "text": "API 預設每次呼叫都是全新的對話。Interactions API 會回傳一個 id，下一次呼叫時把它放進 previous_interaction_id，AI 就會接著上一輪的內容回答，不必自己重送整段歷史。\n常見錯誤：400 加上 API_KEY_INVALID 表示金鑰貼錯或已被刪除；429 表示超過免費額度，請稍等或隔天再試；網路錯誤則先檢查網址與連線。把錯誤訊息顯示在畫面上，除錯會容易很多。"
         },
         {
+          "title": "範例四：結構化輸出，讓 AI 回固定格式的 JSON",
+          "text": "AI 平常回的是一段文字，程式很難從裡面準確取出「題目是什麼、答案是哪個」。加上 response_format，把 mime_type 設成 application/json，再用 schema（JSON Schema）描述有哪些欄位，AI 就會照這個格式回答。程式用 JSON.parse 轉成物件後，就能直接做成測驗、表格或存起來。\nschema 要寫清楚欄位名稱、型別（string 文字、integer 整數、array 陣列、object 物件）和必填欄位（required）；欄位加上 description 說明用途，AI 會填得更準。\n注意：有些限制（例如字數上下限）不一定會被強制遵守，程式拿到資料後仍要自己檢查一次再使用。"
+        },
+        {
           "title": "正式上線：把金鑰嵌在後端",
-          "text": "要讓別人使用你的 AI 小工具時，正確架構是：使用者的瀏覽器 → 你自己的後端 → Gemini API。金鑰只存在後端的環境變數裡，使用者完全拿不到。\n「範例四」用 Node.js（建議 22 以上，不需安裝任何套件）寫一個最小後端：金鑰放在同資料夾的 .env 檔，用 node --env-file=.env server.mjs 啟動；網頁由同一個後端提供，前端只呼叫自己的 /api/ask，程式碼裡完全沒有金鑰。\n記得建立 .gitignore 並寫入 .env，確認上傳的檔案裡沒有金鑰。之後部署到任何雲端平台，也都是在平台的「環境變數／Secrets」設定填入金鑰，而不是寫進程式碼。\n正式服務還要考慮：限制每位使用者的呼叫次數、檢查輸入長度，避免你的額度被別人用光。"
+          "text": "要讓別人使用你的 AI 小工具時，正確架構是：使用者的瀏覽器 → 你自己的後端 → Gemini API。金鑰只存在後端的環境變數裡，使用者完全拿不到。\n「範例五」用 Node.js（建議 22 以上，不需安裝任何套件）寫一個最小後端：金鑰放在同資料夾的 .env 檔，用 node --env-file=.env server.mjs 啟動；網頁由同一個後端提供，前端只呼叫自己的 /api/ask，程式碼裡完全沒有金鑰。\n記得建立 .gitignore 並寫入 .env，確認上傳的檔案裡沒有金鑰。之後部署到任何雲端平台，也都是在平台的「環境變數／Secrets」設定填入金鑰，而不是寫進程式碼。\n正式服務還要考慮：限制每位使用者的呼叫次數、檢查輸入長度，避免你的額度被別人用光。"
         }
       ],
       "prompts": [
         "<!doctype html>\n<html lang=\"zh-Hant\">\n<meta charset=\"utf-8\">\n<title>Gemini API 練習</title>\n<h1>Gemini API 練習（只在自己電腦使用）</h1>\n<p>API Key（每次手動貼上，不寫進程式碼）：\n  <input id=\"key\" type=\"password\" size=\"45\" autocomplete=\"off\"></p>\n<textarea id=\"question\" rows=\"4\" cols=\"60\">用三句話向新手解釋什麼是 API</textarea><br>\n<button id=\"send\">送出</button>\n<pre id=\"answer\" style=\"white-space:pre-wrap\"></pre>\n\n<script>\nconst API_URL = \"https://generativelanguage.googleapis.com/v1beta/interactions\";\nconst MODEL = \"gemini-3.5-flash-lite\";\n\n// 送出請求，回傳 { id, text }\nasync function askGemini(apiKey, body) {\n  const res = await fetch(API_URL, {\n    method: \"POST\",\n    headers: { \"Content-Type\": \"application/json\", \"x-goog-api-key\": apiKey },\n    body: JSON.stringify({ model: MODEL, ...body })\n  });\n  const data = await res.json();\n  if (!res.ok) {\n    // 錯誤訊息有時直接回傳，有時包在陣列裡，兩種都處理\n    const error = [].concat(data)[0]?.error;\n    throw new Error(error?.message || \"HTTP \" + res.status);\n  }\n  // 只取最後一次提問之後、模型輸出的文字\n  const steps = data.steps || [];\n  const start = steps.findLastIndex(s => s.type === \"user_input\") + 1;\n  const text = steps.slice(start)\n    .filter(s => s.type === \"model_output\")\n    .flatMap(s => s.content || [])\n    .filter(c => c.type === \"text\")\n    .map(c => c.text)\n    .join(\"\");\n  return { id: data.id, text: text || JSON.stringify(data, null, 2) };\n}\n\ndocument.querySelector(\"#send\").onclick = async () => {\n  const out = document.querySelector(\"#answer\");\n  const apiKey = document.querySelector(\"#key\").value.trim();\n  if (!apiKey) { out.textContent = \"請先貼上 API Key\"; return; }\n  out.textContent = \"思考中…\";\n  try {\n    const result = await askGemini(apiKey, {\n      input: document.querySelector(\"#question\").value\n    });\n    out.textContent = result.text;\n  } catch (err) {\n    out.textContent = \"發生錯誤：\" + err.message;\n  }\n};\n</script>\n</html>",
         "const result = await askGemini(apiKey, {\n  system_instruction: \"你是親切的程式小助教。用繁體中文回答，先給結論，再用一個生活化的比喻說明，全文不超過 150 字。\",\n  input: document.querySelector(\"#question\").value,\n  generation_config: {\n    temperature: 0.3,        // 越低越穩定，越高越有創意\n    max_output_tokens: 400   // 限制回答長度\n  }\n});",
         "// 在 <script> 最上方宣告，用來記住上一輪的 id\nlet lastId = null;\n\n// 送出時帶上 previous_interaction_id，AI 就會記得前面聊過的內容\nconst result = await askGemini(apiKey, {\n  input: document.querySelector(\"#question\").value,\n  ...(lastId ? { previous_interaction_id: lastId } : {})\n});\nlastId = result.id;   // 存起來給下一輪使用\nout.textContent = result.text;\n\n// 想重新開始新對話時：lastId = null;",
+        "const result = await askGemini(apiKey, {\n  input: \"請依下面的主題，出 3 題四選一的選擇題：\" + document.querySelector(\"#question\").value,\n  response_format: {\n    type: \"text\",\n    mime_type: \"application/json\",\n    schema: {\n      type: \"object\",\n      properties: {\n        questions: {\n          type: \"array\",\n          items: {\n            type: \"object\",\n            properties: {\n              question: { type: \"string\", description: \"題目\" },\n              options: { type: \"array\", items: { type: \"string\" }, minItems: 4, maxItems: 4 },\n              answer: { type: \"integer\", description: \"正確選項的位置，0 到 3\" }\n            },\n            required: [\"question\", \"options\", \"answer\"]\n          }\n        }\n      },\n      required: [\"questions\"]\n    }\n  }\n});\n\n// 回傳的文字就是 JSON：轉成物件，先檢查格式再使用\nconst quiz = JSON.parse(result.text);\nif (!Array.isArray(quiz.questions)) throw new Error(\"回傳格式不符：\" + result.text);\nout.textContent = quiz.questions.map((q, i) =>\n  (i + 1) + \". \" + q.question + \"\\n\" +\n  q.options.map((o, j) => \"   (\" + \"ABCD\"[j] + \") \" + o).join(\"\\n\") +\n  \"\\n   答案：\" + \"ABCD\"[q.answer]\n).join(\"\\n\\n\");",
         "// ① 同資料夾建立 .env，內容只有一行（不要上傳這個檔案）：\n//    GEMINI_API_KEY=貼上你的金鑰\n// ② 建立 .gitignore，寫入一行：.env\n// ③ 把範例一存成同資料夾的 index.html，刪掉金鑰欄位，\n//    並把 askGemini 裡的 fetch 改成呼叫自己的後端（不帶金鑰）：\n//    fetch(\"/api/ask\", { method: \"POST\",\n//      headers: { \"Content-Type\": \"application/json\" },\n//      body: JSON.stringify({ input: \"你的問題\" }) })\n// ④ 啟動（Node.js 22 以上）：node --env-file=.env server.mjs\n//    再用瀏覽器開啟 http://localhost:3000\n\nimport http from \"node:http\";\nimport { readFile } from \"node:fs/promises\";\n\nconst API_URL = \"https://generativelanguage.googleapis.com/v1beta/interactions\";\n\nhttp.createServer(async (req, res) => {\n  try {\n    // 提供前端網頁\n    if (req.method === \"GET\" && req.url === \"/\") {\n      res.writeHead(200, { \"Content-Type\": \"text/html; charset=utf-8\" });\n      res.end(await readFile(\"index.html\"));\n      return;\n    }\n    if (req.method !== \"POST\" || req.url !== \"/api/ask\") {\n      res.writeHead(404).end();\n      return;\n    }\n    let raw = \"\";\n    for await (const chunk of req) raw += chunk;\n    const { input } = JSON.parse(raw || \"{}\");\n    if (typeof input !== \"string\" || !input || input.length > 2000) {\n      res.writeHead(400, { \"Content-Type\": \"text/plain; charset=utf-8\" });\n      res.end(\"問題不可空白，且不超過 2000 字\");\n      return;\n    }\n    // 由後端代為呼叫 Gemini，金鑰只在伺服器上\n    const upstream = await fetch(API_URL, {\n      method: \"POST\",\n      headers: {\n        \"Content-Type\": \"application/json\",\n        \"x-goog-api-key\": process.env.GEMINI_API_KEY\n      },\n      body: JSON.stringify({ model: \"gemini-3.5-flash-lite\", input })\n    });\n    res.writeHead(upstream.status, { \"Content-Type\": \"application/json; charset=utf-8\" });\n    res.end(await upstream.text());\n  } catch (err) {\n    res.writeHead(500, { \"Content-Type\": \"text/plain; charset=utf-8\" });\n    res.end(\"伺服器發生錯誤：\" + err.message);\n  }\n}).listen(3000, () => console.log(\"已啟動：http://localhost:3000\"));",
         "我是程式新手，正在學習用 JavaScript 呼叫 Gemini API。\n請逐段解釋下面這段程式碼在做什麼，用生活化的比喻說明 fetch、headers、JSON 這三個概念，\n最後告訴我：如果要把這個網頁給別人使用，金鑰應該怎麼保管才安全？\n\n\"\"\"\n【貼上程式碼，記得先把 API Key 刪掉】\n\"\"\""
       ],
@@ -1061,8 +1116,17 @@
         "範例一：前端本機練習頁（存成 gemini-test.html，只在自己電腦開啟）",
         "範例二：加上 System Instruction 與參數（替換範例一送出的內容）",
         "範例三：多輪對話（接著上一輪回答）",
-        "範例四：正式上線，金鑰嵌在後端（server.mjs）",
+        "範例四：結構化輸出，讓 AI 出三題選擇題（替換範例一送出的內容）",
+        "範例五：正式上線，金鑰嵌在後端（server.mjs）",
         "請 AI 幫你看懂程式碼（貼上前先刪掉金鑰）"
+      ],
+      "promptKinds": [
+        "code",
+        "code",
+        "code",
+        "code",
+        "code",
+        "prompt"
       ],
       "links": [
         {
@@ -1250,6 +1314,11 @@
         "呼叫子 Agent",
         "主要 Agent 範本：.opencode/agents/writer.md（寫作夥伴）"
       ],
+      "promptKinds": [
+        "prompt",
+        "prompt",
+        "prompt"
+      ],
       "links": [
         {
           "label": "OpenCode 官方文件：Agents",
@@ -1425,6 +1494,11 @@
         "Skill 範本：.opencode/skills/meeting-notes/SKILL.md",
         "範本檔：.opencode/skills/meeting-notes/templates/notes.md",
         "用設定檔加入 MCP（opencode.jsonc，與指令二選一）"
+      ],
+      "promptKinds": [
+        "prompt",
+        "prompt",
+        "prompt"
       ],
       "links": [
         {
@@ -1606,6 +1680,11 @@
         "全域安全護欄：opencode.jsonc",
         "AGENTS.md 加入回饋迴圈"
       ],
+      "promptKinds": [
+        "prompt",
+        "code",
+        "prompt"
+      ],
       "links": [
         {
           "label": "Agent Harness Engineering（Addy Osmani）",
@@ -1730,7 +1809,7 @@
       "island": "island-01",
       "concept": "提問五要素",
       "text": "角色、任務、背景、限制、格式。先寫清楚任務，再補上最影響結果的一兩項，AI 的回答就會更貼近你的需求。",
-      "topic": 1
+      "topic": 4
     },
     {
       "id": "resident-02",
@@ -1738,7 +1817,7 @@
       "island": "island-01",
       "concept": "追問與查證",
       "text": "把對話當成來回修改，讓 AI 先問你問題再回答；數字、日期與來源要自己查證，個資與機密不要貼進免費服務。",
-      "topic": 2
+      "topic": 5
     },
     {
       "id": "resident-03",

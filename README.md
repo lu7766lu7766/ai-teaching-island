@@ -12,15 +12,17 @@
 
 | 站 | 島嶼 | 海域 | 主題 |
 | --- | --- | --- | --- |
-| 1 | 咒語入門島 | Gemini 免費入門 | 用 Gemini 免費版學會好好提問 |
+| 1 | 咒語入門島 | Gemini 免費入門 | 認識 AI 怎麼運作（LLM、Token、幻覺），用 Gemini 免費版學會好好提問 |
 | 2 | 符文研究所 | Gemini 免費入門 | 提示詞工程：範例、拆解、自我檢查與評估 |
 | 3 | 魔法書之島 | Gemini 免費入門 | System Prompt：替 AI 設定固定的身分與規則 |
 | 4 | 魔杖工坊 | OpenCode 實作 | 安裝 OpenCode，免帳號使用免費 AI 模型 |
 | 5 | 契約之島 | OpenCode 實作 | AGENTS.md 與自訂指令：讓 AI 記住你的做事方法 |
-| 6 | 星門渡口 | API 串接 | 在 Google AI Studio 申請 API Key，用 JavaScript 呼叫 Gemini 3.5 Flash-Lite |
+| 6 | 星門渡口 | API 串接 | 在 Google AI Studio 申請 API Key，用 JavaScript 呼叫 Gemini 3.5 Flash-Lite、取得結構化 JSON |
 | 7 | 使魔召喚島 | OpenCode 實作 | 打造專屬 Agent：System Prompt＋模型＋權限 |
 | 8 | 法器寶庫島 | 進階打造 | Skills 技能包與 MCP 外部工具 |
 | 9 | 魔導高塔 | 進階打造 | Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統 |
+
+中央的 AI 魔法學習島另有：學習路線、安全使用 AI 的五條守則、畢業專題（做一個專屬 AI 小幫手）與名詞小辭典。
 
 ## 網站功能
 
@@ -63,7 +65,7 @@ islands/
 | --- | --- | --- |
 | 資料設定 | `json` 區塊 | 順序、識別碼、名稱、海域、簡介、學習目標、比較表 |
 | 教材內容 | `###` 標題＋文字 | 課程正文，可自由增刪段落 |
-| 教材提示詞 | `###` 標題＋`text` 區塊 | 網頁上會顯示「複製提示詞」按鈕 |
+| 教材提示詞 | `###` 標題＋程式碼區塊 | `text` 區塊顯示「複製提示詞」按鈕；程式碼範例改用 `html`、`js`、`json` 或 `bash`，按鈕會變成「複製程式碼」 |
 | 延伸資源 | `json` 區塊 | 外部連結，必須是完整的 http(s) 網址 |
 | 隨堂測驗 | `json` 區塊 | 剛好四題，題目識別碼不可重複 |
 | 島民概念 | `json` 區塊 | 兩位島民，`topic` 是對應「教材內容」第幾段（從 0 開始） |
