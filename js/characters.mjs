@@ -22,11 +22,14 @@ export const RESIDENT_LOOKS={
  'resident-19':{hairStyle:'twintail',hair:'#cfd6ee',outfitType:'dress',outfit:'#bcd0f2',hat:'flower',hatColor:'#ffffff',prop:'crystal'},
  'resident-20':{hairStyle:'hood',hair:'#8a8fa8',outfitType:'robe',outfit:'#a9a6c4',hatColor:'#c9c6dc',accent:'#6b6f8c',prop:'magnifier'},
  'resident-21':{hairStyle:'curly',hair:'#e59445',outfit:'#c9f0d6',hat:'goggles',hatColor:'#4f7a8c',prop:'flask',propColor:'#7fd1a0'},
+ 'resident-23':{hairStyle:'twintail',hair:'#e98aa0',outfitType:'apron',outfit:'#fbf6ec',accent:'#5a9bd8',hat:'bow',hatColor:'#f2c14e',prop:'palette'},
+ 'resident-24':{hairStyle:'short',hair:'#3b2a24',outfit:'#cbb8e3',glasses:'#3b3040',scarf:'#5a9bd8',prop:'brush',propColor:'#d4565a'},
  'resident-22':{hairStyle:'bun',hair:'#5a3d32',outfitType:'apron',outfit:'#e7c26a',accent:'#8c5a3c',prop:'ladle'}
 };
 export const HOST_LOOKS={
  'island-10':{hairStyle:'long',hair:'#dfe3f0',outfitType:'robe',outfit:'#2f3a66',accent:'#f2c14e',hat:'star-hat',hatColor:'#2f3a66',glasses:'#c99a3c',cape:'#4a5a96',prop:'crystal',scale:1.12},
  'island-01':{hairStyle:'ponytail',hair:'#3b2a24',outfit:'#f2a983',pants:'#5a6b8c',hat:'beret',hatColor:'#e59445',scarf:'#d4565a',prop:'scroll',propColor:'#e59445',scale:1.12},
+ 'island-12':{hairStyle:'bob',hair:'#2b2626',outfitType:'apron',outfit:'#f3e3c9',accent:'#6b4d84',hat:'beret',hatColor:'#6b4d84',scarf:'#e59445',prop:'brush',propColor:'#5a9bd8',scale:1.12},
  'island-08':{hairStyle:'short',hair:'#2b2626',outfitType:'robe',outfit:'#5a3d7a',accent:'#cdb4e0',hat:'mortarboard',hatColor:'#2b2626',glasses:'#3b3040',prop:'book',propColor:'#b8a0d8',scale:1.12},
  'island-02':{hairStyle:'long',hair:'#7a3b5a',outfitType:'dress',outfit:'#e98aa0',accent:'#f2c14e',hat:'witch',hatColor:'#6b4d84',prop:'book',propColor:'#6b4d84',scale:1.12},
  'island-03':{hairStyle:'spiky',hair:'#c9692e',outfitType:'apron',outfit:'#e9d8b4',accent:'#8c5a3c',hat:'goggles',hatColor:'#c99a3c',prop:'wand',scale:1.12},
@@ -39,5 +42,5 @@ export const HOST_LOOKS={
 };
 // 講師：依王子齊（Jac）的照片——黑色短髮、裸上身、深色長褲、右上臂金色圖騰。
 export const INSTRUCTOR_LOOK={id:'instructor',hairStyle:'spiky',hair:'#1f1a1a',brows:true,skin:'#e8b48a',iris:'#3b2a20',outfitType:'shirtless',pants:'#3d3a3a',shoes:'#2b2626',tattoo:true,scale:1.22};
-// 榮譽島民：集滿 14 把魔法杖的學員分身。
+// 榮譽島民：集滿 15 把魔法杖的學員分身。
 export const HONORARY_LOOK={id:'honorary',hairStyle:'short',hair:'#5a3d32',outfitType:'robe',outfit:'#6b4d84',accent:'#f2c14e',hat:'witch',hatColor:'#6b4d84',cape:'#ed9d50',prop:'wand',scale:1.08};

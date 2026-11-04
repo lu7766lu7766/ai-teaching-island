@@ -1,4 +1,4 @@
-export const COURSE_COUNT=11;
+export const COURSE_COUNT=12;
 // 同一個解析器供網站及本機同步工具使用；教材從 .md 讀取，無第三方套件。
 function sections(source){let fence=false,current=null;const out=[];for(const line of source.replace(/\r/g,'').split('\n')){if(!fence&&/^## /.test(line)){current={title:line.slice(3).trim(),lines:[]};out.push(current);}else if(current)current.lines.push(line);if(/^```/.test(line))fence=!fence;}if(fence)throw Error('Markdown 的程式碼區塊未以 ``` 結束。');return new Map(out.map(s=>[s.title,s.lines.join('\n').trim()]));}
 function jsonSection(s,key){const value=s.get(key);if(value===undefined)throw Error('缺少「'+key+'」段落。');const match=/^```json\n([\s\S]*?)\n```$/.exec(value);if(!match)throw Error('「'+key+'」須保留完整 json 程式碼區塊。');try{return JSON.parse(match[1]);}catch{throw Error('「'+key+'」的 JSON 格式不正確。');}}

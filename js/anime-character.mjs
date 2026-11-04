@@ -83,6 +83,8 @@ export function createAnimeCharacter(index=0,owner=false,look=null){
   case'quill':{cyl(hand,.008,.008,.25,'#6b4a35',0,.08,.05,4);const f=cone(hand,.05,.22,'#fbf6ec',0,.26,.05,6);f.scale.z=.4;break;}
   case'gear':{torus(hand,.09,.03,P,0,0,.06);for(let j=0;j<6;j++){const a=j/6*Math.PI*2;box(hand,.04,.05,.04,P,Math.cos(a)*.13,Math.sin(a)*.13,.06).rotation.z=a;}break;}
   case'magnifier':{torus(hand,.08,.018,'#c99a3c',0,.14,.06);mesh(hand,new THREE.CircleGeometry(.075,12),'#d8eef6',0,.14,.065);box(hand,.025,.14,.025,'#6b4a35',0,0,.06);break;}
+  case'brush':{const h=cyl(hand,.018,.022,.4,'#a37a52',0,.12,.05,6);h.rotation.x=.5;const tip=cone(hand,.035,.1,P,0,.32,.16,6);tip.rotation.x=.5+Math.PI;break;}
+  case'palette':{const pl=cyl(hand,.17,.17,.025,'#e9cfa0',0,0,.08,14);pl.rotation.x=Math.PI/2-.3;for(const [x,y,c]of [[-.08,.06,'#d4565a'],[0,.1,'#f2c14e'],[.08,.06,'#5a9bd8'],[.09,-.03,'#7fd1a0'],[-.07,-.04,'#b08ad8']])ball(hand,.03,c,x,y,.1);break;}
   case'ladle':{cyl(hand,.015,.015,.36,'#a37a52',0,.08,.06,6);const b=mesh(hand,new THREE.SphereGeometry(.07,10,6,0,Math.PI*2,Math.PI/2,Math.PI/2),'#a37a52',0,-.12,.06);b.scale.y=.7;break;}
  }
  if(L.prop==='pet'){const pet=new THREE.Group();pet.position.set(-.4,.88,.04);g.add(pet);ball(pet,.11,P,0,0,0);ball(pet,.09,P,0,.12,.04);for(const side of [-1,1]){cone(pet,.035,.08,P,side*.05,.21,.04,4);ball(pet,.018,'#ffe08a',side*.035,.13,.12,.6);}const tail=cyl(pet,.015,.015,.18,P,0,.05,-.12,5);tail.rotation.x=-.8;g.userData.pet=pet;}
