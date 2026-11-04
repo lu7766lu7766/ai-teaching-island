@@ -9,7 +9,7 @@ function courseTopic(q){
  if(includesAny(q,['魔法書','systemprompt','系統提示','系統指令','aistudio','systeminstruction']))return 'island-02';
  if(includesAny(q,['使魔','subagent','子agent','agent','代理人','權限','permission','reviewer']))return 'island-05';
  if(includesAny(q,['魔杖工坊','opencode','免費模型','bigpickle','安裝','/models','/undo','plan','build']))return 'island-03';
- if(includesAny(q,['咒語入門','gemini','提問','問問題','提示詞','prompt','五要素','查證','token','幻覺','hallucination','知識截止','上下文長度','contextwindow','語言模型','llm','ai怎麼運作','ai是什麼']))return 'island-01';
+ if(includesAny(q,['咒語入門','gemini','提問','問問題','提示詞','prompt','五要素','查證','token','幻覺','hallucination','知識截止','上下文長度','contextwindow','語言模型','llm','ai怎麼運作','ai是什麼','notebook','notebooklm','筆記本']))return 'island-01';
  return null;
 }
 export function answerIslandQuestion(input,data){const q=String(input).trim().toLowerCase().replace(/[？?！!，,。\s]/g,'');const center={id:'center',name:data.center.name};const result=(text,ids=[])=>({text,sources:ids.map(id=>id==='center'?center:{id,name:data.courses.find(c=>c.id===id)?.name}).filter(x=>x.name)});

@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>完整文字教材｜AI 魔法學習島</title><style>body{font:18px/1.8 system-ui;max-width:850px;margin:auto;padding:24px;background:#fffaf1;color:#382e42}pre,p{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse}td,th{border:1px solid;padding:8px}a{color:#5f357e}</style><body><main><a href="./">返回群島首頁</a><h1>AI 魔法學習島</h1><p>本站教材依 Google Gemini 與 OpenCode 官方文件整理，資料查核日期：2026 年 11 月 3 日。AI 工具更新快速，免費模型名單、使用額度與操作畫面可能變動，請以官方頁面為準。測驗為自編練習題。</p><h2>講師介紹：王子齊／Jac</h2><p>學歷：台中科技大學多媒體設計系</p><p>經歷：軟體工程師－高中老師</p><ul><li>生活科技老師</li><li>AI小雜工</li></ul><h3>從提問到 Harness 的九站學習路線</h3><p>依難易度排列，建議照順序前進：
-① 咒語入門島：用 Gemini 免費版學會好好提問
+① 咒語入門島：認識 AI 怎麼運作，用 Gemini 免費版學會好好提問，並用 Gemini Notebook 根據自己的資料提問
 ② 符文研究所：提示詞工程，用範例、拆解、自我檢查與評估讓 AI 穩定做好
 ③ 魔法書之島：在 Google AI Studio 寫出 System Prompt
 ④ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型
@@ -7,7 +7,7 @@
 ⑥ 星門渡口：在 Google AI Studio 申請 API Key，用 JavaScript 串接 Gemini API
 ⑦ 使魔召喚島：打造有固定角色與權限的 Agent
 ⑧ 法器寶庫島：用 Skills 與 MCP 擴充能力
-⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統</p><h3>免費優先，人人都能動手</h3><p>課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。
+⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統</p><h3>免費優先，人人都能動手</h3><p>課程只使用 Google 的免費工具（Gemini、Google AI Studio、Gemini Notebook）；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。
 串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。
 每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。</p><h3>安全使用 AI 的五條守則</h3><p>① 個資與機密不貼：身分證字號、病歷、成績、公司內部文件、帳號密碼都不要貼進免費 AI 服務；免費方案的對話可能被用來改善服務。
 ② 重要資訊要查證：數字、日期、法規、醫療與財務相關內容，一律以原始來源為準。
@@ -23,6 +23,7 @@
 Token：AI 切分文字的小片段，額度與計費都用它計算。（第 1 站）
 上下文長度：AI 每次回答時能同時看到的內容上限。（第 1 站）
 幻覺：AI 把不存在或錯誤的內容說得很肯定。（第 1 站）
+Gemini Notebook：Google 的免費 AI 筆記本（原名 NotebookLM），只根據你提供的資料回答並標出處。（第 1 站）
 提示詞（Prompt）：你給 AI 的指示與資料。（第 1、2 站）
 Few-shot：在提示詞裡附上範例，讓 AI 照著做。（第 2 站）
 System Prompt：替 AI 設定固定身分與規則的系統指令。（第 3 站）
@@ -45,7 +46,10 @@ AI 每次回答時能同時看到的內容有上限，叫做「上下文長度�
 把提問拆成五個要素：角色（用什麼身分回答）、任務（要做什麼）、背景（對象與目的）、限制（字數、語氣、禁止事項）、格式（表格、條列、步驟）。
 不必每次五項都寫滿；先寫任務，再補上最影響結果的一兩項，就會明顯進步。</p><h3>追問、改寫與查證</h3><p>第一次的回答很少完美，請把對話當成來回修改：「第 2 點再具體一點」、「改成給新手看的語氣」、「整理成表格」。
 請它「先問我 3 個問題再回答」，可以讓 AI 補齊它缺少的資訊。
-AI 可能把錯的事說得很肯定，數字、日期、法規與引用來源一定要自己查證；個資、公司機密與帳號密碼不要貼進免費服務。</p><table><thead><tr><th>提問要素</th><th>要交代什麼</th><th>範例</th></tr></thead><tbody><tr><td>角色</td><td>希望 AI 用什麼身分回答</td><td>你是一位擅長簡報的顧問</td></tr><tr><td>任務</td><td>要它做什麼（動詞開頭）</td><td>幫我列出 5 頁簡報大綱</td></tr><tr><td>背景</td><td>對象、目的、已知資訊</td><td>聽眾是第一次接觸 AI 的同事</td></tr><tr><td>限制</td><td>字數、語氣、不能做的事</td><td>每頁不超過 3 點，避免專有名詞</td></tr><tr><td>格式</td><td>希望產出的樣子</td><td>用表格呈現：頁次｜標題｜重點</td></tr></tbody></table><h3>五要素提問範本</h3><pre>你是一位【角色，例如：擅長把複雜概念講簡單的講師】。
+AI 可能把錯的事說得很肯定，數字、日期、法規與引用來源一定要自己查證；個資、公司機密與帳號密碼不要貼進免費服務。</p><h3>讓 AI 只根據你的資料回答：Gemini Notebook（原 NotebookLM）</h3><p>Gemini Notebook 是 Google 的免費 AI 筆記本，2026 年 7 月由 NotebookLM 改名而來，舊網址會自動轉到新名稱，用 Google 帳號就能使用。
+用法：建立一本筆記本，加入你的「來源」，例如 PDF、Google 文件、網頁連結、YouTube 影片或貼上的文字；之後的提問，AI 會根據這些來源回答，並標出引用出處，點一下就能對照原文。
+因為答案綁在你提供的資料上，比直接問聊天 AI 更不容易出現幻覺，很適合整理講義、會議紀錄、長篇報告。它還能把資料做成學習指南、心智圖或語音摘要。
+免費版有來源數量與使用量上限，以畫面顯示為準。上傳前一樣要確認資料裡沒有個資或機密。</p><table><thead><tr><th>提問要素</th><th>要交代什麼</th><th>範例</th></tr></thead><tbody><tr><td>角色</td><td>希望 AI 用什麼身分回答</td><td>你是一位擅長簡報的顧問</td></tr><tr><td>任務</td><td>要它做什麼（動詞開頭）</td><td>幫我列出 5 頁簡報大綱</td></tr><tr><td>背景</td><td>對象、目的、已知資訊</td><td>聽眾是第一次接觸 AI 的同事</td></tr><tr><td>限制</td><td>字數、語氣、不能做的事</td><td>每頁不超過 3 點，避免專有名詞</td></tr><tr><td>格式</td><td>希望產出的樣子</td><td>用表格呈現：頁次｜標題｜重點</td></tr></tbody></table><h3>五要素提問範本</h3><pre>你是一位【角色，例如：擅長把複雜概念講簡單的講師】。
 請幫我【任務，例如：設計一份 10 分鐘的 AI 入門分享大綱】。
 
 背景：
@@ -62,7 +66,7 @@ AI 可能把錯的事說得很肯定，數字、日期、法規與引用來源�
 回答規則：
 - 把內容分成「確定的事實」和「推測或不確定」兩部分
 - 不知道或資料不足時，直接說不知道，不要自己編
-- 列出我可以用來查證的來源類型或關鍵字（不要編造網址）</pre><p><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini（網頁版）</a> 使用 Google 帳號登入即可免費使用</p><p><a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener noreferrer">Gemini 方案比較（官方）</a> 查看免費版與付費方案的最新差異</p><h3>自編練習題</h3><details><summary>下列哪一個提問最可能得到貼近需求的回答？</summary><ol><li>幫我寫簡報</li><li>請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現</li><li>簡報</li><li>寫得好一點</li></ol><p>正確答案：請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現<br>這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。</p></details><details><summary>「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？</summary><ol><li>角色</li><li>背景</li><li>限制</li><li>格式</li></ol><p>正確答案：限制<br>字數、語氣與禁止事項都屬於限制。</p></details><details><summary>AI 回答了一個很肯定的統計數字，最恰當的做法是？</summary><ol><li>直接引用，AI 不會出錯</li><li>自行查證原始來源後再使用</li><li>換個字體就好</li><li>請 AI 回答得更肯定</li></ol><p>正確答案：自行查證原始來源後再使用<br>AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。</p></details><details><summary>和 AI 聊了很久之後，它開始忘記你一開始交代的規則，最可能的原因是？</summary><ol><li>AI 故意不聽話</li><li>網路速度太慢</li><li>對話太長，早期的內容在上下文中被淡忘或超出範圍</li><li>規則寫得太有禮貌</li></ol><p>正確答案：對話太長，早期的內容在上下文中被淡忘或超出範圍<br>AI 每次能看到的內容有上限（上下文長度）。換主題就開新對話、重要規則再提醒一次，或改寫成 System Prompt。</p></details></section><section><h2>2. 符文研究所</h2><p>L2 進階提問｜提示詞工程：範例、拆解、自我檢查與評估</p><p>學習目標：AI 做不好時能診斷原因、補上引導；會用範例（Few-shot）、任務拆解與串接、自我檢查，並用固定測試題比較提示詞版本。</p><h3>AI 做不好時：罵它沒用，給它更完整的引導</h3><p>AI 回答不理想，最常見的原因是它缺了某些資訊，而不是它「不努力」。大寫、驚嘆號、責罵或威脅都沒有提供新資訊，只會讓下一次回答一樣離題。
+- 列出我可以用來查證的來源類型或關鍵字（不要編造網址）</pre><p><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Gemini（網頁版）</a> 使用 Google 帳號登入即可免費使用</p><p><a href="https://gemini.google/subscriptions/" target="_blank" rel="noopener noreferrer">Gemini 方案比較（官方）</a> 查看免費版與付費方案的最新差異</p><p><a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">Gemini Notebook（原 NotebookLM）</a> 舊網址會自動轉到新名稱；用 Google 帳號免費使用</p><p><a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" target="_blank" rel="noopener noreferrer">NotebookLM is now Gemini Notebook（Google 官方部落格）</a> 2026 年 7 月改名公告</p><h3>自編練習題</h3><details><summary>下列哪一個提問最可能得到貼近需求的回答？</summary><ol><li>幫我寫簡報</li><li>請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現</li><li>簡報</li><li>寫得好一點</li></ol><p>正確答案：請以顧問身分，為沒用過 AI 的同事列 5 頁簡報大綱，用表格呈現<br>這個提問包含角色、任務、背景與格式，AI 掌握的資訊最完整。</p></details><details><summary>「每頁不超過 3 點、避免專有名詞」屬於提問五要素中的哪一項？</summary><ol><li>角色</li><li>背景</li><li>限制</li><li>格式</li></ol><p>正確答案：限制<br>字數、語氣與禁止事項都屬於限制。</p></details><details><summary>AI 回答了一個很肯定的統計數字，最恰當的做法是？</summary><ol><li>直接引用，AI 不會出錯</li><li>自行查證原始來源後再使用</li><li>換個字體就好</li><li>請 AI 回答得更肯定</li></ol><p>正確答案：自行查證原始來源後再使用<br>AI 可能產生看似合理但錯誤的內容，數字、日期與引用都需要查證。</p></details><details><summary>和 AI 聊了很久之後，它開始忘記你一開始交代的規則，最可能的原因是？</summary><ol><li>AI 故意不聽話</li><li>網路速度太慢</li><li>對話太長，早期的內容在上下文中被淡忘或超出範圍</li><li>規則寫得太有禮貌</li></ol><p>正確答案：對話太長，早期的內容在上下文中被淡忘或超出範圍<br>AI 每次能看到的內容有上限（上下文長度）。換主題就開新對話、重要規則再提醒一次，或改寫成 System Prompt。</p></details></section><section><h2>2. 符文研究所</h2><p>L2 進階提問｜提示詞工程：範例、拆解、自我檢查與評估</p><p>學習目標：AI 做不好時能診斷原因、補上引導；會用範例（Few-shot）、任務拆解與串接、自我檢查，並用固定測試題比較提示詞版本。</p><h3>AI 做不好時：罵它沒用，給它更完整的引導</h3><p>AI 回答不理想，最常見的原因是它缺了某些資訊，而不是它「不努力」。大寫、驚嘆號、責罵或威脅都沒有提供新資訊，只會讓下一次回答一樣離題。
 請先像醫生一樣診斷：它缺了背景資料？不知道你要的樣子？任務一次塞太多？還是沒有判斷標準？再針對原因補上引導（對照本島上方表格）。
 具體回饋的寫法：「你寫的是 A，我需要的是 B，因為 C。請保留 D，只修改 E。」
 如果對話已經被錯誤方向帶偏，與其在原對話裡反覆糾正，不如開新對話，把補齊後的完整提示詞一次給清楚。

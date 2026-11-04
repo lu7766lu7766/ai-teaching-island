@@ -19,11 +19,11 @@
     "blocks": [
       {
         "title": "從提問到 Harness 的九站學習路線",
-        "text": "依難易度排列，建議照順序前進：\n① 咒語入門島：用 Gemini 免費版學會好好提問\n② 符文研究所：提示詞工程，用範例、拆解、自我檢查與評估讓 AI 穩定做好\n③ 魔法書之島：在 Google AI Studio 寫出 System Prompt\n④ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型\n⑤ 契約之島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑥ 星門渡口：在 Google AI Studio 申請 API Key，用 JavaScript 串接 Gemini API\n⑦ 使魔召喚島：打造有固定角色與權限的 Agent\n⑧ 法器寶庫島：用 Skills 與 MCP 擴充能力\n⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統"
+        "text": "依難易度排列，建議照順序前進：\n① 咒語入門島：認識 AI 怎麼運作，用 Gemini 免費版學會好好提問，並用 Gemini Notebook 根據自己的資料提問\n② 符文研究所：提示詞工程，用範例、拆解、自我檢查與評估讓 AI 穩定做好\n③ 魔法書之島：在 Google AI Studio 寫出 System Prompt\n④ 魔杖工坊：安裝 OpenCode，免帳號使用免費模型\n⑤ 契約之島：用 AGENTS.md 與自訂指令讓 AI 記住規則\n⑥ 星門渡口：在 Google AI Studio 申請 API Key，用 JavaScript 串接 Gemini API\n⑦ 使魔召喚島：打造有固定角色與權限的 Agent\n⑧ 法器寶庫島：用 Skills 與 MCP 擴充能力\n⑨ 魔導高塔：把所有元件組成能自我檢查的工作系統"
       },
       {
         "title": "免費優先，人人都能動手",
-        "text": "課程只使用 Gemini 的免費功能；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
+        "text": "課程只使用 Google 的免費工具（Gemini、Google AI Studio、Gemini Notebook）；遇到需要付費方案的功能（例如 Gemini Spark、Skills、Workspace Studio 自動化），改用開源免費的 OpenCode 與它內建的限時免費模型完成。\n串接 Gemini API 時同樣只用免費方案：在 Google AI Studio 申請 API Key 即可，不需綁信用卡。\n每座島都附可直接複製的提示詞與設定範本，照著貼上、修改括號內容就能體驗。"
       },
       {
         "title": "安全使用 AI 的五條守則",
@@ -35,7 +35,7 @@
       },
       {
         "title": "名詞小辭典",
-        "text": "大型語言模型（LLM）：從大量文字學會語言規律、靠預測下一段文字來回答的 AI。（第 1 站）\nToken：AI 切分文字的小片段，額度與計費都用它計算。（第 1 站）\n上下文長度：AI 每次回答時能同時看到的內容上限。（第 1 站）\n幻覺：AI 把不存在或錯誤的內容說得很肯定。（第 1 站）\n提示詞（Prompt）：你給 AI 的指示與資料。（第 1、2 站）\nFew-shot：在提示詞裡附上範例，讓 AI 照著做。（第 2 站）\nSystem Prompt：替 AI 設定固定身分與規則的系統指令。（第 3 站）\nOpenCode：開源的 AI 程式助手，可使用免費模型。（第 4 站）\nAGENTS.md：寫給 AI 看的專案規則檔，每次都會讀取。（第 5 站）\nAPI／API Key：讓你的程式呼叫 AI 的介面，以及代表你身分的金鑰。（第 6 站）\n結構化輸出：要求 AI 依固定的 JSON 格式回答，方便程式使用。（第 6 站）\nAgent：會自己規劃步驟、使用工具完成任務的 AI。（第 7 站）\nSkill：需要時才載入的技能包。（第 8 站）\nMCP：讓 AI 接上外部工具與資料的標準協定。（第 8 站）\nHarness：包在模型外面、引導與檢查 AI 的整套系統。（第 9 站）"
+        "text": "大型語言模型（LLM）：從大量文字學會語言規律、靠預測下一段文字來回答的 AI。（第 1 站）\nToken：AI 切分文字的小片段，額度與計費都用它計算。（第 1 站）\n上下文長度：AI 每次回答時能同時看到的內容上限。（第 1 站）\n幻覺：AI 把不存在或錯誤的內容說得很肯定。（第 1 站）\nGemini Notebook：Google 的免費 AI 筆記本（原名 NotebookLM），只根據你提供的資料回答並標出處。（第 1 站）\n提示詞（Prompt）：你給 AI 的指示與資料。（第 1、2 站）\nFew-shot：在提示詞裡附上範例，讓 AI 照著做。（第 2 站）\nSystem Prompt：替 AI 設定固定身分與規則的系統指令。（第 3 站）\nOpenCode：開源的 AI 程式助手，可使用免費模型。（第 4 站）\nAGENTS.md：寫給 AI 看的專案規則檔，每次都會讀取。（第 5 站）\nAPI／API Key：讓你的程式呼叫 AI 的介面，以及代表你身分的金鑰。（第 6 站）\n結構化輸出：要求 AI 依固定的 JSON 格式回答，方便程式使用。（第 6 站）\nAgent：會自己規劃步驟、使用工具完成任務的 AI。（第 7 站）\nSkill：需要時才載入的技能包。（第 8 站）\nMCP：讓 AI 接上外部工具與資料的標準協定。（第 8 站）\nHarness：包在模型外面、引導與檢查 AI 的整套系統。（第 9 站）"
       },
       {
         "title": "AI 是擴增器，不是取代者。",
@@ -148,6 +148,10 @@
         {
           "title": "追問、改寫與查證",
           "text": "第一次的回答很少完美，請把對話當成來回修改：「第 2 點再具體一點」、「改成給新手看的語氣」、「整理成表格」。\n請它「先問我 3 個問題再回答」，可以讓 AI 補齊它缺少的資訊。\nAI 可能把錯的事說得很肯定，數字、日期、法規與引用來源一定要自己查證；個資、公司機密與帳號密碼不要貼進免費服務。"
+        },
+        {
+          "title": "讓 AI 只根據你的資料回答：Gemini Notebook（原 NotebookLM）",
+          "text": "Gemini Notebook 是 Google 的免費 AI 筆記本，2026 年 7 月由 NotebookLM 改名而來，舊網址會自動轉到新名稱，用 Google 帳號就能使用。\n用法：建立一本筆記本，加入你的「來源」，例如 PDF、Google 文件、網頁連結、YouTube 影片或貼上的文字；之後的提問，AI 會根據這些來源回答，並標出引用出處，點一下就能對照原文。\n因為答案綁在你提供的資料上，比直接問聊天 AI 更不容易出現幻覺，很適合整理講義、會議紀錄、長篇報告。它還能把資料做成學習指南、心智圖或語音摘要。\n免費版有來源數量與使用量上限，以畫面顯示為準。上傳前一樣要確認資料裡沒有個資或機密。"
         }
       ],
       "prompts": [
@@ -175,6 +179,16 @@
           "label": "Gemini 方案比較（官方）",
           "url": "https://gemini.google/subscriptions/",
           "note": "查看免費版與付費方案的最新差異"
+        },
+        {
+          "label": "Gemini Notebook（原 NotebookLM）",
+          "url": "https://notebooklm.google.com/",
+          "note": "舊網址會自動轉到新名稱；用 Google 帳號免費使用"
+        },
+        {
+          "label": "NotebookLM is now Gemini Notebook（Google 官方部落格）",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+          "note": "2026 年 7 月改名公告"
         }
       ],
       "quiz": [
