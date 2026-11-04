@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {CSS2DObject} from '../vendor/CSS2DRenderer.js';
 import {pointAt} from './navigation.mjs';
 import {WAND_BRIDGES} from './core.mjs';
-// 散落在各島步道外側與兩座橋上的魔法杖；點擊即可撿起，集滿 14 把成為榮譽島民。
+// 散落在各島步道外側與兩座橋上的魔法杖；點擊即可撿起，集滿 16 把成為榮譽島民。
 const COLORS=['#c86b4a','#6b4d84','#4f7a8c','#a37a52','#8c2f3c','#5a7aa8','#7a8a4c'];
 export function createWands(scene,network,nodes,{onWand}={}){
  const mats=new Map();const mat=(c,glow=0)=>{const k=c+glow;if(!mats.has(k))mats.set(k,new THREE.MeshStandardMaterial({color:c,roughness:.6,...(glow?{emissive:c,emissiveIntensity:glow}:{})}));return mats.get(k);};

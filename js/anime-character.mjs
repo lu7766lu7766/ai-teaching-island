@@ -65,6 +65,7 @@ export function createAnimeCharacter(index=0,owner=false,look=null){
  if(L.hat==='bow'){for(const side of [-1,1]){const b=ball(g,.1,H,.22+side*.09,1.36,.05);b.scale.set(1,.7,.5);}ball(g,.05,H,.22,1.36,.06);}
  if(L.hat==='headband'){const t=torus(g,.34,.03,H,0,1.24,0);t.rotation.x=Math.PI/2-.25;}
  if(L.hat==='goggles'){const t=torus(g,.34,.03,'#5a4636',0,1.26,0);t.rotation.x=Math.PI/2-.2;for(const side of [-1,1]){const lens=cyl(g,.08,.08,.06,H,side*.12,1.28,.29,12);lens.rotation.x=Math.PI/2-.2;cyl(g,.06,.06,.065,'#cfe8f2',side*.12,1.28,.3,12).rotation.x=Math.PI/2-.2;}}
+ if(L.hat==='headphones'){const band=torus(g,.37,.03,H,0,1.12,0);band.scale.set(1,1.08,1);for(const side of [-1,1]){const cup=cyl(g,.11,.11,.08,H,side*.37,1.08,0,12);cup.rotation.z=Math.PI/2;cyl(g,.08,.08,.085,L.accent||'#3b3040',side*.38,1.08,0,12).rotation.z=Math.PI/2;}}
  if(L.hat==='flower'){for(let j=0;j<5;j++){const a=j/5*Math.PI*2;ball(g,.05,H,.25+Math.cos(a)*.06,1.3+Math.sin(a)*.06,.12);}ball(g,.04,'#ffe08a',.25,1.3,.14);}
  if(L.hairStyle==='hood'){const hood=mesh(g,new THREE.SphereGeometry(.4,16,10,Math.PI/2+.85,Math.PI*2-1.7,0,Math.PI*.62),H,0,1.08,-.02);hood.material.side=THREE.DoubleSide;const tip=cone(g,.14,.3,H,0,1.52,-.12,8);tip.rotation.x=-.5;const fringe=ball(g,.2,L.hair||'#3b3040',0,1.3,.17);fringe.scale.set(1.3,.45,.5);}
  // 手持道具（右手）與肩上寵物
@@ -85,6 +86,9 @@ export function createAnimeCharacter(index=0,owner=false,look=null){
   case'magnifier':{torus(hand,.08,.018,'#c99a3c',0,.14,.06);mesh(hand,new THREE.CircleGeometry(.075,12),'#d8eef6',0,.14,.065);box(hand,.025,.14,.025,'#6b4a35',0,0,.06);break;}
   case'brush':{const h=cyl(hand,.018,.022,.4,'#a37a52',0,.12,.05,6);h.rotation.x=.5;const tip=cone(hand,.035,.1,P,0,.32,.16,6);tip.rotation.x=.5+Math.PI;break;}
   case'palette':{const pl=cyl(hand,.17,.17,.025,'#e9cfa0',0,0,.08,14);pl.rotation.x=Math.PI/2-.3;for(const [x,y,c]of [[-.08,.06,'#d4565a'],[0,.1,'#f2c14e'],[.08,.06,'#5a9bd8'],[.09,-.03,'#7fd1a0'],[-.07,-.04,'#b08ad8']])ball(hand,.03,c,x,y,.1);break;}
+  case'mic':{cyl(hand,.025,.02,.26,'#3b3040',0,.04,.06,8);ball(hand,.07,P||'#9aa0a6',0,.21,.06);torus(hand,.072,.012,'#c99a3c',0,.19,.06).rotation.x=Math.PI/2;break;}
+  case'clapper':{box(hand,.28,.2,.03,'#2b2626',0,.02,.07);for(let j=0;j<4;j++)box(hand,.04,.03,.032,'#fbf6ec',-.1+j*.07,.08,.071);const top=box(hand,.28,.05,.03,'#2b2626',0,.15,.07);top.rotation.z=.25;break;}
+  case'note':{const h=ball(hand,.07,P,0,0,.06);h.scale.set(1.25,.85,.85);box(hand,.02,.28,.02,P,.075,.14,.06);const f=box(hand,.1,.03,.02,P,.12,.26,.06);f.rotation.z=-.5;break;}
   case'ladle':{cyl(hand,.015,.015,.36,'#a37a52',0,.08,.06,6);const b=mesh(hand,new THREE.SphereGeometry(.07,10,6,0,Math.PI*2,Math.PI/2,Math.PI/2),'#a37a52',0,-.12,.06);b.scale.y=.7;break;}
  }
  if(L.prop==='pet'){const pet=new THREE.Group();pet.position.set(-.4,.88,.04);g.add(pet);ball(pet,.11,P,0,0,0);ball(pet,.09,P,0,.12,.04);for(const side of [-1,1]){cone(pet,.035,.08,P,side*.05,.21,.04,4);ball(pet,.018,'#ffe08a',side*.035,.13,.12,.6);}const tail=cyl(pet,.015,.015,.18,P,0,.05,-.12,5);tail.rotation.x=-.8;g.userData.pet=pet;}
