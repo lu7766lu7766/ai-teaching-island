@@ -17,6 +17,7 @@ function courseTopic(q){
 export function answerIslandQuestion(input,data){const q=String(input).trim().toLowerCase().replace(/[？?！!，,。\s]/g,'');const center={id:'center',name:data.center.name};const result=(text,ids=[])=>({text,sources:ids.map(id=>id==='center'?center:{id,name:data.courses.find(c=>c.id===id)?.name}).filter(x=>x.name)});
  if(!q)return result('我是島主咒咒！你可以問我課程內容、網站怎麼用，或該從哪一座島開始。',['center']);
  if(includesAny(q,['答案','正解','選哪個','第幾題','第1題','第2題','第3題','第4題']))return result('我不直接提供測驗答案喔！你可以問我教材概念，或先作答再閱讀每題解析；我們一起把觀念弄懂。',[]);
+ if(includesAny(q,['魔法杖','榮譽島民','撿','收集魔杖','幾把']))return result('群島上藏了 14 把魔法杖：中央島和每座課程島各 1 把，另外 2 把在橋上。點島名或島面放大後，點發光的魔法杖就能撿起，進度會記在中央廣場的「進度與證書」。集滿 14 把就成為「榮譽島民」：你的分身會出現在中央島散步，紀念證書也會加上榮譽島民印記。魔法杖紀錄存在這個瀏覽器，也會一起匯出到進度備份檔。',['center']);
  const explicit=courseTopic(q);
  if(explicit&&!includesAny(q,['證書','測驗','考試','總複習','已讀','我的進度','本站','這個網站'])){const c=data.courses.find(c=>c.id===explicit);return result(c.name+'：'+c.blocks.map(b=>b.text).join('\n\n')+'\n\n以上依本站教材整理，實際功能以官方最新版本為準。',[explicit]);}
  const centerBlock=title=>{const b=data.center.blocks.find(b=>b.title.includes(title));return b?b.title+'：\n'+b.text:null;};
@@ -24,7 +25,7 @@ export function answerIslandQuestion(input,data){const q=String(input).trim().to
  if(includesAny(q,['辭典','名詞','詞彙','術語'])&&centerBlock('名詞小辭典'))return result(centerBlock('名詞小辭典'),['center']);
  if(includesAny(q,['安全','守則','隱私','個資','著作權','版權','揭露','抄襲','倫理','提示注入','promptinjection','注入','偏見','歧視','最小權限'])&&centerBlock('守則'))return result(centerBlock('守則'),['center']);
  if(includesAny(q,['工具形態','六種形態','網頁版','桌面版','手機app','命令列','編輯器','挑工具','用哪個工具'])&&centerBlock('六種形態'))return result(centerBlock('六種形態'),['center']);
- if(includesAny(q,['你是誰','島主','咒咒','介紹自己']))return result('我是咒咒，這座學習群島的島主！我依本站教材與功能說明協助導覽，能帶你找課程、測驗與資源；右上「？」內的圖文是純說明；提問請先選一座島，再點島上咒咒。我不會連到外部 AI，也不直接揭露測驗答案。',['center']);
+ if(includesAny(q,['你是誰','島主','咒咒','介紹自己']))return result('我是咒咒，中央島的島主！其他每座課程島也各有一位島主，例如水晶球觀測所的觀星師望望、鍊金工房的鍊金術士爐爐；點島上的島主就能問他們。我們都依本站教材與功能說明協助導覽，不會連到外部 AI，也不直接揭露測驗答案。中央島塔前站著的是講師王子齊（Jac），點他可以看講師介紹。',['center']);
  if(includesAny(q,['證書','證明','畢業','75']))return result('要領取學習完成紀念證書，十一課都標記已讀，而且各課測驗至少 75 分。到中央廣場的「進度與證書」輸入姓名，就能下載 PNG 或列印／另存 PDF；這是學習紀念，不代表官方認證。',['center']);
  if(includesAny(q,['進度','存在哪','存哪裡','保存','儲存','重置','接續','不同電腦','換電腦']))return result('閱讀紀錄與測驗最高分保存在目前瀏覽器。重新整理會保留；換瀏覽器或裝置不會自動同步。中央廣場「進度與證書」可匯出 JSON 備份，換裝置後匯入接續；會合併已讀並保留最高分，也可清除紀錄。若瀏覽器拒絕儲存，會提示「僅本次有效」，這次操作仍可繼續，但重新整理後不會保留。',['center']);
  if(includesAny(q,['室內','學習室','進入中央','中央主島']))return result('先點中央主島聚焦外觀，再點主建築進入3D學習室；可拖曳旋轉或雙指縮放，點室內咒咒才會開啟廣場教材。按「返回中央島」回戶外；課程清單仍可直接查看廣場、測驗與證書。',['center']);

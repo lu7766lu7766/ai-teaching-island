@@ -13,6 +13,7 @@ export function parseIslandMarkdown(source,central=false){const s=sections(sourc
  return {course,residents};
 }
 export async function loadMarkdownMaterials(read){const manifest=JSON.parse(await read('islands/manifest.json')),central=parseIslandMarkdown(await read(manifest.center),true),items=await Promise.all(manifest.courses.map(async path=>{try{return parseIslandMarkdown(await read(path));}catch(e){throw Error(path+'：'+e.message);}}));const data={...central,courses:items.map(x=>x.course),residents:items.flatMap(x=>x.residents).sort((a,b)=>Number(a.id.slice(9))-Number(b.id.slice(9)))};
+ if(data.courses.some(c=>!c.host?.name||!c.host?.title))throw Error('每座課程島的資料設定須有 host（島主 name 與 title）。');const hostNames=data.courses.map(c=>c.host.name);if(new Set([...hostNames,'咒咒',...data.residents.map(r=>r.name)]).size!==hostNames.length+1+data.residents.length)throw Error('島主與島民的名字不可重複，也不可叫咒咒。');
  const n=data.courses.length;if(n!==COURSE_COUNT||new Set(data.courses.map(c=>c.id)).size!==n||data.courses.some((c,i)=>c.order!==i+1))throw Error('本專案須有'+COURSE_COUNT+'課且順序（order）連續；增減整島需同步修改場景位置（js/world.mjs）與 COURSE_COUNT。');
  const questionIds=data.courses.flatMap(c=>c.quiz.map(q=>q.id));if(new Set(questionIds).size!==n*4)throw Error('測驗識別碼不可重複。');
  const people=n*2;if(data.residents.length!==people||new Set(data.residents.map(r=>r.id)).size!==people||new Set(data.residents.map(r=>r.name)).size!==people||new Set(data.residents.map(r=>r.concept)).size!==people)throw Error('每座島須有2位島民，識別碼、姓名與概念皆不可重複。');

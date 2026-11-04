@@ -86,6 +86,10 @@
       "order": 1,
       "id": "island-10",
       "name": "水晶球觀測所",
+      "host": {
+        "name": "望望",
+        "title": "觀星師"
+      },
       "group": "Gemini 免費入門",
       "intro": "L1 基礎｜認識 AI 怎麼運作：文字接龍、Token 與上下文、幻覺",
       "points": [],
@@ -269,6 +273,10 @@
       "order": 2,
       "id": "island-01",
       "name": "咒語入門島",
+      "host": {
+        "name": "問問",
+        "title": "咒語老師"
+      },
       "group": "Gemini 免費入門",
       "intro": "L2 入門｜用 Gemini 免費版學會好好提問，用 Gemini Notebook 根據資料提問",
       "points": [],
@@ -469,6 +477,10 @@
       "order": 3,
       "id": "island-08",
       "name": "符文研究所",
+      "host": {
+        "name": "符符",
+        "title": "符文學者"
+      },
       "group": "Gemini 免費入門",
       "intro": "L3 進階提問｜提示詞工程：範例、拆解、自我檢查與評估",
       "points": [],
@@ -674,6 +686,10 @@
       "order": 4,
       "id": "island-02",
       "name": "魔法書之島",
+      "host": {
+        "name": "頁頁",
+        "title": "魔法書管理員"
+      },
       "group": "Gemini 免費入門",
       "intro": "L4 基礎｜System Prompt：替 AI 設定固定的身分與規則",
       "points": [],
@@ -852,6 +868,10 @@
       "order": 5,
       "id": "island-03",
       "name": "魔杖工坊",
+      "host": {
+        "name": "匠匠",
+        "title": "魔杖工匠"
+      },
       "group": "OpenCode 實作",
       "intro": "L5 上手｜安裝 OpenCode，免帳號使用免費 AI 模型",
       "points": [],
@@ -1044,6 +1064,10 @@
       "order": 6,
       "id": "island-04",
       "name": "契約之島",
+      "host": {
+        "name": "約約",
+        "title": "契約公證人"
+      },
       "group": "OpenCode 實作",
       "intro": "L6 規則｜AGENTS.md 與自訂指令：讓 AI 記住你的做事方法",
       "points": [],
@@ -1222,6 +1246,10 @@
       "order": 7,
       "id": "island-09",
       "name": "星門渡口",
+      "host": {
+        "name": "舟舟",
+        "title": "星門船長"
+      },
       "group": "API 串接",
       "intro": "L7 串接｜在 Google AI Studio 申請 API Key，用 JavaScript 第一次呼叫 Gemini 3.5 Flash-Lite",
       "points": [],
@@ -1421,6 +1449,10 @@
       "order": 8,
       "id": "island-11",
       "name": "鍊金工房",
+      "host": {
+        "name": "爐爐",
+        "title": "鍊金術士"
+      },
       "group": "API 串接",
       "intro": "L8 實戰｜多輪對話、結構化 JSON 輸出，把金鑰收進後端正式上線",
       "points": [],
@@ -1619,6 +1651,10 @@
       "order": 9,
       "id": "island-05",
       "name": "使魔召喚島",
+      "host": {
+        "name": "喚喚",
+        "title": "召喚師"
+      },
       "group": "OpenCode 實作",
       "intro": "L9 進階｜打造專屬 Agent：System Prompt＋模型＋權限",
       "points": [],
@@ -1800,6 +1836,10 @@
       "order": 10,
       "id": "island-06",
       "name": "法器寶庫島",
+      "host": {
+        "name": "藏藏",
+        "title": "寶庫守護者"
+      },
       "group": "進階打造",
       "intro": "L10 擴充｜Skills 技能包與 MCP 外部工具",
       "points": [],
@@ -1986,6 +2026,10 @@
       "order": 11,
       "id": "island-07",
       "name": "魔導高塔",
+      "host": {
+        "name": "塔塔",
+        "title": "高塔大法師"
+      },
       "group": "進階打造",
       "intro": "L11 高階｜Agent＝模型＋Harness：設計讓 AI 穩定做對事的整套系統",
       "points": [],
