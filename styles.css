@@ -63,3 +63,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .wand-slots span.got{background:#f2c14e;border:1px solid #c99a3c;color:#fff}
 [data-theme=night] .wand-box{background:#2f2745;border-color:#6b5a8c}
 [data-theme=night] .wand-box h3 small{color:#f2c14e}
+
+/* 教材與測驗底部的「下一站」按鈕 */
+.next-island{display:grid;gap:4px;width:100%;margin-top:22px;padding:16px 18px;text-align:left;border:1.5px dashed var(--accent,#d4823f);border-radius:16px;background:var(--surface)}
+.next-island strong{font-size:1.12em}
+.next-island small{color:var(--muted,#6b625c);line-height:1.5}
+.next-island:hover,.next-island:focus-visible{border-style:solid;transform:translateY(-1px)}
