@@ -988,7 +988,7 @@
         },
         {
           "title": "評估與迭代：用固定測試題比較提示詞版本",
-          "text": "憑感覺說「這版好像比較好」不可靠。準備 3～5 個固定的測試輸入，包含常見情況與一兩個刁鑽的特殊情況，每次修改提示詞都用同一組測試跑一次。\n先定好評分標準（例如：正確性、完整度、格式、語氣，各 1～5 分），再比較新舊版本的分數。\n一次只改一個地方，才知道是哪個改動造成差異；把每一版提示詞與結果記錄下來（v1、v2、v3），好的版本就能隨時找回來。\n免費練習：在 Gemini 或 Google AI Studio 開兩個新對話，分別貼上新舊版本、輸入同一組測試題比較。"
+          "text": "憑感覺說「這版好像比較好」不可靠。準備 3～5 個固定的測試輸入，包含常見情況與一兩個刁鑽的特殊情況，每次修改提示詞都用同一組測試跑一次。\n先定好評分標準（例如：正確性、完整度、格式、語氣，各 1～5 分），再比較新舊版本的分數。\n一次只改一個地方，才知道是哪個改動造成差異；把每一版提示詞與結果記錄下來（v1、v2、v3），好的版本就能隨時找回來。\n免費練習：在 Gemini 或 Google AI Studio 開兩個新對話，分別貼上新舊版本、輸入同一組測試題比較。依 Gemini API 官方條款，Google AI Studio 要年滿 18 歲才能使用；未滿 18 歲的學員請改用 Gemini 練習（個人帳號年滿 13 歲即可使用）。"
         }
       ],
       "prompts": [
@@ -1022,6 +1022,11 @@
           "label": "Google AI Studio",
           "url": "https://aistudio.google.com/",
           "note": "免費開多個對話比較提示詞版本"
+        },
+        {
+          "label": "Gemini API 使用條款（官方）",
+          "url": "https://ai.google.dev/gemini-api/terms",
+          "note": "Google AI Studio 也適用：使用者須年滿 18 歲"
         },
         {
           "label": "Prompt Engineering Guide（社群整理）",
@@ -1180,7 +1185,7 @@
         },
         {
           "title": "免費實作：在 Google AI Studio 設定系統指令",
-          "text": "1. 用 Google 帳號登入 aistudio.google.com（免費，不需信用卡）。\n2. 開一個新的 Chat，找到「System instructions（系統指令）」欄位，貼上本島下方的範本並修改括號內容。\n3. 在下方對話框用幾個不同問題測試，看 AI 是否一直遵守你的規則。\n4. 不滿意就回去改系統指令，再用同樣的問題重測，比較前後差異。\n提醒：Google 可能使用免費服務中的對話內容改善產品，練習時請勿貼上個資或機密資料。"
+          "text": "先提醒年齡：依 Gemini API 官方條款，Google AI Studio 要年滿 18 歲才能使用。未滿 18 歲的學員可以先把 System Prompt 寫好、讀懂下面的步驟，實際在 AI Studio 測試的部分請師長示範。\n1. 用 Google 帳號登入 aistudio.google.com（免費，不需信用卡）。\n2. 開一個新的 Chat，找到「System instructions（系統指令）」欄位，貼上本島下方的範本並修改括號內容。\n3. 在下方對話框用幾個不同問題測試，看 AI 是否一直遵守你的規則。\n4. 不滿意就回去改系統指令，再用同樣的問題重測，比較前後差異。\n提醒：Google 可能使用免費服務中的對話內容改善產品，練習時請勿貼上個資或機密資料。"
         },
         {
           "title": "好的 System Prompt 長什麼樣？",
@@ -1204,6 +1209,11 @@
           "label": "Google AI Studio",
           "url": "https://aistudio.google.com/",
           "note": "免費試用系統指令與各種 Gemini 模型"
+        },
+        {
+          "label": "Gemini API 使用條款（官方）",
+          "url": "https://ai.google.dev/gemini-api/terms",
+          "note": "Google AI Studio 也適用：使用者須年滿 18 歲"
         },
         {
           "label": "OpenCode 內建的 System Prompt（GitHub 原始碼）",
